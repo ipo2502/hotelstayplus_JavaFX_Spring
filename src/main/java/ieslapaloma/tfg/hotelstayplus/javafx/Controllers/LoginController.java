@@ -1,0 +1,66 @@
+package ieslapaloma.tfg.hotelstayplus.javafx.Controllers;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import ieslapaloma.tfg.hotelstayplus.javafx.Models.Model;
+import ieslapaloma.tfg.hotelstayplus.javafx.Views.AccountType;
+import javafx.collections.FXCollections;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+public class LoginController implements Initializable{
+    @FXML
+    private ChoiceBox<AccountType> acc_selector;
+
+    @FXML
+    private Label error_lbl;
+
+    @FXML
+    private Button login_btn;
+
+    @FXML
+    private PasswordField password_fld;
+
+    @FXML
+    private TextField user_fld;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        error_lbl.setText("");
+
+        acc_selector.setItems(FXCollections.observableArrayList(AccountType.CLIENT, AccountType.ADMIN));
+        acc_selector.setValue(Model.getInstance().getViewFactory().getLoginAccountType());
+        acc_selector.valueProperty().addListener(Observable -> Model.getInstance().getViewFactory().setLoginAccountType(acc_selector.getValue()));;
+        login_btn.setOnAction(event -> onLogin());
+    }
+
+    private void onLogin() {
+        System.out.println(login_btn.toString());
+        Stage stage = (Stage) error_lbl.getScene().getWindow();
+        if (Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.CLIENT) {
+            /*
+             * LOGIN: CLIENT CREDENTIALS
+             */
+            Model.getInstance().evaluateClientCredentials(user_fld.getText(), password_fld.getText());
+            System.out.println(Model.getInstance().getClientLoginSucessFlag());
+            if (Model.getInstance().getClientLoginSucessFlag()) {
+                Model.getInstance().getViewFactory().closedStage(stage);
+                Model.getInstance().getViewFactory().showClientWindow();
+            } else {
+                error_lbl.setVisible(true);;
+                error_lbl.setText("Error de inicio de sesión");
+            }
+
+        } else {
+            
+        }
+    }
+
+}

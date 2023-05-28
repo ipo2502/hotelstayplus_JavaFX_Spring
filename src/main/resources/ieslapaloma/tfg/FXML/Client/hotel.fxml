@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="hotelBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="400.0" stylesheets="@../../CSS/Hotel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.HotelController">
+   <children>
+      <ImageView fitHeight="492.0" fitWidth="642.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/hotel_sample.jpg" />
+         </image>
+      </ImageView>
+      <HBox prefHeight="190.0" prefWidth="402.0" styleClass="gradient_high" />
+      <ImageView fx:id="hotelImage" fitHeight="116.0" fitWidth="129.0" layoutX="33.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/hotel_sample.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="hotelName" layoutX="176.0" layoutY="39.0" prefHeight="37.0" prefWidth="123.0" styleClass="title" text="Hotel NAME" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="hotelLocation" layoutX="179.0" layoutY="72.0" prefHeight="35.0" prefWidth="103.0" text="Hotel NAME" textFill="WHITE">
+         <font>
+            <Font name="Calibri Light" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="starsImage" fitHeight="19.0" fitWidth="99.0" layoutX="181.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/stars5.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

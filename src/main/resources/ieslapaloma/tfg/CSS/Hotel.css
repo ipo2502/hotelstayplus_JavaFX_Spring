@@ -1,0 +1,39 @@
+    
+.container {
+    -fx-background-color: linear-gradient(to top, #67676769, transparent);
+    -fx-background-radius: 30 30 30 30;
+}
+
+.title {
+    -fx-text-fill: #eeeeee;
+}
+
+.container:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #ffffff;
+}
+
+.container:hover .gradient_high {
+    -fx-background-color: linear-gradient(to top, #000000, #00000058);
+}
+
+.image {
+    -fx-background-color: linear-gradient(to top, #67676769, transparent);
+
+}
+
+.input_field {
+    -fx-background-color: #FFFFFF;
+    -fx-pref-height: 35;
+    -fx-font-size: 1.20em;
+}
+
+.gradient_low {
+    -fx-background-color: linear-gradient(to top, #00000015, transparent);
+    -fx-background-color: linear-gradient(to left, #00000055, transparent);
+}
+
+.gradient_high {
+    -fx-background-color: linear-gradient(to top, #000000, transparent);
+
+}

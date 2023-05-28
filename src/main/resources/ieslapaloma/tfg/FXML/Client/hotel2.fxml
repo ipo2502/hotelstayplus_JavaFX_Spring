@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="hotelLayout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="400.0" styleClass="container" stylesheets="@../../CSS/Hotel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.HotelController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="400.0" styleClass="gradient_low">
+         <children>
+            <ImageView fx:id="background_img" fitHeight="186.0" fitWidth="400.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../Images/hotel_sample.jpg" />
+               </image>
+            </ImageView>
+            <HBox prefHeight="186.0" prefWidth="400.0" styleClass="gradient_high" />
+            <ImageView fx:id="hotelImage" fitHeight="126.0" fitWidth="116.0" layoutX="25.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/hotel_sample.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="hotelName" layoutX="167.0" layoutY="36.0" prefHeight="34.0" prefWidth="204.0" text="Hotel NAME" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="hotelLocation" layoutX="167.0" layoutY="67.0" prefHeight="35.0" prefWidth="204.0" text="Hotel NAME" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="starsImage" fitHeight="20.0" fitWidth="119.0" layoutX="165.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/stars5.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

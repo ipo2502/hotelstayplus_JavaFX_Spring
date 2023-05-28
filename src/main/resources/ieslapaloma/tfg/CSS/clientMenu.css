@@ -1,0 +1,36 @@
+.main_menu_container {
+    -fx-alignment: center;
+    -fx-padding: 0 10 0 10;
+    -fx-background-color: linear-gradient(to left, #222222,  #333333);
+
+}
+
+.left_container {
+    -fx-background-color: linear-gradient(to left, #222222,  #333333);
+    -fx-background-radius: 0 20 0 00;
+}
+
+.menu_container {
+    -fx-spacing: 20;
+    -fx-background-radius: 20;
+
+}
+
+.line {
+    -fx-stroke: 2px;
+}
+
+.button {
+    -fx-background-color: #7f7f7f;
+    -fx-border-radius: 30;
+    -fx-text-fill: black;
+    -fx-font-family: System;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.348), 10, 0.5, 0, 0);
+}
+
+.button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.51), 10, 0.5, 0, 0);
+
+}
+

@@ -1,0 +1,96 @@
+.gradient {
+    -fx-background-color: rgb(0, 0, 0);
+}
+
+.grey {
+    -fx-fill: #989898;
+}
+
+.top_container {
+    -fx-background-color: linear-gradient(to right, #222222,  #333333);
+}
+
+.grey {
+    -fx-text-fill: #989898;
+
+}
+
+.notgreyLabel {
+    -fx-text-fill: #eeeeee;
+
+}
+/* #1c90e4 */
+.gridpane {
+    -fx-background-color: linear-gradient(to right, #222222,  #333333);
+}
+
+
+.scrollpane {
+    -fx-background-color: linear-gradient(to right, #222222,  #333333);
+
+}
+
+.scrollpane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+}
+
+.scrollpane .scroll-bar:vertical track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 2em;
+}
+
+.scrollpane .scroll-bar:horizontal .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0,10,0,0;
+}
+
+.scrollpane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0,0,10,0;
+}
+
+.scrollpane .scroll-bar .increment-arrow,
+.scrollpane .scroll-bar .decrement-arrow {
+    -fx-padding: -2;
+}
+
+.scrollpane .scroll-bar:vertical .thumn {
+    -fx-background-color: derive(black, 90%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+
+.little_gradient {
+    -fx-background-color: linear-gradient(to bottom, transparent,  #0000000f);
+
+}
+
+.little_gradientleft{
+    -fx-background-color: linear-gradient(to bottom, transparent,  #00000050);
+
+}
+
+.button {
+    -fx-background-color: #7f7f7f;
+    -fx-border-radius: 30;
+    -fx-text-fill: black;
+    -fx-font-family: System;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.348), 10, 0.5, 0, 0);
+}
+
+.button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.51), 10, 0.5, 0, 0);
+
+}
+
+.bigtitle:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.240), 10, 0.5, 0, 0);
+
+}

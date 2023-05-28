@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/clientDashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controller">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="305.0" />
+            <Label alignment="CENTER" text="HotelStay+" textAlignment="CENTER">
+               <font>
+                  <Font name="FranziskaWeb W03 Book" size="43.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="grey" />
+                  <String fx:value="bigtitle" />
+               </styleClass>
+            </Label>
+            <Pane prefHeight="100.0" prefWidth="124.0" />
+            <Label prefHeight="33.0" prefWidth="192.0" styleClass="grey" text="Ignacio Pérez Ortega">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="little_gradientleft">
+         <children>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="233.0">
+               <children>
+                  <Label alignment="CENTER" styleClass="grey" text="Hoteles recientes">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nHotels_lbl" styleClass="grey" text="15 hoteles" />
+               </children>
+            </VBox>
+            <Line endX="896.75732421875" endY="0.0037584304809570312" startX="539.878662109375" startY="0.0018792152404785156" stroke="#989898" strokeWidth="2.0" styleClass="ln" />
+         </children>
+      </HBox>
+      <ScrollPane prefHeight="550.0" prefWidth="1245.0" VBox.vgrow="ALWAYS">
+         <content>
+            <GridPane fx:id="hotelesGrid" prefHeight="0.0" prefWidth="0.0">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <styleClass>
+                  <String fx:value="gridpane" />
+                  <String fx:value="notgreyLabel" />
+               </styleClass>
+            </GridPane>
+         </content>
+         <styleClass>
+            <String fx:value="scrollpane" />
+            <String fx:value="notgreyLabel" />
+         </styleClass>
+      </ScrollPane>
+   </children>
+</VBox>

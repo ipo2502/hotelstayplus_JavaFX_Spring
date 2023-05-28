@@ -1,0 +1,93 @@
+
+
+
+.top_container {
+    -fx-alignment: center;
+
+}
+
+.gradient {
+    -fx-background-color: linear-gradient(to top, #000000, transparent);
+
+}
+
+.image {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.215), 10, 0.5, 0, 0);
+}
+
+.title {
+    -fx-font-family: Calibri;
+    -fx-text-fill: #EEEEEE;
+    -fx-font-weight: bold;
+    -fx-font-size: 2em;
+    -fx-alignment: center;
+}
+
+.bigtitle {
+    -fx-font-size: 7.2em;
+    -fx-font-family: FranziskaWebW03-Book;
+    -fx-alignment: center;
+}
+
+.image:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.51), 10, 0.5, 0, 0);
+}
+
+.gradient_low {
+    -fx-background-color: linear-gradient(to top, #00000069, transparent);
+    -fx-background-color: linear-gradient(to left, #000000, transparent);
+
+}
+
+.line {
+    -fx-stroke-width: 3px;
+}
+
+.gradient_side {
+    -fx-background-color: linear-gradient(to left, #000000, transparent);
+
+}
+
+.gradient_side Label {
+    -fx-font-size: 1.2em;
+    -fx-font-family: FranziskaWebW03-Book;
+    -fx-alignment: center;
+}
+
+.textField {
+    -fx-pref-width: -fx-use-computed-size;
+
+}
+
+.input_field {
+    -fx-background-color: #FFFFFF;
+    -fx-pref-height: 25;
+    -fx-font-size: 1.2em;
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 10);
+}
+
+.button {
+    -fx-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.158), rgba(255, 255, 255, 0.1));
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: linear-gradient(to right, rgba(255, 255, 255, 0.582), rgba(255, 255, 255, 0.555));;
+    -fx-font-family: Arial;
+    -fx-font-style: italic;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.348), 10, 0.5, 0, 0);
+    -fx-transition: background-color 0.3s;
+
+
+}
+
+.button:hover {
+    -fx-background-color: repeating-linear-gradient(to right, rgba(82, 82, 82, 0.337), rgba(255, 255, 255, 0.085));
+    -fx-text-fill: linear-gradient(to right, rgba(255, 255, 255, 0.582), rgba(255, 255, 255, 0.555));
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.799), 10, 0.5, 0, 0);
+
+}
+
+

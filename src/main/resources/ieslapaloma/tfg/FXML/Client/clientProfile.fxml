@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/clientDashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="305.0" />
+            <Label alignment="CENTER" styleClass="grey" text="HotelStay+" textAlignment="CENTER">
+               <font>
+                  <Font name="FranziskaWeb W03 Book" size="43.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="100.0" prefWidth="124.0" />
+            <Label prefHeight="33.0" prefWidth="192.0" text="Ignacio Pérez Ortega">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="little_gradientleft">
+         <children>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="233.0">
+               <children>
+                  <Label alignment="CENTER" styleClass="grey" text="Perfil">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#ababab" glyphName="USER" styleClass="grey" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="nHotels_lbl" styleClass="grey" text="perfil" />
+               </children>
+            </VBox>
+            <Line endX="896.75732421875" endY="0.0037584304809570312" startX="539.878662109375" startY="0.0018792152404785156" stroke="#989898" strokeWidth="2.0" styleClass="ln" />
+         </children>
+      </HBox>
+      <VBox prefHeight="546.0" prefWidth="850.0">
+         <children>
+            <AnchorPane prefHeight="544.0" prefWidth="850.0" styleClass="little_gradient">
+               <children>
+                  <Label layoutX="347.0" layoutY="30.0" styleClass="grey" text="Ignacio Pérez Ortega" underline="true">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView glyphName="USER" layoutX="273.0" layoutY="82.0" size="80" styleClass="grey" wrappingWidth="61.0" />
+                  <Label layoutX="53.0" layoutY="120.0" styleClass="grey" text="Datos Personales">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-626.0" layoutY="159.0" startX="650.0" startY="0.0018792152404785156" stroke="#989898" strokeWidth="1.5" styleClass="ln" />
+                  <Label layoutX="39.0" layoutY="188.0" styleClass="grey" text="Name:" />
+                  <Label layoutX="148.0" layoutY="188.0" styleClass="grey" text="Ignacio Pérez Ortega" />
+                  <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-627.0" layoutY="231.0" startX="650.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />
+                  <Label layoutX="41.0" layoutY="255.0" styleClass="grey" text="Email address:" />
+                  <Label layoutX="150.0" layoutY="255.0" styleClass="grey" text="ipo@gmail.com" />
+                  <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-625.0" layoutY="298.0" startX="650.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />
+                  <Label layoutX="38.0" layoutY="322.0" styleClass="grey" text="Phone number" />
+                  <Label layoutX="147.0" layoutY="322.0" styleClass="grey" text="+34 646 36 05 68" />
+                  <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-628.0" layoutY="365.0" startX="650.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />
+                  <Button layoutX="120.0" layoutY="386.0" mnemonicParsing="false" text="Editar" />
+                  <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-657.0" layoutY="398.0" startX="850.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />
+                  <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-800.0" layoutY="397.0" startX="850.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>
