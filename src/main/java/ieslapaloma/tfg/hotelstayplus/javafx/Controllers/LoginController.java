@@ -5,14 +5,17 @@ import java.util.ResourceBundle;
 
 import ieslapaloma.tfg.hotelstayplus.javafx.Models.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.AccountType;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable{
@@ -34,7 +37,16 @@ public class LoginController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         error_lbl.setText("");
-
+        Platform.runLater(() -> {
+            Scene scene = login_btn.getScene();
+            if (scene != null) {
+                scene.setOnKeyPressed(event -> {
+                    if (event.getCode() == KeyCode.ENTER) {
+                        onLogin();
+                    }
+                });
+            }
+        });
         acc_selector.setItems(FXCollections.observableArrayList(AccountType.CLIENT, AccountType.ADMIN));
         acc_selector.setValue(Model.getInstance().getViewFactory().getLoginAccountType());
         acc_selector.valueProperty().addListener(Observable -> Model.getInstance().getViewFactory().setLoginAccountType(acc_selector.getValue()));;

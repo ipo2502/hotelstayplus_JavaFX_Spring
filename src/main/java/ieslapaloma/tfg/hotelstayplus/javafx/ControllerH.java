@@ -10,7 +10,14 @@ import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import ieslapaloma.tfg.hotelstayplus.HotelstayplusApplication;
 import ieslapaloma.tfg.hotelstayplus.javafx.Models.Hotel;
+import ieslapaloma.tfg.hotelstayplus.repository.ClientRepository;
+import ieslapaloma.tfg.hotelstayplus.service.HotelService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,7 +34,19 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
-public class Controller implements Initializable{
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class ControllerH implements Initializable{
+    
+    
+    private  ClientRepository clientRepository; // Assuming you have a UserRepository class
+    @Autowired
+    private HotelService hotelService;
+   
+
+    private ObservableList<Hotel> hotelsList = FXCollections.observableArrayList();
+    private lokuraControll lokuracont;
 
       @FXML
     //private HBox hotelLayout;
@@ -56,7 +75,7 @@ public class Controller implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+        //nHotels_lbl.setText(String.valueOf(clientRepository.count()));
         load();
         hotelesGrid.setOnMouseClicked(event -> onPrint());
 
@@ -64,9 +83,10 @@ public class Controller implements Initializable{
 
     private void load() {
         recentlyAdded = new ArrayList<>(recentlyAdded());
-
+        //System.out.println("AAAAAA:" +hotelService.getAllHotels().size());
         nHotels_lbl.setText(recentlyAdded.size()+" hoteles");
         
+
 
         int column = 0;
         int row = 1;
@@ -92,13 +112,18 @@ public class Controller implements Initializable{
         } catch (IOException e) {
             e.printStackTrace();
         }
+         
     }
 
     private void onPrint() {
         System.out.println("Acceso a la vaina");
     }
 
+/* */
     private List<Hotel> recentlyAdded() {
+
+      
+         
         List<Hotel> ls = new ArrayList<>();
         Random r = new Random();
         Hotel hotel = new Hotel();
@@ -148,6 +173,8 @@ public class Controller implements Initializable{
         hotel6.setStarsSrc(starsPaths[r.nextInt(starsPaths.length)]);
         hotel6.setBackgroundImg(backgroundImgs[r.nextInt(backgroundImgs.length)]);
         ls.add(hotel6);
+
+         
 
         /*Hotel hotel2 = new Hotel();
         hotel2.setName("Hotel Ignacio");
