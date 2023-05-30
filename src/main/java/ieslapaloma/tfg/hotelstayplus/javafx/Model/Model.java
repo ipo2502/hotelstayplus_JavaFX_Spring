@@ -2,9 +2,11 @@ package ieslapaloma.tfg.hotelstayplus.javafx.Model;
 
 import java.sql.ResultSet;
 
+import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.Database.DatabaseDriver;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.AccountType;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ViewFactory;
+import ieslapaloma.tfg.hotelstayplus.model.Client;
 
 
 public class Model {
@@ -15,12 +17,14 @@ public class Model {
     private DatabaseDriver databaseDriver;
     private boolean login = false;
     private boolean clientLoginSucessFlag;
+    private Client modelClient;
 
     private Model() {
         this.viewFactory = new ViewFactory();
         this.databaseDriver = new DatabaseDriver();
-
+        
         this.clientLoginSucessFlag = false;
+
 
     }
 
@@ -39,20 +43,34 @@ public class Model {
 
     public void setClientLoginSucesssFlag(boolean flag) {this.clientLoginSucessFlag = flag;}
 
+    public Client getModelClient() { return this.modelClient;}
     /*
     * Client Section
     */
-
-    public void evaluateClientCredentials(String user, String password) {
+    //CAMBIAR CON EL DBMANAGER
+    public void evaluateClientCredentialsB(String user, String password) {
         ResultSet resultSet = databaseDriver.getClientData(user, password);
         try {
             if (resultSet.next()) {
                 //Pojo add data to a User/Client object
+                modelClient = new Client();
+                modelClient.setName(user);
+                modelClient.setEmail(password);
                 this.clientLoginSucessFlag = true;
 
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void evaluateClientCredentials(String user, String password) {
+        Client client = DBManager.getInstance().getClientService().loginClient(user, password);
+        if (client != null) {
+            modelClient = client;
+            this.clientLoginSucessFlag = true;
+        } else {
+            System.out.println("no se encontró el usuario");
         }
     }
 

@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/clientDashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/clientDashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.ClientProfileController">
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -63,13 +63,13 @@
                   </Label>
                   <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-626.0" layoutY="159.0" startX="650.0" startY="0.0018792152404785156" stroke="#989898" strokeWidth="1.5" styleClass="ln" />
                   <Label layoutX="39.0" layoutY="188.0" styleClass="grey" text="Name:" />
-                  <Label layoutX="148.0" layoutY="188.0" styleClass="grey" text="Ignacio Pérez Ortega" />
+                  <Label fx:id="name_lbl" layoutX="148.0" layoutY="188.0" styleClass="grey" text="Ignacio Pérez Ortega" />
                   <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-627.0" layoutY="231.0" startX="650.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />
                   <Label layoutX="41.0" layoutY="255.0" styleClass="grey" text="Email address:" />
-                  <Label layoutX="150.0" layoutY="255.0" styleClass="grey" text="ipo@gmail.com" />
+                  <Label fx:id="email_lbl" layoutX="150.0" layoutY="255.0" styleClass="grey" text="ipo@gmail.com" />
                   <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-625.0" layoutY="298.0" startX="650.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />
                   <Label layoutX="38.0" layoutY="322.0" styleClass="grey" text="Phone number" />
-                  <Label layoutX="147.0" layoutY="322.0" styleClass="grey" text="+34 646 36 05 68" />
+                  <Label fx:id="phone_lbl" layoutX="147.0" layoutY="322.0" styleClass="grey" text="+34 646 36 05 68" />
                   <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-628.0" layoutY="365.0" startX="650.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />
                   <Button layoutX="120.0" layoutY="386.0" mnemonicParsing="false" text="Editar" />
                   <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-657.0" layoutY="398.0" startX="850.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />

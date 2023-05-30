@@ -22,4 +22,8 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
+    public Client loginClient(String username, String password) {
+        return clientRepository.findLoginClient(username, password);
+    }
+
 }
