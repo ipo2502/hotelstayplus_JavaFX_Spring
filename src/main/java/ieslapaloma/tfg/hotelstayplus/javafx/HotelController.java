@@ -79,8 +79,16 @@ public class HotelController implements Initializable{
        // Image image3 = new Image(getClass().getResourceAsStream(hotel.getBackgroundImg()));
         //hotelImage.setImage(image2);
         //background_img.setImage(image3);
-        hotelName.setText(hotel.getPOJOname());
-        hotelLocation.setText(hotel.getpOJOlocatioString());
+       
+        ///ieslapaloma/tfg/Images/hotel_sample.jpg
+        String urlImg = getUrlimg(hotel.getImg_n());
+
+        Image imageCover = new Image(getClass().getResourceAsStream(urlImg));
+        hotelImage.setImage(imageCover);
+        background_img.setImage(imageCover);
+
+        hotelName.setText(hotel.getName());
+        hotelLocation.setText(hotel.getLocation());
 
         //Image stars = new Image(getClass().getResourceAsStream(hotel.getStarsSrc()));
        // starsImage.setImage(stars);
@@ -91,6 +99,18 @@ public class HotelController implements Initializable{
         "-fx-background-radius: 10;"+
         "-fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 10);");
         */
+    }
+
+    public String getUrlimg(int img_n) {
+        switch(img_n) {
+            case 1: return "/ieslapaloma/tfg/Images/hotel_sample.jpg";
+            case 2: return "/ieslapaloma/tfg/Images/hotel_sample2.jpg";
+            case 3: return "/ieslapaloma/tfg/Images/hotel_sample3.jpg";
+            case 4: return "/ieslapaloma/tfg/Images/hotel_sample4.jpg";
+            case 5: return "/ieslapaloma/tfg/Images/hotel_sample5.jpg";
+            case 6: return "/ieslapaloma/tfg/Images/hotel_sample6.jpg";
+            default: return "";
+        }
     }
 
     @Override

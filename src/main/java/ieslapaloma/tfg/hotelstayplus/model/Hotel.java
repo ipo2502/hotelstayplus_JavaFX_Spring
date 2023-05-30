@@ -32,10 +32,8 @@ public class Hotel {
     @Column(name = "website")
     private String website;
 
-    //servicios como entity para un futuro
-
-
-
+    @Column(name = "img_n")
+    private int img_n;
 
     public Hotel() {}
 
@@ -64,10 +62,32 @@ public class Hotel {
         this.name = nombre;
     }
 
-    private String POJOname;
+    /*
+     * Cuando un administrador añada un hotel, se va a poder elegir entre varias fotos con un gridpane en una nueva ventana
+     * Cada una de estas fotos va a tener un int identificativo con la ruta de la imagen en local
+     * Sería posible crear una tabla en la base de datos de imágenes que tuviera su id y el path, pero vamos a ir viendo cóm lo hacemos
+     * De momento vamos a partir con las cinco hotel_sample imágenes que tenemos. 
+     */
+
+    public int getImg_n() {
+        return img_n;
+    }
+
+    public void setImg_n(int img_n) {
+        this.img_n = img_n;
+    }
+
+
+
+    @Transient
+    private String POJOname; //retirar en un futuro
+    @Transient
     private String imageSrc;
-    private String pOJOlocatioString;
+    @Transient
+    private String pOJOlocatioString;//retirar en un futuro
+    @Transient
     private String starsSrc;
+    @Transient
     private String backgroundImg;
 
     public String getBackgroundImg() {
@@ -116,6 +136,14 @@ public class Hotel {
                 + location + ", city=" + city + ", postalCode=" + postalCode + ", website=" + website + ", POJOname="
                 + POJOname + ", imageSrc=" + imageSrc + ", pOJOlocatioString=" + pOJOlocatioString + ", starsSrc="
                 + starsSrc + ", backgroundImg=" + backgroundImg + "]";
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     
