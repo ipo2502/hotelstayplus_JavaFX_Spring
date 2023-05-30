@@ -15,6 +15,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.HotelstayplusApplication;
+import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
+import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
 import ieslapaloma.tfg.hotelstayplus.repository.ClientRepository;
 import ieslapaloma.tfg.hotelstayplus.repository.HotelRepository;
@@ -77,13 +79,21 @@ public class ControllerH implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //nHotels_lbl.setText(String.valueOf(clientRepository.count()));
         load();
-        hotelesGrid.setOnMouseClicked(event -> onPrint());
+        //nHotels_lbl.setText(String.valueOf(clientRepository.count()));
+        //hotelesGrid.setOnMouseClicked(event -> onPrint());
 
     }
 
+    
+
     private void load() {
+        if (hotelesGrid == null) {
+            System.out.println("nulleooo");
+
+        } else {
+
+        
         recentlyAdded = new ArrayList<>(recentlyAdded());
         System.out.println("BDFDBDF:" +DBManager.getInstance().getHotelService().getAllHotels().get(0).toString());
         
@@ -103,25 +113,29 @@ public class ControllerH implements Initializable{
                 hotelController.setData(hotel);
                 pane.setOnMouseClicked(event -> hotelController.handleItemClick(event));
 
+                
+                
+                    if (column == 2) {
+                        column = 0;
+                        ++row;
+                    }
+                    hotelesGrid.add(pane, column++, row);
+                    GridPane.setMargin(pane, new Insets(10));
+                
 
-                if (column == 2) {
-                    column = 0;
-                    ++row;
-                }
-                hotelesGrid.add(pane, column++, row);
-                GridPane.setMargin(pane, new Insets(10));
             }
             
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-         
+    }
     }
 
     private void onPrint() {
         System.out.println(pane.toString());
-       // System.out.println(hotelSelected.toString());
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.MAX);
+        System.out.println("bookings_btn.toString()");
     }
 
 /* */

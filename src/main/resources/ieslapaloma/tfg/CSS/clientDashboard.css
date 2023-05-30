@@ -76,6 +76,11 @@
 
 }
 
+.little_gradientleftHalf{
+    -fx-background-color: linear-gradient(to bottom, transparent,  #00000039);
+
+}
+
 .button {
     -fx-background-color: #7f7f7f;
     -fx-border-radius: 30;
@@ -93,4 +98,14 @@
 .bigtitle:hover {
     -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.240), 10, 0.5, 0, 0);
 
+}
+
+.gradientup {
+    -fx-background-color: linear-gradient(to top, #000000c2, transparent);
+
+}
+
+.gradientupleft {
+    -fx-background-color: linear-gradient(to bottom, #000000c2, transparent);
+    -fx-background-color: linear-gradient(to right, #0000008c, transparent);
 }

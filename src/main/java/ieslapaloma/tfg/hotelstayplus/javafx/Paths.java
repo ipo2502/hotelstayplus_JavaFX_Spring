@@ -21,6 +21,8 @@ public class Paths { //C:\Users\ignac\Downloads\hotelstayplus\hotelstayplus\src\
                 return new FXMLLoader(cl.getResource(fxmlPath+ "Client/client.fxml"));
             case OTHERDASHBOARD:
                 return new FXMLLoader(cl.getResource(fxmlPath+ "Client/clientDashboard2.fxml"));
+            case FULLHOTEL:
+                return new FXMLLoader(cl.getResource(fxmlPath + "Client/fullHotel.fxmls"));
             default:
                 break;
 
@@ -37,6 +39,8 @@ public class Paths { //C:\Users\ignac\Downloads\hotelstayplus\hotelstayplus\src\
                 return new FXMLLoader(cl.getResource(fxmlPath+ "Client/clientBookings.fxml"));
             case PROFILE:
                 return new FXMLLoader(cl.getResource(fxmlPath + "Client/clientProfile.fxml"));
+            case MAX:
+                return new FXMLLoader(cl.getResource(fxmlPath + "Client/fullHotelWithout.fxml"));
             default:
                 break;
 

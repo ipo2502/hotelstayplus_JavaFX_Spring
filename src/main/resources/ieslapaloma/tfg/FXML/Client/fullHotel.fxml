@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/clientDashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.ControllerH">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="little_gradientleftHalf">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="305.0" />
+            <Label alignment="CENTER" text="HotelStay+" textAlignment="CENTER">
+               <font>
+                  <Font name="FranziskaWeb W03 Book" size="43.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="grey" />
+                  <String fx:value="bigtitle" />
+               </styleClass>
+            </Label>
+            <Pane prefHeight="100.0" prefWidth="124.0" />
+            <Label prefHeight="33.0" prefWidth="192.0" styleClass="grey" text="Ignacio Pérez Ortega">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox prefHeight="660.0" prefWidth="850.0">
+         <children>
+            <AnchorPane prefHeight="661.0" prefWidth="850.0">
+               <children>
+                  <ImageView fitHeight="666.0" fitWidth="850.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample6.jpg" />
+                     </image>
+                     <effect>
+                        <GaussianBlur radius="2.36" />
+                     </effect>
+                  </ImageView>
+                  <HBox disable="true" prefHeight="655.0" prefWidth="850.0">
+                     <styleClass>
+                        <String fx:value="gradientupleft" />
+                        <String fx:value="gradientup" />
+                     </styleClass>
+                     <effect>
+                        <GaussianBlur radius="28.85" />
+                     </effect>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="655.0" prefWidth="850.0">
+                     <styleClass>
+                        <String fx:value="gradientupleft" />
+                        <String fx:value="gradientup" />
+                     </styleClass>
+                     <effect>
+                        <GaussianBlur radius="42.98" />
+                     </effect>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

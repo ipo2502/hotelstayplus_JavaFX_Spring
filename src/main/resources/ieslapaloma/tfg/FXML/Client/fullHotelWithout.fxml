@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/maxHotel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.HotelMaxController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="little_gradientleftHalf">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="305.0" />
+            <ImageView fitHeight="53.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icon%20white.png" />
+               </image>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+            <Pane prefHeight="100.0" prefWidth="124.0" />
+            <Label prefHeight="33.0" prefWidth="192.0" styleClass="grey" text="Ignacio Pérez Ortega">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox prefHeight="660.0" prefWidth="850.0">
+         <children>
+            <AnchorPane prefHeight="661.0" prefWidth="850.0">
+               <children>
+                  <ImageView fitHeight="666.0" fitWidth="850.0" opacity="0.39" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample6.jpg" />
+                     </image>
+                     <effect>
+                        <GaussianBlur radius="2.36" />
+                     </effect>
+                  </ImageView>
+                  <HBox disable="true" layoutX="20.0" layoutY="20.0" prefHeight="655.0" prefWidth="850.0">
+                     <styleClass>
+                        <String fx:value="gradientupleft" />
+                        <String fx:value="gradientup" />
+                     </styleClass>
+                     <effect>
+                        <GaussianBlur radius="28.85" />
+                     </effect>
+                  </HBox>
+                  <HBox disable="true" layoutX="10.0" layoutY="10.0" prefHeight="655.0" prefWidth="850.0">
+                     <styleClass>
+                        <String fx:value="gradientupleft" />
+                        <String fx:value="gradientup" />
+                     </styleClass>
+                     <effect>
+                        <GaussianBlur radius="28.85" />
+                     </effect>
+                  </HBox>
+                  <Label fx:id="hotelName_lbl" alignment="CENTER" layoutX="156.0" layoutY="32.0" prefHeight="66.0" prefWidth="537.0" text="Hotel Sample" textAlignment="CENTER" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="bigtitle" />
+                        <String fx:value="image" />
+                     </styleClass>
+                     <font>
+                        <Font name="Times New Roman" size="43.0" />
+                     </font>
+                  </Label>
+                  <Line endX="320.1666259765625" layoutX="314.0" layoutY="98.0" startX="-100.0" stroke="WHITE">
+                     <styleClass>
+                        <String fx:value="image" />
+                        <String fx:value="line" />
+                     </styleClass>
+                  </Line>
+                  <Label fx:id="pricePerNight_lbl" alignment="CENTER" layoutX="22.0" layoutY="72.0" prefHeight="54.0" prefWidth="179.0" styleClass="bigtitle" text="99€/noche!" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="stars_img" fitHeight="13.0" fitWidth="100.0" layoutX="377.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/stars5.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="booking_btn" layoutX="709.0" layoutY="47.0" mnemonicParsing="false" text="Reservar" textFill="#ff7e7e">
+                     <font>
+                        <Font name="Arial" size="19.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="location_lbl" layoutX="290.0" layoutY="107.0" prefHeight="18.0" prefWidth="238.0" text="Dirección del Hotel - Excellent Location" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="MAP" styleClass="white" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="like_btn" layoutX="635.0" layoutY="53.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="46.0">
+                     <graphic>
+                        <FontAwesomeIconView fill="#ffffff5e" glyphName="HEART" />
+                     </graphic>
+                  </Button>
+                  <VBox alignment="CENTER" layoutX="590.0" layoutY="116.0" prefHeight="84.0" prefWidth="238.0">
+                     <children>
+                        <HBox prefHeight="84.0" prefWidth="177.0">
+                           <children>
+                              <Pane prefHeight="84.0" prefWidth="160.0">
+                                 <children>
+                                    <Label fx:id="ratingtitle_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="14.0" text="Muy buena" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="nRatings_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="43.0" text="3.254 valoraciones" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <FontAwesomeIconView fill="WHITE" glyphName="THUMBS_UP" size="45" wrappingWidth="44.65707015991211">
+                                 <HBox.margin>
+                                    <Insets top="13.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample5.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <Label fx:id="bigText_lbl" alignment="CENTER" layoutX="259.0" layoutY="175.0" prefHeight="150.0" prefWidth="384.0" text="¡Bienvenidos al Hotel Paradiso!&#10;Sumérgete en la experiencia de lujo y confort en nuestro &#10;magnífico hotel, ubicado en un entorno paradisíaco.&#10;Desde el momento en que pongas un pie en nuestras instalaciones,&#10;te envolverá una atmósfera de elegancia y hospitalidad incomparable." textAlignment="JUSTIFY" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample5.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <Label fx:id="bigText2_lbl" alignment="CENTER" layoutX="259.0" layoutY="371.0" prefHeight="150.0" prefWidth="384.0" text="Disponemos de una amplia selección de habitaciones y suites,&#10;todas ellas equipadas con comodidades de primer nivel y detalles&#10;de diseño exquisito. Desde las habitaciones estándar hasta las &#10;lujosas suites, cada espacio ha sido pensado para ofrecer el &#10;máximo confort y relajación a nuestros huéspedes." textAlignment="JUSTIFY" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="93.0" fitWidth="105.0" layoutX="38.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample5.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="105.0" layoutX="206.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample5.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="105.0" layoutX="377.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample5.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="105.0" layoutX="545.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample5.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="105.0" layoutX="708.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample5.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <Rectangle fx:id="bigImage1_img" arcHeight="5.0" arcWidth="5.0" height="150.0" layoutX="37.0" layoutY="175.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="201.0" />
+                  <Rectangle fx:id="bigImage2_img" arcHeight="5.0" arcWidth="5.0" height="150.0" layoutX="37.0" layoutY="371.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="201.0" />
+                  <Rectangle fx:id="imageSmall1_img" arcHeight="5.0" arcWidth="5.0" height="79.0" layoutX="38.0" layoutY="559.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="105.0" />
+                  <Rectangle fx:id="imageSmall2_img" arcHeight="5.0" arcWidth="5.0" height="79.0" layoutX="206.0" layoutY="559.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="105.0" />
+                  <Rectangle fx:id="imageSmall3_img" arcHeight="5.0" arcWidth="5.0" height="79.0" layoutX="377.0" layoutY="559.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="105.0" />
+                  <Rectangle fx:id="imageSmall4_img" arcHeight="5.0" arcWidth="5.0" height="79.0" layoutX="545.0" layoutY="559.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="105.0" />
+                  <Rectangle fx:id="imageSmall5_img" arcHeight="5.0" arcWidth="5.0" height="79.0" layoutX="708.0" layoutY="559.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="105.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

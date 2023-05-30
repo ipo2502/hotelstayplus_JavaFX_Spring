@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 
+import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
+import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -63,6 +65,10 @@ public class HotelController implements Initializable{
             String location = hotelLocation.getText();
             System.out.println("Clicked item: " + title + ", " + location);
             // Perform further actions with the clicked item information
+
+            Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.MAX);
+
+
         }
 
     public void setData(Hotel hotel) {

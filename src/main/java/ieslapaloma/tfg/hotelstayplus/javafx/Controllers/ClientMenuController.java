@@ -36,6 +36,7 @@ public class ClientMenuController implements Initializable{
         profile_btn.setOnAction(event -> onProfile());
     }
 
+
     private void onBookings() {
         System.out.println(bookings_btn.toString());
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.BOOKINGS);

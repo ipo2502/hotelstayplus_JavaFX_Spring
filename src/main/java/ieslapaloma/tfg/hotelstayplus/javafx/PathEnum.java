@@ -7,7 +7,7 @@ public enum PathEnum {
     CLIENTDASHBOARD,
     OTHERDASHBOARD,
     CLIENT,
-
+    FULLHOTEL,
     //IMG
     IMG_ICON
 }

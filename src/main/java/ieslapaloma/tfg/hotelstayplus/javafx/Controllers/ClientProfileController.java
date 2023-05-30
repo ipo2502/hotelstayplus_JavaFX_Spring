@@ -25,6 +25,8 @@ public class ClientProfileController implements Initializable{
     private Label phone_lbl;
 
 
+    @FXML
+    private Label usernameTitle_lbl;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -34,6 +36,7 @@ public class ClientProfileController implements Initializable{
     private void load() {
         System.out.println("Está logeado con: " +Model.getInstance().getModelClient().toString());
         Client client = Model.getInstance().getModelClient();
+        usernameTitle_lbl.setText(client.getName());
         email_lbl.setText(client.getEmail());
         name_lbl.setText(client.getName());
         phone_lbl.setText(String.valueOf(client.getPhoneNumber()));

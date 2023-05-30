@@ -21,6 +21,7 @@ public class ViewFactory {
     private VBox clientDashboardView;
     private VBox clientBookingsView;
     private VBox clientProfileView;
+    private VBox maxHotelView;
 
     public ViewFactory() {
         this.loginAccountType = AccountType.CLIENT;
@@ -53,6 +54,12 @@ public class ViewFactory {
     public void showOtherDashboardView() {
         FXMLLoader loader = Paths.getFXML(PathEnum.OTHERDASHBOARD, getClass());
         createStage(loader);
+    }
+
+    public void showMaxHotelView() {
+        FXMLLoader loader = Paths.getFXML(PathEnum.FULLHOTEL, getClass());
+        createStage(loader);
+
     }
      
      private void createStage(FXMLLoader loader) {
@@ -122,6 +129,18 @@ public class ViewFactory {
             }
         }
         return clientProfileView;
+    }
+
+    public VBox getMaxView() {
+        System.out.println("> selected hotel");
+        if (maxHotelView == null) {
+            try {
+                maxHotelView = Paths.getFXML(ClientMenuOptions.MAX, getClass()).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return maxHotelView;
     }
     
 }

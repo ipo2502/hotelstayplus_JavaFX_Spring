@@ -19,8 +19,11 @@ public class ClientController implements Initializable{
                     case DASHBOARD -> client_parent.setCenter(Model.getInstance().getViewFactory().getDashboardView());
                     case BOOKINGS -> client_parent.setCenter(Model.getInstance().getViewFactory().getBookingsView());
                     case PROFILE -> client_parent.setCenter(Model.getInstance().getViewFactory().getProfileView());
+                    //esto es una guarrada
+                    case MAX -> client_parent.setCenter(Model.getInstance().getViewFactory().getMaxView());
                     default -> client_parent.setCenter(Model.getInstance().getViewFactory().getDashboardView());
                 }
             });
+
     }
 }
