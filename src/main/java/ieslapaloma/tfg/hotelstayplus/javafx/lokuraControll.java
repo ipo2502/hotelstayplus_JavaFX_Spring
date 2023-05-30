@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import ieslapaloma.tfg.hotelstayplus.javafx.Models.Client;
+import ieslapaloma.tfg.hotelstayplus.model.Client;
 import ieslapaloma.tfg.hotelstayplus.repository.ClientRepository;
 
 public class lokuraControll {
@@ -12,13 +12,9 @@ public class lokuraControll {
     private static ClientRepository clientRepository; // Assuming you have a UserRepository class
     private static lokuraControll instance;
 
-    private lokuraControll(ClientRepository clientRepository) {
-        lokuraControll.clientRepository = clientRepository;
-    }
-
     public static lokuraControll getInstance(ClientRepository clientRepository2) {
         if (instance == null) {
-            instance = new lokuraControll(clientRepository2);
+            instance = new lokuraControll();
         }
         return instance;
     }

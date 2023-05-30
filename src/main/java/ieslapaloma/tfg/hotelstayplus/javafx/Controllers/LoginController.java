@@ -3,7 +3,7 @@ package ieslapaloma.tfg.hotelstayplus.javafx.Controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import ieslapaloma.tfg.hotelstayplus.javafx.Models.Model;
+import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.AccountType;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;

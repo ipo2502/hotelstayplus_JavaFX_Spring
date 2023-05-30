@@ -1,4 +1,4 @@
-package ieslapaloma.tfg.hotelstayplus.javafx.Models;
+package ieslapaloma.tfg.hotelstayplus.javafx.Model;
 
 import java.sql.ResultSet;
 
@@ -13,7 +13,7 @@ public class Model {
     private ViewFactory viewFactory;
     private AccountType loginAccountType = AccountType.CLIENT;
     private DatabaseDriver databaseDriver;
-    private boolean login = true;
+    private boolean login = false;
     private boolean clientLoginSucessFlag;
 
     private Model() {

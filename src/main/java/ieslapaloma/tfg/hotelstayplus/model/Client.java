@@ -1,8 +1,8 @@
-package ieslapaloma.tfg.hotelstayplus.javafx.Models;
+package ieslapaloma.tfg.hotelstayplus.model;
 import jakarta.persistence.*;
 import jakarta.persistence.GenerationType;
 @Entity
-@Table(name = "CLIENTS")
+@Table(name = "clients")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

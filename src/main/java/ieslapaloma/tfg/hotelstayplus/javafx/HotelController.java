@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-import ieslapaloma.tfg.hotelstayplus.javafx.Models.Hotel;
+import ieslapaloma.tfg.hotelstayplus.model.Hotel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -55,6 +56,15 @@ public class HotelController implements Initializable{
         "D7EEFF",
         "FAFFC7"};
 
+
+        @FXML
+        public void handleItemClick(MouseEvent event) {
+            String title = hotelName.getText();
+            String location = hotelLocation.getText();
+            System.out.println("Clicked item: " + title + ", " + location);
+            // Perform further actions with the clicked item information
+        }
+
     public void setData(Hotel hotel) {
 
         String url  = Paths.getImg(PathEnum.IMG_ICON, getClass()).toString();
@@ -65,10 +75,10 @@ public class HotelController implements Initializable{
         Background background = new Background(backgroundImage);
         hotelLayout.setBackground(background);
 
-        Image image2 = new Image(getClass().getResourceAsStream(hotel.getImageSrc()));
-        Image image3 = new Image(getClass().getResourceAsStream(hotel.getBackgroundImg()));
-        hotelImage.setImage(image2);
-        background_img.setImage(image3);
+        //Image image2 = new Image(getClass().getResourceAsStream(hotel.getImageSrc()));
+       // Image image3 = new Image(getClass().getResourceAsStream(hotel.getBackgroundImg()));
+        //hotelImage.setImage(image2);
+        //background_img.setImage(image3);
         hotelName.setText(hotel.getPOJOname());
         hotelLocation.setText(hotel.getpOJOlocatioString());
 

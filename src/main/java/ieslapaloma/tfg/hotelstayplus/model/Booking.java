@@ -1,10 +1,9 @@
-package ieslapaloma.tfg.hotelstayplus.javafx.Models;
+package ieslapaloma.tfg.hotelstayplus.model;
 import java.time.LocalDate;
-
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "BOOKINGS")
+@Table(name = "bookings")
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

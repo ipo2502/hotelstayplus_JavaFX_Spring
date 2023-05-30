@@ -11,10 +11,13 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.HotelstayplusApplication;
-import ieslapaloma.tfg.hotelstayplus.javafx.Models.Hotel;
+import ieslapaloma.tfg.hotelstayplus.model.Hotel;
 import ieslapaloma.tfg.hotelstayplus.repository.ClientRepository;
+import ieslapaloma.tfg.hotelstayplus.repository.HotelRepository;
 import ieslapaloma.tfg.hotelstayplus.service.HotelService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,17 +39,16 @@ import javafx.scene.layout.Pane;
 
 import org.springframework.stereotype.Controller;
 
-@Controller
 public class ControllerH implements Initializable{
     
-    
-    private  ClientRepository clientRepository; // Assuming you have a UserRepository class
+    private HotelRepository hotelRepository;
+   
     @Autowired
     private HotelService hotelService;
-   
-
     private ObservableList<Hotel> hotelsList = FXCollections.observableArrayList();
-    private lokuraControll lokuracont;
+    
+    private Hotel hotelSelected;
+    private static Pane pane;
 
       @FXML
     //private HBox hotelLayout;
@@ -83,22 +85,24 @@ public class ControllerH implements Initializable{
 
     private void load() {
         recentlyAdded = new ArrayList<>(recentlyAdded());
-        //System.out.println("AAAAAA:" +hotelService.getAllHotels().size());
-        nHotels_lbl.setText(recentlyAdded.size()+" hoteles");
+        System.out.println("BDFDBDF:" +DBManager.getInstance().getHotelService().getAllHotels().get(0).toString());
         
-
+        List<Hotel> hotelitos = DBManager.getInstance().getHotelService().getAllHotels();
+        nHotels_lbl.setText(hotelitos.size()+" hoteles");
 
         int column = 0;
         int row = 1;
         try {
-            for (Hotel hotel: recentlyAdded) {
+            for (Hotel hotel: hotelitos) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/ieslapaloma/tfg/FXML/Client/hotel2.fxml"));
-    
-                Pane pane = fxmlLoader.load();
-    
+ 
+                pane = fxmlLoader.load();
+
                 HotelController hotelController = fxmlLoader.getController();
                 hotelController.setData(hotel);
+                pane.setOnMouseClicked(event -> hotelController.handleItemClick(event));
+
 
                 if (column == 2) {
                     column = 0;
@@ -116,14 +120,17 @@ public class ControllerH implements Initializable{
     }
 
     private void onPrint() {
-        System.out.println("Acceso a la vaina");
+        System.out.println(pane.toString());
+       // System.out.println(hotelSelected.toString());
     }
 
 /* */
     private List<Hotel> recentlyAdded() {
 
       
-         
+         /*
+          * 
+          */
         List<Hotel> ls = new ArrayList<>();
         Random r = new Random();
         Hotel hotel = new Hotel();

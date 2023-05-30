@@ -1,9 +1,9 @@
-package ieslapaloma.tfg.hotelstayplus.javafx.Models;
+package ieslapaloma.tfg.hotelstayplus.model;
 
 import jakarta.persistence.*;
 import jakarta.persistence.GenerationType;
 @Entity
-@Table(name = "HOTELS")
+@Table(name = "hotels")
 public class Hotel {
     //Attributes
     @Id
@@ -109,5 +109,15 @@ public class Hotel {
     public void setStarsSrc(String starsSrc) {
         this.starsSrc = starsSrc;
     }
+
+    @Override
+    public String toString() {
+        return "Hotel [id=" + id + ", name=" + name + ", stars=" + stars + ", rating=" + rating + ", location="
+                + location + ", city=" + city + ", postalCode=" + postalCode + ", website=" + website + ", POJOname="
+                + POJOname + ", imageSrc=" + imageSrc + ", pOJOlocatioString=" + pOJOlocatioString + ", starsSrc="
+                + starsSrc + ", backgroundImg=" + backgroundImg + "]";
+    }
+
+    
     
 }
