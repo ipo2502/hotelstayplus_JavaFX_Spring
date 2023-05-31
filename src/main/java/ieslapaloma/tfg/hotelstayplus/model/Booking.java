@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_booking")
+    @Column(name = "booking_id")
     private Long id;
 
     @ManyToOne

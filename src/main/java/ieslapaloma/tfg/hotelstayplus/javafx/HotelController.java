@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 
+import ieslapaloma.tfg.hotelstayplus.DBManager;
+import ieslapaloma.tfg.hotelstayplus.javafx.Controllers.HotelMaxController;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
@@ -41,6 +43,11 @@ public class HotelController implements Initializable{
     private ImageView background_img;
 
     @FXML
+    private Label id_lbl;
+
+    HotelMaxController hotelMaxController;
+
+    @FXML
     private ImageView starsImage;
     private String[] starsPaths = {
         "/ieslapaloma/tfg/Images/stars1.jpg",
@@ -61,13 +68,18 @@ public class HotelController implements Initializable{
 
         @FXML
         public void handleItemClick(MouseEvent event) {
+            System.out.println("HANDLE ITEM CLICK---");
             String title = hotelName.getText();
             String location = hotelLocation.getText();
-            System.out.println("Clicked item: " + title + ", " + location);
+            long id = Long.valueOf(id_lbl.getText());
+            System.out.println("Selected id: "+id);
+            System.out.println("Clicked item: " + title + ", " + location+ "[ID: " +id +"]");
             // Perform further actions with the clicked item information
-
+            Hotel hotel = DBManager.getInstance().getHotelService().getHotelById(id).get();
+            System.out.println("hotel con id: " +id);
+            Model.getInstance().setSelectedModelHotel(hotel);
             Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.MAX);
-
+            HotelMaxController.getInstance().initialize(null, null);
 
         }
 
@@ -81,13 +93,8 @@ public class HotelController implements Initializable{
         Background background = new Background(backgroundImage);
         hotelLayout.setBackground(background);
 
-        //Image image2 = new Image(getClass().getResourceAsStream(hotel.getImageSrc()));
-       // Image image3 = new Image(getClass().getResourceAsStream(hotel.getBackgroundImg()));
-        //hotelImage.setImage(image2);
-        //background_img.setImage(image3);
-       
-        ///ieslapaloma/tfg/Images/hotel_sample.jpg
-        String urlImg = getUrlimg(hotel.getImg_n());
+        String urlImg = Paths.getHotelUrlImage(hotel.getHotelImg_n());
+        String urlStarsImg = Paths.getHotelUrlImage((hotel.getStars()+6));
 
         Image imageCover = new Image(getClass().getResourceAsStream(urlImg));
         hotelImage.setImage(imageCover);
@@ -95,9 +102,9 @@ public class HotelController implements Initializable{
 
         hotelName.setText(hotel.getName());
         hotelLocation.setText(hotel.getLocation());
-
-        //Image stars = new Image(getClass().getResourceAsStream(hotel.getStarsSrc()));
-       // starsImage.setImage(stars);
+        id_lbl.setText(String.valueOf(hotel.getId()));
+        Image stars = new Image(getClass().getResourceAsStream(urlStarsImg));
+        starsImage.setImage(stars);
 
         Random r = new Random();
         /*hotelBox.setStyle("-fx-background-color: #" +(colors[r.nextInt(colors.length)])
@@ -106,18 +113,8 @@ public class HotelController implements Initializable{
         "-fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 10);");
         */
     }
-
-    public String getUrlimg(int img_n) {
-        switch(img_n) {
-            case 1: return "/ieslapaloma/tfg/Images/hotel_sample.jpg";
-            case 2: return "/ieslapaloma/tfg/Images/hotel_sample2.jpg";
-            case 3: return "/ieslapaloma/tfg/Images/hotel_sample3.jpg";
-            case 4: return "/ieslapaloma/tfg/Images/hotel_sample4.jpg";
-            case 5: return "/ieslapaloma/tfg/Images/hotel_sample5.jpg";
-            case 6: return "/ieslapaloma/tfg/Images/hotel_sample6.jpg";
-            default: return "";
-        }
-    }
+    //pasar esto a una clase
+    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

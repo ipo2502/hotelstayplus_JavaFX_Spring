@@ -7,6 +7,7 @@ import ieslapaloma.tfg.hotelstayplus.javafx.Database.DatabaseDriver;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.AccountType;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ViewFactory;
 import ieslapaloma.tfg.hotelstayplus.model.Client;
+import ieslapaloma.tfg.hotelstayplus.model.Hotel;
 
 
 public class Model {
@@ -18,6 +19,7 @@ public class Model {
     private boolean login = false;
     private boolean clientLoginSucessFlag;
     private Client modelClient;
+    private Hotel modelHotel;
 
     private Model() {
         this.viewFactory = new ViewFactory();
@@ -42,8 +44,9 @@ public class Model {
     public boolean getClientLoginSucessFlag() {return this.clientLoginSucessFlag;}
 
     public void setClientLoginSucesssFlag(boolean flag) {this.clientLoginSucessFlag = flag;}
-
+    public void setSelectedModelHotel(Hotel hotel) {this.modelHotel = hotel;}
     public Client getModelClient() { return this.modelClient;}
+    public Hotel getModelHotel() { return this.modelHotel;}
     /*
     * Client Section
     */

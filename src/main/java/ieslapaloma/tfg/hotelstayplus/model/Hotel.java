@@ -1,5 +1,8 @@
 package ieslapaloma.tfg.hotelstayplus.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.*;
 import jakarta.persistence.GenerationType;
 @Entity
@@ -8,7 +11,7 @@ public class Hotel {
     //Attributes
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_hotel")
+    @Column(name = "hotel_id")
     private Long id;
 
     @Column
@@ -32,8 +35,18 @@ public class Hotel {
     @Column(name = "website")
     private String website;
 
-    @Column(name = "img_n")
-    private int img_n;
+    @Column(name = "hotelImg_n")
+    private Integer hotelImg_n;
+
+    @Column(name = "price")
+    private Double price;
+
+    private Integer description_n1;
+
+    private Integer description_n2;
+
+    @ManyToMany(mappedBy = "likedHotels")
+    private Set<Client> likedByUsers = new HashSet<>();
 
     public Hotel() {}
 
@@ -42,21 +55,17 @@ public class Hotel {
         this.name = nombre;
     }
 
-
     public Long getId() {
         return id;
     }
-
 
     public void setId(Long id) {
         this.id = id;
     }
 
-
     public String getName() {
         return name;
     }
-
 
     public void setName(String nombre) {
         this.name = nombre;
@@ -69,12 +78,104 @@ public class Hotel {
      * De momento vamos a partir con las cinco hotel_sample imágenes que tenemos. 
      */
 
-    public int getImg_n() {
-        return img_n;
+    public int getHotelImg_n() {
+        return hotelImg_n;
     }
 
-    public void setImg_n(int img_n) {
-        this.img_n = img_n;
+    public void setHotelImg_n(int hotelImg_n) {
+        this.hotelImg_n = hotelImg_n;
+    }
+
+    
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+    
+
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+
+
+
+    public Integer getStars() {
+        return stars;
+    }
+
+    public void setStars(Integer stars) {
+        this.stars = stars;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public void setHotelImg_n(Integer hotelImg_n) {
+        this.hotelImg_n = hotelImg_n;
+    }
+
+    public Set<Client> getLikedByUsers() {
+        return likedByUsers;
+    }
+
+    public void setLikedByUsers(Set<Client> likedByUsers) {
+        this.likedByUsers = likedByUsers;
+    }
+
+    public void setPOJOname(String pOJOname) {
+        POJOname = pOJOname;
+    }
+
+    public void setpOJOlocatioString(String pOJOlocatioString) {
+        this.pOJOlocatioString = pOJOlocatioString;
+    }
+
+    
+
+    public Integer getDescription_n1() {
+        return description_n1;
+    }
+
+    public void setDescription_n1(Integer description_n1) {
+        this.description_n1 = description_n1;
+    }
+
+    public Integer getDescription_n2() {
+        return description_n2;
+    }
+
+    public void setDescription_n2(Integer description_n2) {
+        this.description_n2 = description_n2;
     }
 
 

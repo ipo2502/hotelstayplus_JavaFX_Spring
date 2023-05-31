@@ -20,6 +20,13 @@
 	<dependencies>
 
  	<dependency>
+ 		<groupId>org.webjars</groupId>
+ 		<artifactId>fontawesome-iconpicker</artifactId>
+ 		<version>1.2.2</version>
+ 	</dependency>
+
+
+ 	<dependency>
  		<groupId>org.springframework.boot</groupId>
  		<artifactId>spring-boot-starter-web</artifactId>
  		<version>3.1.0</version>
@@ -144,6 +151,11 @@
     <artifactId>ignite-spring</artifactId>
     <version>1.2.2</version>
 </dependency>
+<dependency>
+        <groupId>de.jensd</groupId>
+        <artifactId>fontawesomefx</artifactId>
+        <version>8.9</version>
+    </dependency>
  </dependencies>
 
 	<build>

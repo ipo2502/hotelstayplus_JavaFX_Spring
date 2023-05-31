@@ -1,5 +1,6 @@
 package ieslapaloma.tfg.hotelstayplus.service;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
@@ -20,5 +21,9 @@ public class HotelService {
 
     public List<Hotel> getAllHotels() {
         return hotelRepository.findAll();
+    }
+
+    public Optional<Hotel> getHotelById(Long id) {
+        return hotelRepository.findById(id);
     }
 }

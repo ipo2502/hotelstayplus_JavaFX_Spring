@@ -1,4 +1,7 @@
 package ieslapaloma.tfg.hotelstayplus.model;
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.*;
 import jakarta.persistence.GenerationType;
 @Entity
@@ -6,7 +9,7 @@ import jakarta.persistence.GenerationType;
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_client")
+    @Column(name = "client_id")
     private Long id;
 
     @Column
@@ -26,6 +29,14 @@ public class Client {
 
     @Column
     private String phoneNumber;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+        name = "user_liked_hotel",
+        joinColumns = @JoinColumn(name = "client_id"),
+        inverseJoinColumns = @JoinColumn(name = "hotel_id")
+    )
+    private Set<Hotel> likedHotels = new HashSet<>();
     
     public Client() {}
 
