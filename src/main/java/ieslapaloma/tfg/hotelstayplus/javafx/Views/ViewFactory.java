@@ -1,5 +1,7 @@
 package ieslapaloma.tfg.hotelstayplus.javafx.Views;
 
+import javax.faces.flow.builder.ReturnBuilder;
+
 import ieslapaloma.tfg.hotelstayplus.javafx.PathEnum;
 import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
 import javafx.beans.property.ObjectProperty;
@@ -22,6 +24,9 @@ public class ViewFactory {
     private VBox clientBookingsView;
     private VBox clientProfileView;
     private VBox maxHotelView;
+    private VBox hotelBookingView;
+    private VBox loadingView;
+    private VBox bookingSuccessfulView;
 
     public ViewFactory() {
         this.loginAccountType = AccountType.CLIENT;
@@ -141,6 +146,42 @@ public class ViewFactory {
             }
         }
         return maxHotelView;
+    }
+
+    public VBox getHotelBookingView() {
+        System.out.println("> selected booking view");
+        if (hotelBookingView == null) {
+            try {
+                hotelBookingView = Paths.getFXML(ClientMenuOptions.BOOKINGHOTEL, getClass()).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return hotelBookingView;
+    }
+
+    public VBox getLoadingView() {
+        System.out.println("> loading");
+        if (loadingView == null) {
+            try {
+                loadingView = Paths.getFXML(ClientMenuOptions.LOADING, getClass()).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return loadingView;
+    }
+
+    public VBox getBookingSuccessfulView() {
+        System.out.println("> successful");
+        if (bookingSuccessfulView == null) {
+            try {
+                bookingSuccessfulView = Paths.getFXML(ClientMenuOptions.SUCCESSFULBOOKING, getClass()).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return bookingSuccessfulView;
     }
     
 }

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/maxHotel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.BookingPageController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="little_gradientleftHalf">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="305.0" />
+            <ImageView fitHeight="53.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icon%20white.png" />
+               </image>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+            <Pane prefHeight="100.0" prefWidth="124.0" />
+            <Label prefHeight="33.0" prefWidth="192.0" styleClass="grey" text="Ignacio Pérez Ortega">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox prefHeight="660.0" prefWidth="850.0">
+         <children>
+            <AnchorPane prefHeight="661.0" prefWidth="850.0">
+               <children>
+                  <ImageView fx:id="backgroundImg_img" fitHeight="666.0" fitWidth="850.0" opacity="0.39" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample6.jpg" />
+                     </image>
+                     <effect>
+                        <GaussianBlur radius="2.36" />
+                     </effect>
+                  </ImageView>
+                  <HBox disable="true" layoutX="20.0" layoutY="20.0" prefHeight="655.0" prefWidth="850.0">
+                     <styleClass>
+                        <String fx:value="gradientupleft" />
+                        <String fx:value="gradientup" />
+                     </styleClass>
+                     <effect>
+                        <GaussianBlur radius="28.85" />
+                     </effect>
+                  </HBox>
+                  <HBox disable="true" layoutX="10.0" layoutY="10.0" prefHeight="655.0" prefWidth="850.0">
+                     <styleClass>
+                        <String fx:value="gradientupleft" />
+                        <String fx:value="gradientup" />
+                     </styleClass>
+                     <effect>
+                        <GaussianBlur radius="28.85" />
+                     </effect>
+                  </HBox>
+                  <Label fx:id="hotelName_lbl" alignment="CENTER" layoutX="156.0" layoutY="32.0" prefHeight="66.0" prefWidth="537.0" text="Hotel Sample" textAlignment="CENTER" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="bigtitle" />
+                        <String fx:value="image" />
+                     </styleClass>
+                     <font>
+                        <Font name="Times New Roman" size="43.0" />
+                     </font>
+                  </Label>
+                  <Line endX="320.1666259765625" layoutX="314.0" layoutY="98.0" startX="-100.0" stroke="WHITE">
+                     <styleClass>
+                        <String fx:value="image" />
+                        <String fx:value="line" />
+                     </styleClass>
+                  </Line>
+                  <ImageView fx:id="stars_img" fitHeight="13.0" fitWidth="100.0" layoutX="391.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/stars5.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="booking_btn" layoutX="709.0" layoutY="47.0" mnemonicParsing="false" text="Reservar" textFill="#ff7e7e">
+                     <font>
+                        <Font name="Arial" size="19.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="location_lbl" alignment="CENTER" layoutX="290.0" layoutY="107.0" prefHeight="18.0" prefWidth="238.0" text="Selección de habitación" textAlignment="CENTER" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="BED" styleClass="white" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="like_btn" layoutX="635.0" layoutY="53.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="46.0">
+                     <graphic>
+                        <FontAwesomeIconView fx:id="heart_icon" fill="#ffffff5e" glyphName="HEART" />
+                     </graphic>
+                  </Button>
+                  <VBox alignment="CENTER" layoutX="590.0" layoutY="116.0" prefHeight="84.0" prefWidth="238.0">
+                     <children>
+                        <HBox prefHeight="84.0" prefWidth="177.0">
+                           <children>
+                              <Pane prefHeight="84.0" prefWidth="160.0">
+                                 <children>
+                                    <Label fx:id="ratingtitle_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="14.0" text="Muy buena" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="nRatings_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="43.0" text="3.254 valoraciones" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <FontAwesomeIconView fx:id="rating_icon" fill="WHITE" glyphName="THUMBS_UP" size="45" wrappingWidth="44.65707015991211">
+                                 <HBox.margin>
+                                    <Insets top="13.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ImageView fx:id="bigImage1_img" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample5.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <Label fx:id="bigText_lbl" alignment="CENTER" layoutX="38.0" layoutY="176.0" prefHeight="150.0" prefWidth="384.0" text="¡Bienvenidos al Hotel Paradiso!&#10;Sumérgete en la experiencia de lujo y confort en nuestro &#10;magnífico hotel, ubicado en un entorno paradisíaco.&#10;Desde el momento en que pongas un pie en nuestras instalaciones,&#10;te envolverá una atmósfera de elegancia y hospitalidad incomparable." textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="bigText2_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="259.0" layoutY="309.0" prefHeight="150.0" prefWidth="384.0" text="Disponemos de una amplia selección de habitaciones y suites,&#10;todas ellas equipadas con comodidades de primer nivel y detalles&#10;de diseño exquisito. Desde las habitaciones estándar hasta las &#10;lujosas suites, cada espacio ha sido pensado para ofrecer el &#10;máximo confort y relajación a nuestros huéspedes." textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="website_lbl" alignment="CENTER" layoutX="291.0" layoutY="646.0" prefHeight="18.0" prefWidth="238.0" text="www.hotel.es" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="GLOBE" styleClass="white" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="TOP_CENTER" layoutX="674.0" layoutY="318.0" prefHeight="280.0" prefWidth="120.0" spacing="3.0" styleClass="services">
+                     <children>
+                        <Label fx:id="ratingtitle_lbl1" alignment="CENTER" contentDisplay="CENTER" text="Servicios" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Line endX="320.1666259765625" startX="230.0" stroke="WHITE">
+                           <styleClass>
+                              <String fx:value="image" />
+                              <String fx:value="line" />
+                           </styleClass>
+                        </Line>
+                        <Label fx:id="servWifi_lbl" opacity="0.57" prefHeight="18.0" prefWidth="79.0" text="Wifi" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fx:id="servWifi_icon" glyphName="WIFI" styleClass="white" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="servBar_lbl" opacity="0.57" prefHeight="18.0" prefWidth="79.0" text="Bar" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fx:id="servBar_icon" glyphName="GLASS" styleClass="white" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="servDesayuno_lbl" opacity="0.57" prefHeight="18.0" prefWidth="79.0" text="Desayuno" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fx:id="servDesayuno_icon" glyphName="COFFEE" styleClass="white" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="serv24h_lbl" opacity="0.57" prefHeight="18.0" prefWidth="79.0" text="24 horas" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fx:id="serv24h_icon" glyphName="STAR" styleClass="white" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="servParking_lbl" opacity="0.57" prefHeight="18.0" prefWidth="79.0" text="Parking" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fx:id="servParking_icon" glyphName="CAR" styleClass="white" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </VBox>
+                  <Label fx:id="hotelName_lbl1" alignment="CENTER" layoutX="26.0" layoutY="117.0" prefHeight="66.0" prefWidth="311.0" text="Habitación ofertada" textAlignment="CENTER" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="bigtitle" />
+                        <String fx:value="image" />
+                     </styleClass>
+                     <font>
+                        <Font name="Times New Roman" size="31.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="BED" />
+                     </graphic>
+                  </Label>
+                  <Line endX="190.0" layoutX="139.0" layoutY="176.0" startX="-100.0" stroke="WHITE">
+                     <styleClass>
+                        <String fx:value="image" />
+                        <String fx:value="line" />
+                     </styleClass>
+                  </Line>
+                  <ImageView fx:id="bigImage1_img1" fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample5.jpg" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <VBox alignment="CENTER" layoutX="271.0" layoutY="496.0" prefHeight="149.0" prefWidth="212.0" spacing="3.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="238.0" text="Fechas a elegir desde" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="BED" styleClass="white" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <DatePicker fx:id="datePicker1" />
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="238.0" text="a" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="datePicker2" />
+                        <Label fx:id="datesChosen_lbl" alignment="CENTER" prefHeight="18.0" prefWidth="238.0" text="x días" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="CALENDAR" styleClass="white" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="474.0" layoutY="497.0" prefHeight="149.0" prefWidth="212.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="totalPrice_lbl" alignment="CENTER" prefHeight="18.0" prefWidth="238.0" text="€ " textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="MONEY" styleClass="white" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="22.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="calculate_btn" mnemonicParsing="false" text="Calcular" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" layoutX="612.0" layoutY="182.0" prefHeight="100.0" prefWidth="186.0" spacing="5.0">
+                     <children>
+                        <Label fx:id="pricePerNight_lbl" contentDisplay="RIGHT" ellipsisString="" lineSpacing="5.0" prefHeight="54.0" prefWidth="133.0" styleClass="bigtitle" text="99€/noche!" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <FontAwesomeIconView fill="WHITE" glyphName="MONEY" size="35" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="36.0" prefWidth="318.0">
+                     <children>
+                        <Label fx:id="location_lbl2" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="142.0" text="Hotel Sample &gt;" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="STAR" styleClass="white" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="location_lbl21" alignment="CENTER" prefHeight="18.0" prefWidth="159.0" text="Selección de habitación" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="BED" styleClass="white" text="" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

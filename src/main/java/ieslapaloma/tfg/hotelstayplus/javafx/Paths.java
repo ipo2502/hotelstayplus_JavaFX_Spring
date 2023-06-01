@@ -59,6 +59,12 @@ public class Paths { //C:\Users\ignac\Downloads\hotelstayplus\hotelstayplus\src\
                 return new FXMLLoader(cl.getResource(fxmlPath + "Client/clientProfile.fxml"));
             case MAX:
                 return new FXMLLoader(cl.getResource(fxmlPath + "Client/fullHotelWithout.fxml"));
+            case BOOKINGHOTEL:
+                return new FXMLLoader(cl.getResource(fxmlPath + "Client/bookingPage.fxml"));
+            case LOADING:
+                return new FXMLLoader(cl.getResource(fxmlPath + "Client/loading.fxml"));
+            case SUCCESSFULBOOKING:
+                return new FXMLLoader(cl.getResource(fxmlPath + "Client/successfulBooking.fxml"));
             default:
                 break;
 

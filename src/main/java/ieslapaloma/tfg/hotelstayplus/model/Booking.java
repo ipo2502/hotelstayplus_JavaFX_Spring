@@ -24,6 +24,13 @@ public class Booking {
     @Column(name = "date_end")
     private LocalDate dateEnd;
 
+    public Booking(Client client, Hotel hotel, LocalDate dateStart, LocalDate dateEnd) {
+        this.client = client;
+        this.hotel = hotel;
+        this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
+    }
+
     public Booking() {}
 
     public Long getId() {

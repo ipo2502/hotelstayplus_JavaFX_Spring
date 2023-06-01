@@ -155,3 +155,50 @@
     -fx-background-radius: 8;*/
 }
 
+.date-picker {
+    -fx-background-color: #9898983e;
+    -fx-font-size: 14px;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.158), rgba(255, 255, 255, 0.1));
+    -fx-text-fill: white;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: #ffa500;
+}
+
+.date-picker .text-field {
+    -fx-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.158), rgba(255, 255, 255, 0.1));
+    -fx-border-color: #999999;
+    -fx-border-width: 0.9px;
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-text-alignment: center;
+
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: rgba(0, 0, 0, 0.119);
+}
+
+.date-picker-popup > .month-year-pane > .spinner > .spinner-arrow {
+    -fx-text-fill: #000000;
+}
+
+.date-picker-popup > .calendar-grid > .day-cell {
+    -fx-font-size: 14px;
+    -fx-text-fill: #000000;
+    -fx-background-color: linear-gradient(to top, rgba(0, 0, 0, 0.158), rgba(255, 255, 255, 0.1));;
+}
+
+.date-picker-popup > .calendar-grid > .day-cell:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.426);
+}
+
+.date-picker-popup > .calendar-grid > .day-cell:selected {
+    -fx-background-color: #ff0080;
+    -fx-text-fill: #ffffff;
+}
+
+

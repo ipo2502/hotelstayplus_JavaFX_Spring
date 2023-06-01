@@ -6,5 +6,8 @@ public enum ClientMenuOptions {
     PROFILE,
     USER,
     LOGOUT,
-    MAX
+    MAX,
+    BOOKINGHOTEL,
+    LOADING,
+    SUCCESSFULBOOKING
 }

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -44,6 +48,25 @@
             <Line endX="896.75732421875" endY="0.0037584304809570312" startX="539.878662109375" startY="0.0018792152404785156" stroke="#989898" strokeWidth="2.0" styleClass="ln" />
          </children>
       </HBox>
-      <VBox prefHeight="539.0" prefWidth="850.0" />
+      <VBox prefHeight="539.0" prefWidth="850.0">
+         <children>
+            <ScrollPane prefHeight="550.0" prefWidth="1245.0">
+               <content>
+                  <GridPane fx:id="hotelesGrid" prefHeight="0.0" prefWidth="0.0">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <styleClass>
+                        <String fx:value="gridpane" />
+                        <String fx:value="notgreyLabel" />
+                     </styleClass>
+                  </GridPane>
+               </content>
+               <styleClass>
+                  <String fx:value="scrollpane" />
+                  <String fx:value="notgreyLabel" />
+               </styleClass>
+            </ScrollPane>
+         </children></VBox>
    </children>
 </VBox>
