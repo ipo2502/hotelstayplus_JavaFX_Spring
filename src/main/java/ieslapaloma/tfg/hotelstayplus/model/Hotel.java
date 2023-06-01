@@ -1,7 +1,11 @@
 package ieslapaloma.tfg.hotelstayplus.model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
+import javax.transaction.Transactional;
 
 import jakarta.persistence.*;
 import jakarta.persistence.GenerationType;
@@ -47,6 +51,14 @@ public class Hotel {
 
     @ManyToMany(mappedBy = "likedHotels")
     private Set<Client> likedByUsers = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "hotel_service",
+            joinColumns = @JoinColumn(name = "hotel_id"),
+            inverseJoinColumns = @JoinColumn(name = "service_id")
+    )
+    private List<Service> services = new ArrayList<>();
 
     public Hotel() {}
 
@@ -190,6 +202,8 @@ public class Hotel {
     private String starsSrc;
     @Transient
     private String backgroundImg;
+    @Transient
+    private List<Service> realPojoServices;
 
     public String getBackgroundImg() {
         return backgroundImg;
@@ -245,6 +259,22 @@ public class Hotel {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public List<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(List<Service> services) {
+        this.services = services;
+    }
+
+    public List<Service> getServicesPojo() {
+        return realPojoServices;
+    }
+
+    public void setRealPojoServices(List<Service> realPojoServices) {
+        this.realPojoServices = realPojoServices;
     }
 
     

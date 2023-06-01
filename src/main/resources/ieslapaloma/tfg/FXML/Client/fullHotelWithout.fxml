@@ -220,15 +220,15 @@
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
                   </Label>
-                  <VBox alignment="TOP_CENTER" layoutX="719.0" layoutY="211.0" prefHeight="280.0" prefWidth="100.0">
+                  <VBox alignment="TOP_CENTER" layoutX="699.0" layoutY="211.0" prefHeight="280.0" prefWidth="120.0" spacing="3.0" styleClass="services">
                      <children>
                         <Label fx:id="ratingtitle_lbl1" alignment="CENTER" contentDisplay="CENTER" text="Servicios" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
-                           <padding>
-                              <Insets bottom="3.0" />
-                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
                         </Label>
                         <Line endX="320.1666259765625" startX="230.0" stroke="WHITE">
                            <styleClass>
@@ -236,47 +236,50 @@
                               <String fx:value="line" />
                            </styleClass>
                         </Line>
-                        <Label fx:id="location_lbl1" prefHeight="18.0" prefWidth="79.0" text="Wifi" textFill="WHITE">
+                        <Label fx:id="servWifi_lbl" opacity="0.57" prefHeight="18.0" prefWidth="79.0" text="Wifi" textFill="WHITE">
                            <graphic>
-                              <FontAwesomeIconView glyphName="WIFI" styleClass="white" />
+                              <FontAwesomeIconView fx:id="servWifi_icon" glyphName="WIFI" styleClass="white" />
                            </graphic>
                            <font>
                               <Font name="System Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="location_lbl11" prefHeight="18.0" prefWidth="79.0" text="Bar" textFill="WHITE">
+                        <Label fx:id="servBar_lbl" opacity="0.57" prefHeight="18.0" prefWidth="79.0" text="Bar" textFill="WHITE">
                            <graphic>
-                              <FontAwesomeIconView glyphName="GLASS" styleClass="white" />
+                              <FontAwesomeIconView fx:id="servBar_icon" glyphName="GLASS" styleClass="white" />
                            </graphic>
                            <font>
                               <Font name="System Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="location_lbl111" prefHeight="18.0" prefWidth="79.0" text="Desayuno" textFill="WHITE">
+                        <Label fx:id="servDesayuno_lbl" opacity="0.57" prefHeight="18.0" prefWidth="79.0" text="Desayuno" textFill="WHITE">
                            <graphic>
-                              <FontAwesomeIconView glyphName="COFFEE" styleClass="white" />
+                              <FontAwesomeIconView fx:id="servDesayuno_icon" glyphName="COFFEE" styleClass="white" />
                            </graphic>
                            <font>
                               <Font name="System Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="location_lbl112" prefHeight="18.0" prefWidth="79.0" text="24 horas" textFill="WHITE">
+                        <Label fx:id="serv24h_lbl" opacity="0.57" prefHeight="18.0" prefWidth="79.0" text="24 horas" textFill="WHITE">
                            <graphic>
-                              <FontAwesomeIconView glyphName="STAR" styleClass="white" />
+                              <FontAwesomeIconView fx:id="serv24h_icon" glyphName="STAR" styleClass="white" />
                            </graphic>
                            <font>
                               <Font name="System Bold Italic" size="12.0" />
                            </font>
                         </Label>
-                        <Label fx:id="location_lbl1121" prefHeight="18.0" prefWidth="79.0" text="24 horas" textFill="WHITE">
+                        <Label fx:id="servParking_lbl" opacity="0.57" prefHeight="18.0" prefWidth="79.0" text="Parking" textFill="WHITE">
                            <graphic>
-                              <FontAwesomeIconView glyphName="P" styleClass="white" />
+                              <FontAwesomeIconView fx:id="servParking_icon" glyphName="CAR" styleClass="white" />
                            </graphic>
                            <font>
                               <Font name="System Bold Italic" size="12.0" />
                            </font>
                         </Label>
                      </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </VBox>
                </children>
             </AnchorPane>

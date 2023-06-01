@@ -1,14 +1,17 @@
 package ieslapaloma.tfg.hotelstayplus.javafx;
 import java.lang.System.Logger;
 import java.net.URL;
+import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.Controllers.HotelMaxController;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
+import ieslapaloma.tfg.hotelstayplus.model.Service;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -68,14 +71,22 @@ public class HotelController implements Initializable{
 
         @FXML
         public void handleItemClick(MouseEvent event) {
-            System.out.println("HANDLE ITEM CLICK---");
+           // System.out.println("HANDLE ITEM CLICK---");
             String title = hotelName.getText();
             String location = hotelLocation.getText();
             long id = Long.valueOf(id_lbl.getText());
-            System.out.println("Selected id: "+id);
-            System.out.println("Clicked item: " + title + ", " + location+ "[ID: " +id +"]");
+            //System.out.println("Selected id: "+id);
+            //System.out.println("Clicked item: " + title + ", " + location+ "[ID: " +id +"]");
+            
+            List<Service> services = DBManager.getInstance().getServiceService().getServicesByHotelId(id);
+            System.out.println("SERVICES FROM HOTEL "+title+ " AND ID: "+id+" :::::: " +services.size());
+            
             // Perform further actions with the clicked item information
             Hotel hotel = DBManager.getInstance().getHotelService().getHotelById(id).get();
+
+            
+            hotel.setRealPojoServices((services));
+
             System.out.println("hotel con id: " +id);
             Model.getInstance().setSelectedModelHotel(hotel);
             Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.MAX);

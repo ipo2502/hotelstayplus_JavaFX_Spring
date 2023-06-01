@@ -1,13 +1,18 @@
 package ieslapaloma.tfg.hotelstayplus.javafx.Controllers;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.HotelController;
 import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
+import ieslapaloma.tfg.hotelstayplus.model.Service;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -21,7 +26,7 @@ public class HotelMaxController implements Initializable{
 
     @FXML
     private ImageView backgroundImg_img;
-    
+
     @FXML
     private ImageView bigImage1_img;
 
@@ -36,6 +41,9 @@ public class HotelMaxController implements Initializable{
 
     @FXML
     private Button booking_btn;
+
+    @FXML
+    private FontAwesomeIconView heart_icon;
 
     @FXML
     private Label hotelName_lbl;
@@ -68,19 +76,57 @@ public class HotelMaxController implements Initializable{
     private Label pricePerNight_lbl;
 
     @FXML
+    private FontAwesomeIconView rating_icon;
+
+    @FXML
     private Label ratingtitle_lbl;
+
+    @FXML
+    private Label ratingtitle_lbl1;
+
+    @FXML
+    private FontAwesomeIconView serv24h_icon;
+
+    @FXML
+    private Label serv24h_lbl;
+
+    @FXML
+    private FontAwesomeIconView servBar_icon;
+
+    @FXML
+    private Label servBar_lbl;
+
+    @FXML
+    private FontAwesomeIconView servDesayuno_icon;
+
+    @FXML
+    private Label servDesayuno_lbl;
+
+    @FXML
+    private FontAwesomeIconView servParking_icon;
+
+    @FXML
+    private Label servParking_lbl;
+
+    @FXML
+    private FontAwesomeIconView servWifi_icon;
+
+    @FXML
+    private Label servWifi_lbl;
 
     @FXML
     private ImageView stars_img;
 
     @FXML
-    private FontAwesomeIconView rating_icon;
-
-    @FXML
     private Label website_lbl;
 
-    @FXML
-    private FontAwesomeIconView heart_icon;
+    private List<Service> allServices = List.of(
+        new Service(1L, "Wifi"), 
+        new Service(2L, "Bar"), 
+        new Service(3L, "Desayuno"), 
+        new Service(4L, "24 Horas"), 
+        new Service(5L, "Parking"));
+
     boolean red = false;
     static HotelMaxController instance;
 
@@ -99,8 +145,16 @@ public class HotelMaxController implements Initializable{
     private void load() {
         System.out.println("EJECUCION DEL LOAD -------------------------------------------------------");
         Hotel hotel = Model.getInstance().getModelHotel();
-        System.out.println("Está viendo e hotel: " +hotel);
-        
+
+        System.out.println(servDesayuno_icon.getOpacity());
+        allServicesOpacity();
+
+        List<Service> services = hotel.getServicesPojo();
+        System.out.println(services.size());
+        //List<Service> servicesList = loadServices(services);
+        //System.out.println("Está viendo e hotel: " +hotel+ " que tiene una lista de servicios de " +servicesList.toString());
+        loadGraphicServices(services);
+
         String hotelUrlImg = Paths.getHotelUrlImage(hotel.getHotelImg_n());
         String bedroomUrlImg = Paths.getBedroomUrlImage(hotel.getHotelImg_n());
         String starsUrlImg = Paths.getHotelUrlImage((hotel.getStars()+6));
@@ -130,7 +184,33 @@ public class HotelMaxController implements Initializable{
     public static HotelMaxController getInstance() {
         return instance;
     }
+    
+    private void allServicesOpacity() {
+        servWifi_icon.setOpacity(0.57);
+        servWifi_icon.setFill(Color.WHITE);
+        servWifi_lbl.setOpacity(0.57);
+        servWifi_lbl.setTextFill(Color.WHITE);
+         
+        servBar_icon.setOpacity(0.57);
+        servBar_icon.setFill(Color.WHITE);
+        servBar_lbl.setOpacity(0.57);
+        servBar_lbl.setTextFill(Color.WHITE);
 
+        servDesayuno_icon.setOpacity(0.57);
+        servDesayuno_icon.setFill(Color.WHITE);
+        servDesayuno_lbl.setOpacity(0.57);
+        servDesayuno_lbl.setTextFill(Color.WHITE);
+
+        serv24h_icon.setOpacity(0.57);
+        serv24h_icon.setFill(Color.WHITE);
+        serv24h_lbl.setOpacity(0.57);
+        serv24h_lbl.setTextFill(Color.WHITE);
+
+        servParking_icon.setOpacity(0.57);
+        servParking_icon.setFill(Color.WHITE);
+        servParking_lbl.setOpacity(0.57);
+        servParking_lbl.setTextFill(Color.WHITE);
+    }
     private void onLike() {
         System.out.println(like_btn.toString());
         if (!red) {
@@ -147,8 +227,19 @@ public class HotelMaxController implements Initializable{
         System.out.println(booking_btn.toString());
     }
 
+    private List<Service> loadServices(List<Service> services) {
+        List<Service> listaServicios = new ArrayList<>();
+        for (int i = 0; i < allServices.size() && i < services.size(); i++) {
+            if (services.get(i).equals(allServices.get(i))) {
+                listaServicios.add(services.get(i));
+            }
+        } 
+        return listaServicios;
+       }
+
     private void setRating(Double rating, Label label, FontAwesomeIconView icon) {
         String output = "";
+        boolean badrating = false;
         if (rating > 9) {
             output = "Excelente";
         } else if (rating > 7) {
@@ -159,9 +250,54 @@ public class HotelMaxController implements Initializable{
             output = "Decente";
         } else if (rating < 5) {
             output = "Mala";
+            badrating = true;
+        }
+        if(badrating) {
             rating_icon.setGlyphName("THUMBS_DOWN");
+
+        } else {
+            rating_icon.setGlyphName("THUMBS_UP");
+
         }
         label.setText(output);
     }
     
+    private void loadGraphicServices(List<Service> services) {
+        for (Service s : services) {
+            switch(Math.toIntExact(s.getId())) {
+                case 1:
+                    servWifi_icon.setOpacity(100);
+                    servWifi_lbl.setOpacity(100);
+                    servWifi_icon.setFill(Color.valueOf("#80fa61"));
+                    servWifi_lbl.setTextFill(Color.valueOf("#80fa61"));
+                    break;
+                case 2:
+                    servBar_icon.setOpacity(100);
+                    servBar_lbl.setOpacity(100);
+                    servBar_icon.setFill(Color.valueOf("#80fa61"));
+                    servBar_lbl.setTextFill(Color.valueOf("#80fa61"));
+                    break;
+                case 3:
+                    servDesayuno_icon.setOpacity(100);
+                    servDesayuno_lbl.setOpacity(100);
+                    servDesayuno_icon.setFill(Color.valueOf("#80fa61"));
+                    servDesayuno_lbl.setTextFill(Color.valueOf("#80fa61"));
+                    break;
+                case 4:
+                    serv24h_icon.setOpacity(100);
+                    serv24h_lbl.setOpacity(100);
+                    serv24h_icon.setFill(Color.valueOf("#80fa61"));
+                    serv24h_lbl.setTextFill(Color.valueOf("#80fa61"));
+                    break;
+                case 5:
+                    servParking_icon.setOpacity(100);
+                    servParking_lbl.setOpacity(100);
+                    servParking_icon.setFill(Color.valueOf("#80fa61"));
+                    servParking_lbl.setTextFill(Color.valueOf("#80fa61"));
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 }

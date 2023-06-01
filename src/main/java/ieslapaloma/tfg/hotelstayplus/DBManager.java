@@ -9,6 +9,7 @@ import ieslapaloma.tfg.hotelstayplus.javafx.App;
 import ieslapaloma.tfg.hotelstayplus.repository.BookingRepository;
 import ieslapaloma.tfg.hotelstayplus.service.ClientService;
 import ieslapaloma.tfg.hotelstayplus.service.HotelService;
+import ieslapaloma.tfg.hotelstayplus.service.ServiceService;
 import javafx.application.Application;
 
 @SpringBootApplication
@@ -16,20 +17,21 @@ public class DBManager {
 
     private static HotelService hotelService;
     private static ClientService clientService;
+    private static ServiceService serviceService;
     //private static BookingRepository bookingService.
 
 
     private static DBManager instance;
 
-    public DBManager(HotelService hotelService, ClientService clientService) {
+    public DBManager(HotelService hotelService, ClientService clientService, ServiceService serviceService) {
         this.hotelService = hotelService;
         this.clientService = clientService;
+        this.serviceService = serviceService;
         instance = this;
     }
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(DBManager.class, args);
         DBManager application = context.getBean(DBManager.class);
-        application.start();
         Application.launch(App.class, args);
     }
 
@@ -45,7 +47,8 @@ public class DBManager {
         return clientService;
     }
 
-    private void start() {
-        System.out.println("AAAAAAAAAAAAAAAA: " +hotelService.getAllHotels().size());
+    public ServiceService getServiceService() {
+        return serviceService;
     }
+
 }
