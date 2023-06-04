@@ -25,4 +25,8 @@ public class BookingService {
         return bookingRepository.saveAndFlush(booking);
     }
 
+    public List<Booking> getAllBookingsByClientId(Long id) {
+        return bookingRepository.findBookingsByClientId(id);
+    }
+
 }

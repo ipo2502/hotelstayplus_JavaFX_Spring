@@ -40,13 +40,13 @@ public class LoadingController implements Initializable{
 
                 // Update the label on the UI thread
                 Platform.runLater(() -> loading_lbl.setText("cargando ."));
-                Thread.sleep(500);
+                Thread.sleep(700);
 
                 Platform.runLater(() -> loading_lbl.setText("cargando . ."));
                 Thread.sleep(500);
 
                 Platform.runLater(() -> loading_lbl.setText("cargando . . ."));
-                Thread.sleep(500);
+                Thread.sleep(800);
             }
 
             // Loading is complete, go to the next screen

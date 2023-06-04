@@ -142,7 +142,7 @@ public class BookingPageController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         instance = this;
-        if (first) {
+        if (first) { //añadir que verifique que sea null cada uno de los elementos  del load data y borrar el if para que se actualicen
             loadData();
             first = false;
             calculate_btn.setOnAction(event -> onCalculate());
@@ -164,7 +164,7 @@ public class BookingPageController implements Initializable {
         allServicesOpacity();
 
         List<Service> services = hotel.getServicesPojo();
-        System.out.println(services.size());
+        System.out.println(services.size());    
         //List<Service> servicesList = loadServices(services);
         //System.out.println("Está viendo e hotel: " +hotel+ " que tiene una lista de servicios de " +servicesList.toString());
         loadGraphicServices(services);

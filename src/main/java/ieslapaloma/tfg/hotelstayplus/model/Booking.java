@@ -24,6 +24,9 @@ public class Booking {
     @Column(name = "date_end")
     private LocalDate dateEnd;
 
+    /*@Column(name = "total_price")
+    private double totalPrice;
+*/
     public Booking(Client client, Hotel hotel, LocalDate dateStart, LocalDate dateEnd) {
         this.client = client;
         this.hotel = hotel;
@@ -73,5 +76,14 @@ public class Booking {
         this.dateEnd = fechaFin;
     }
 
+    /*
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+ */
     
 }

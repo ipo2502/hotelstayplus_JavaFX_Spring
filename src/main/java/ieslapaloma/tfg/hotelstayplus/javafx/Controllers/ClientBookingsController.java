@@ -7,6 +7,8 @@ import java.util.ResourceBundle;
 
 import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.HotelController;
+import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
+import ieslapaloma.tfg.hotelstayplus.model.Booking;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,7 +29,7 @@ public class ClientBookingsController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+        load();
     }
 
         private void load() {
@@ -35,24 +37,25 @@ public class ClientBookingsController implements Initializable{
                 System.out.println("nulleooo");
     
             } else {
-    
-                        System.out.println("BDFDBDF:" +DBManager.getInstance().getHotelService().getAllHotels().get(0).toString());
-            
-            List<Hotel> hotelitos = DBManager.getInstance().getHotelService().getAllHotels();
-            nHotels_lbl.setText(hotelitos.size()+" hoteles");
+
+            Long id = Model.getInstance().getModelClient().getId();
+                System.out.println(DBManager.getInstance().getBookingService().getAllBookingsByClientId(id));
+                
+            List<Booking> bookings = DBManager.getInstance().getBookingService().getAllBookingsByClientId(id);
+            nHotels_lbl.setText(bookings.size()+" hoteles");
     
             int column = 0;
             int row = 1;
             try {
-                for (Hotel hotel: hotelitos) {
+                for (Booking booking: bookings) {
                     FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("/ieslapaloma/tfg/FXML/Client/hotel2.fxml"));
+                    fxmlLoader.setLocation(getClass().getResource("/ieslapaloma/tfg/FXML/Client/booking.fxml"));
      
                     pane = fxmlLoader.load();
     
-                    HotelController hotelController = fxmlLoader.getController();
-                    hotelController.setData(hotel);
-                    pane.setOnMouseClicked(event -> hotelController.handleItemClick(event));
+                    BookingController bookingController = fxmlLoader.getController();
+                    bookingController.setData(booking);
+                    //pane.setOnMouseClicked(event -> bookingController.handleItemClick(event));
     
                     
                     
@@ -61,7 +64,7 @@ public class ClientBookingsController implements Initializable{
                             ++row;
                         }
                         hotelesGrid.add(pane, column++, row);
-                        GridPane.setMargin(pane, new Insets(10));
+                        //GridPane.setMargin(pane, new Insets(3));
                     
     
                 }
