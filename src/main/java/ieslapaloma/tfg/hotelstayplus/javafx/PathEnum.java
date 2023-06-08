@@ -8,6 +8,8 @@ public enum PathEnum {
     OTHERDASHBOARD,
     CLIENT,
     FULLHOTEL,
+    ADMIN,
+    REGISTER,
     //IMG
     IMG_ICON
 }

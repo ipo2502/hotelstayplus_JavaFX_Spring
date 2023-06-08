@@ -16,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class LoginController implements Initializable{
@@ -34,6 +35,9 @@ public class LoginController implements Initializable{
     @FXML
     private TextField user_fld;
 
+    @FXML
+    private Text register_lbl;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         error_lbl.setText("");
@@ -51,6 +55,14 @@ public class LoginController implements Initializable{
         acc_selector.setValue(Model.getInstance().getViewFactory().getLoginAccountType());
         acc_selector.valueProperty().addListener(Observable -> Model.getInstance().getViewFactory().setLoginAccountType(acc_selector.getValue()));;
         login_btn.setOnAction(event -> onLogin());
+        register_lbl.setOnMouseClicked(event -> onRegister());
+    }
+
+    private void onRegister() {
+        System.out.println("> register");
+        Stage stage = (Stage) error_lbl.getScene().getWindow();
+        Model.getInstance().getViewFactory().closedStage(stage);
+        Model.getInstance().getViewFactory().showRegisterWindow();
     }
 
     private void onLogin() {
@@ -71,7 +83,17 @@ public class LoginController implements Initializable{
             }
 
         } else {
-            
+            System.out.println("ADMIN ----");
+            /*
+             * ADMIN: ADMIN CREDENTIALS
+             */
+            if (Model.getInstance().evaluateAdminCredentials(user_fld.getText(), password_fld.getText())) {
+                System.out.println("LOGEO DEL ADMIN");
+                Model.getInstance().getViewFactory().closedStage(stage);
+                Model.getInstance().getViewFactory().showAdminView();
+            } else {
+                System.out.println("NO LOGEO");
+            }
         }
     }
 

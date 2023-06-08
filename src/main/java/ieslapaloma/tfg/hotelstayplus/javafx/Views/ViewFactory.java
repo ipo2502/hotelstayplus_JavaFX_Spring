@@ -27,6 +27,8 @@ public class ViewFactory {
     private VBox hotelBookingView;
     private VBox loadingView;
     private VBox bookingSuccessfulView;
+    private VBox failedBookingView;
+    
 
     public ViewFactory() {
         this.loginAccountType = AccountType.CLIENT;
@@ -51,10 +53,22 @@ public class ViewFactory {
         createStage(loader);
      }
 
-     public void showClientWindow() {
+    public void showClientWindow() {
         FXMLLoader loader = Paths.getFXML(PathEnum.CLIENT, getClass());
         createStage(loader);
-     }
+    }
+
+    public void showRegisterWindow() {
+        FXMLLoader loader = Paths.getFXML(PathEnum.REGISTER, getClass());
+        createStage(loader);
+
+    }
+
+    public void showAdminView() {
+        FXMLLoader loader = Paths.getFXML(PathEnum.ADMIN, getClass());
+        createStage(loader);
+
+    }
  
     public void showOtherDashboardView() {
         FXMLLoader loader = Paths.getFXML(PathEnum.OTHERDASHBOARD, getClass());
@@ -182,6 +196,18 @@ public class ViewFactory {
             }
         }
         return bookingSuccessfulView;
+    }
+
+    public VBox getFailedBookingView() {
+        System.out.println("> failed");
+        if (failedBookingView == null) {
+            try {
+                failedBookingView = Paths.getFXML(ClientMenuOptions.FAILEDBOOKING, getClass()).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return failedBookingView;
     }
     
 }

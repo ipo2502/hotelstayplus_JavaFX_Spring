@@ -135,6 +135,10 @@ public class BookingPageController implements Initializable {
     @FXML
     private Label website_lbl;
 
+    
+    @FXML
+    private Label error_lbl;
+
     private static BookingPageController instance;
     private static LocalDate[] selectedDates = new LocalDate[2];
     private static boolean first = true;
@@ -142,13 +146,20 @@ public class BookingPageController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         instance = this;
-        if (first) { //añadir que verifique que sea null cada uno de los elementos  del load data y borrar el if para que se actualicen
+        System.out.println("el booking flag: " +Model.getInstance().getSuccessfulBookingFlag());
+        if (!Model.getInstance().getSuccessfulBookingFlag()) {
+            error_lbl.setVisible(true);
+            System.out.println("nove");
+        }
+       // if (first) { //añadir que verifique que sea null cada uno de los elementos  del load data y borrar el if para que se actualicen
             loadData();
             first = false;
             calculate_btn.setOnAction(event -> onCalculate());
             booking_btn.setOnAction(event -> showConfirmationDialog());
-        }  
+       // }  
     }
+
+    
 
     public static BookingPageController getInstance() {
         return instance;
@@ -195,12 +206,19 @@ public class BookingPageController implements Initializable {
     }
 
     private void showConfirmationDialog() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation Dialog");
-        alert.setHeaderText("Are you sure you want to proceed?");
-        alert.setContentText("This action cannot be undone.");
+        if (datePicker1.getValue() == null || datePicker2.getValue() == null) {
+            System.out.println("datepickers vacíos");
+            showAlert("Por favor, seleccione unas fechas válidas.");
+        } else {
 
-        ButtonType yesButton = new ButtonType("Yes");
+        
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("¿Está seguro de que quiere hacer una reserva?");
+        alert.setHeaderText("Se le cobrarán " +totalPrice_lbl.getText()+ "€ a su cuenta.");
+        alert.setContentText(":O.");
+        //alert.getDialogPane().getStyleClass().add("alert");
+
+        ButtonType yesButton = new ButtonType("Sí");
         ButtonType noButton = new ButtonType("No");
 
         alert.getButtonTypes().setAll(yesButton, noButton);
@@ -216,15 +234,30 @@ public class BookingPageController implements Initializable {
             }
         });
     }
+    }
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Date Selection");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 
     private void makeBooking() {
         Hotel hotel = Model.getInstance().getModelHotel();
         Client client = Model.getInstance().getModelClient();
         Booking booking = new Booking(client, hotel, selectedDates[0], selectedDates[1]);
         try {
-            DBManager.getInstance().getBookingService().addBooking(booking);
-            Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.LOADING);
-            //LoadingController.getInstance().initialize(null, null);
+            
+            if (DBManager.getInstance().getBookingService().createBooking(booking)) {
+                Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.LOADING);
+                Model.getInstance().setModelBooking(booking);
+
+            } else {
+                Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.LOADING);
+                
+            }
+            LoadingController.getInstance().initialize(null, null);
 
         } catch (Exception e) {
             e.printStackTrace();

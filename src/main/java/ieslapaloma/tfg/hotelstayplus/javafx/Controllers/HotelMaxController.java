@@ -129,6 +129,7 @@ public class HotelMaxController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("inicialización de hotel max controller --");
         instance = this;
         bigText_lbl.setWrapText(true); // Enable text wrapping
         bigText2_lbl.setWrapText(true); // Enable text wrapping
@@ -140,7 +141,7 @@ public class HotelMaxController implements Initializable{
     }
     
     private void load() {
-        System.out.println("EJECUCION DEL LOAD -------------------------------------------------------");
+        //System.out.println("EJECUCION DEL LOAD -------------------------------------------------------");
         Hotel hotel = Model.getInstance().getModelHotel();
 
         System.out.println(servDesayuno_icon.getOpacity());
@@ -222,8 +223,11 @@ public class HotelMaxController implements Initializable{
     }
 
     private void onBooking() {
+        Hotel hotel = Model.getInstance().getModelHotel();
+
         System.out.println(booking_btn.toString());
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.BOOKINGHOTEL);
+        Model.getInstance().setSelectedModelHotel(hotel);
         BookingPageController.getInstance().initialize(null, null);
     }
 

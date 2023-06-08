@@ -16,9 +16,12 @@ public class Client {
     private String name;
 
     @Column
+    private String surnames;
+
+    @Column(unique = true)
     private String email;
 
-    @Column
+    @Column(unique = true)
     private String username;
 
     @Column
@@ -27,8 +30,11 @@ public class Client {
     @Column
     private String password;
 
-    @Column
+    @Column(unique = true)
     private String phoneNumber;
+
+    @Column
+    private String address;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -122,6 +128,42 @@ public class Client {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+
+
+    public String getSurnames() {
+        return surnames;
+    }
+
+
+
+    public void setSurnames(String surnames) {
+        this.surnames = surnames;
+    }
+
+
+
+    public String getAddress() {
+        return address;
+    }
+
+
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+
+
+    public Set<Hotel> getLikedHotels() {
+        return likedHotels;
+    }
+
+
+
+    public void setLikedHotels(Set<Hotel> likedHotels) {
+        this.likedHotels = likedHotels;
     }
 
 

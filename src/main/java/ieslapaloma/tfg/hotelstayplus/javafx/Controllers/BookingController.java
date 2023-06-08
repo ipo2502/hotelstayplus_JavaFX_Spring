@@ -16,7 +16,7 @@ import javafx.scene.layout.AnchorPane;
 
 public class BookingController implements Initializable{
 
-   
+    public static BookingController instance;
     @FXML
     private Label date1_lbl;
 
@@ -44,9 +44,12 @@ public class BookingController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        instance = this;
     }
-
+    
+    public static BookingController getInstance() {
+        return instance;
+    }
     public void setData(Booking booking) {
         hotelName_lbl.setText(booking.getHotel().getName());
         //price_lbl.setText(booking.getHotel().getPrice());

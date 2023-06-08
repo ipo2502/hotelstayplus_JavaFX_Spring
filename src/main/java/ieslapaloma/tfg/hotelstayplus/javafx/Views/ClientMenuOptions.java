@@ -9,5 +9,6 @@ public enum ClientMenuOptions {
     MAX,
     BOOKINGHOTEL,
     LOADING,
-    SUCCESSFULBOOKING
+    SUCCESSFULBOOKING,
+    FAILEDBOOKING
 }

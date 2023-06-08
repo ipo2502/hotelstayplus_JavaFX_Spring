@@ -16,7 +16,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/maxHotel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.BookingPageController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/maxHotel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.SuccessfulBookingController">
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="little_gradientleftHalf">
          <children>
@@ -91,7 +91,7 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <Label fx:id="loading_lbl" alignment="CENTER" layoutX="150.0" layoutY="221.0" prefHeight="25.0" prefWidth="549.0" text="¡Felicidades! Su reserva ha sido completada con éxito" textAlignment="CENTER" textFill="WHITE">
+                  <Label fx:id="loading_lbl" alignment="CENTER" layoutX="150.0" layoutY="221.0" prefHeight="25.0" prefWidth="549.0" text="¡Felicidades! Su reserva ha sido completada con éxito" textAlignment="CENTER" textFill="#6cff3b">
                      <graphic>
                         <FontAwesomeIconView glyphName="BED" styleClass="white" />
                      </graphic>
@@ -107,27 +107,27 @@
                               <Font name="System Bold" size="22.0" />
                            </font>
                         </Label>
-                        <Label fx:id="ratingtitle_lbl1" alignment="CENTER" contentDisplay="CENTER" text="HotelSample" textFill="WHITE">
+                        <Label fx:id="hotelName_lbl" alignment="CENTER" contentDisplay="CENTER" text="HotelSample" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
                         </Label>
-                        <Label fx:id="ratingtitle_lbl11" alignment="CENTER" contentDisplay="CENTER" text="Sábado 1 de Noviembre" textFill="WHITE">
+                        <Label fx:id="date1_lbl" alignment="CENTER" contentDisplay="CENTER" text="Sábado 1 de Noviembre" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="ratingtitle_lbl111" alignment="CENTER" contentDisplay="CENTER" text="Lunes 3 de Noviembre" textFill="WHITE">
+                        <Label fx:id="date2_lbl" alignment="CENTER" contentDisplay="CENTER" text="Lunes 3 de Noviembre" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="ratingtitle_lbl2" alignment="CENTER" contentDisplay="CENTER" text="Reserva Nº: 1234F" textFill="WHITE">
+                        <Label fx:id="bookingNumber_lbl" alignment="CENTER" contentDisplay="CENTER" text="Reserva Nº: 1234F" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="107.0" text="Ir a Reservas">
+                        <Button fx:id="bookings_btn" mnemonicParsing="false" prefHeight="34.0" prefWidth="107.0" text="Ir a Reservas">
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>

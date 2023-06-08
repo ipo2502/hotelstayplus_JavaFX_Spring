@@ -34,6 +34,7 @@ public class LoadingController implements Initializable{
     }
 
     private void load() {
+
         try {
             for (int i = 0; i < 2; i++) {
                 System.out.println("vuelta: " + i);
@@ -50,12 +51,20 @@ public class LoadingController implements Initializable{
             }
 
             // Loading is complete, go to the next screen
-            Platform.runLater(this::goSuccessful);
+            if (Model.getInstance().getSuccessfulBookingFlag()) {
+                Platform.runLater(this::goSuccessful);
+            
+            } else {
+                Platform.runLater(this::goFailed);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    private void goFailed() {
+       Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.BOOKINGHOTEL);
+       BookingPageController.getInstance().initialize(null, null);
+    }
 
     private void goSuccessful() {
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.SUCCESSFULBOOKING);

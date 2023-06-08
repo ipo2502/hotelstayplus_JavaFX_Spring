@@ -52,14 +52,10 @@
          <children>
             <ScrollPane prefHeight="550.0" prefWidth="1245.0">
                <content>
-                  <GridPane fx:id="hotelesGrid" prefHeight="0.0" prefWidth="0.0">
+                  <GridPane fx:id="hotelesGrid" prefHeight="0.0" prefWidth="0.0" styleClass="gridpane">
                      <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
-                     <styleClass>
-                        <String fx:value="gridpane" />
-                        <String fx:value="notgreyLabel" />
-                     </styleClass>
                   </GridPane>
                </content>
                <styleClass>

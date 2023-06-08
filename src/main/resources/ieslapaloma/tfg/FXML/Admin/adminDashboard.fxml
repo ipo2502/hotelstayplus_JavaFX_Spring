@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/clientDashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.ControllerH">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="305.0" />
+            <Label alignment="CENTER" text="HotelStay+" textAlignment="CENTER">
+               <font>
+                  <Font name="FranziskaWeb W03 Book" size="43.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="grey" />
+                  <String fx:value="bigtitle" />
+               </styleClass>
+            </Label>
+            <Pane prefHeight="100.0" prefWidth="124.0" />
+            <Label alignment="CENTER" prefHeight="33.0" prefWidth="192.0" styleClass="grey" text="Admin Edition">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="little_gradientleft">
+         <children>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="233.0" styleClass="hoverpane">
+               <children>
+                  <Label alignment="CENTER" styleClass="grey" text="Hoteles">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="HOTEL" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="nHotels_lbl" styleClass="grey" text="15 hoteles" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="233.0" styleClass="hoverpane">
+               <children>
+                  <Label alignment="CENTER" styleClass="grey" text="Usuarios">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USER" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="nHotels_lbl1" styleClass="grey" text="15 hoteles" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="233.0" styleClass="hoverpane">
+               <children>
+                  <Label alignment="CENTER" styleClass="grey" text="Reservas">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="TICKET" />
+                     </graphic>
+                  </Label>
+                  <Label fx:id="nHotels_lbl11" styleClass="grey" text="15 hoteles" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="233.0">
+         <children>
+            <Label alignment="CENTER" styleClass="grey" text="Se ha traspasado un total de €300.00">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="MONEY" />
+               </graphic>
+            </Label>
+            <Label fx:id="nHotels_lbl2" styleClass="grey" text="desde la creación de la base de datos." />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="297.0" prefWidth="850.0">
+         <children>
+            <Label alignment="CENTER" styleClass="grey" text="Una aplicación diseñada por Ignacio Pérez Ortega">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HEART" />
+               </graphic>
+            </Label>
+            <Label fx:id="nHotels_lbl21" styleClass="grey" text="con uso de JavaFX y Spring Boot." />
+         </children>
+      </VBox>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/logo_white_large.png" />
+         </image>
+      </ImageView>
+   </children>
+</VBox>

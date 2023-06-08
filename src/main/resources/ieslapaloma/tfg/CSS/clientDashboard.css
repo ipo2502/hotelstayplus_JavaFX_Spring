@@ -24,6 +24,10 @@
     -fx-background-color: linear-gradient(to right, #222222,  #333333);
 }
 
+.hoverpane:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.134);
+}
+
 
 .scrollpane {
     -fx-background-color: linear-gradient(to right, #222222,  #333333);
@@ -108,4 +112,14 @@
 .gradientupleft {
     -fx-background-color: linear-gradient(to bottom, #000000c2, transparent);
     -fx-background-color: linear-gradient(to right, #0000008c, transparent);
+}
+
+.input_field {
+    -fx-background-color: rgba(255, 255, 255, 0.045);
+    -fx-pref-height: 15;
+    -fx-font-size: 1.1em;
+    -fx-background-radius: 40;
+    -fx-font-family: FranziskaWebW03-Bold;
+    -fx-text-fill: #ffffff38;
+
 }

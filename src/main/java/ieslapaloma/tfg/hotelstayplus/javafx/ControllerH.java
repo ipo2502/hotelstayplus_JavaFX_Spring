@@ -28,6 +28,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
@@ -51,6 +53,12 @@ public class ControllerH implements Initializable{
     
     private Hotel hotelSelected;
     private static Pane pane;
+
+    @FXML
+    private Button filter_btn;
+
+    @FXML
+    private ChoiceBox<?> filter_selector;
 
       @FXML
     //private HBox hotelLayout;
@@ -77,6 +85,10 @@ public class ControllerH implements Initializable{
     @FXML
     private Label nHotels_lbl;
 
+    @FXML
+    private Label userName_lbl;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         load();
@@ -92,7 +104,7 @@ public class ControllerH implements Initializable{
             System.out.println("nulleooo");
 
         } else {
-
+            userName_lbl.setText(Model.getInstance().getModelClient().getName() + " " + Model.getInstance().getModelClient().getSurnames());
         
         recentlyAdded = new ArrayList<>(recentlyAdded());
         System.out.println("BDFDBDF:" +DBManager.getInstance().getHotelService().getAllHotels().get(0).toString());

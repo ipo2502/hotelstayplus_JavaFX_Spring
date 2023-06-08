@@ -20,6 +20,7 @@ import javafx.scene.layout.Pane;
 
 public class ClientBookingsController implements Initializable{
 
+    public static ClientBookingsController instance;
     @FXML
     private GridPane hotelesGrid;
 
@@ -29,7 +30,12 @@ public class ClientBookingsController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        instance = this;
         load();
+    }
+
+    public static ClientBookingsController getInstance() {
+        return instance;
     }
 
         private void load() {

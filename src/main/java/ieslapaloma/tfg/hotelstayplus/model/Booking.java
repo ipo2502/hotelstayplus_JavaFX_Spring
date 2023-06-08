@@ -3,7 +3,9 @@ import java.time.LocalDate;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "bookings")
+@Table(name = "booking",
+uniqueConstraints = @UniqueConstraint(name = "unique_booking_hotel_dates", 
+columnNames = {"id_hotel", "date_start", "date_end"}))
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,9 +26,9 @@ public class Booking {
     @Column(name = "date_end")
     private LocalDate dateEnd;
 
-    /*@Column(name = "total_price")
+    @Column(name = "total_price")
     private double totalPrice;
-*/
+
     public Booking(Client client, Hotel hotel, LocalDate dateStart, LocalDate dateEnd) {
         this.client = client;
         this.hotel = hotel;
@@ -76,7 +78,7 @@ public class Booking {
         this.dateEnd = fechaFin;
     }
 
-    /*
+    
     public double getTotalPrice() {
         return totalPrice;
     }
@@ -84,6 +86,6 @@ public class Booking {
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
- */
+ 
     
 }

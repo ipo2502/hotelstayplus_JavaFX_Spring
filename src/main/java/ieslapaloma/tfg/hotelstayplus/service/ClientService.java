@@ -26,4 +26,8 @@ public class ClientService {
         return clientRepository.findLoginClient(username, password);
     }
 
+    public Client addClient(Client client) {
+        return clientRepository.saveAndFlush(client);
+    }
+
 }

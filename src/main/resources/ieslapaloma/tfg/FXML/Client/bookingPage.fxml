@@ -326,6 +326,14 @@
                         </Label>
                      </children>
                   </HBox>
+                  <Label fx:id="error_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="456.0" layoutY="600.0" prefHeight="66.0" prefWidth="371.0" text="ERROR: ya existe una reserva con fechas bla bla" textFill="#ff1111" underline="true" visible="false" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <effect>
+                        <Glow level="0.41" />
+                     </effect>
+                  </Label>
                </children>
             </AnchorPane>
          </children>

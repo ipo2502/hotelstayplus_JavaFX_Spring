@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" stylesheets="@../CSS/login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.RegisterController">
+   <children>
+      <ImageView fitHeight="772.0" fitWidth="1005.0" layoutX="-9.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/hotel_sample2.jpg" />
+         </image>
+      </ImageView>
+      <HBox layoutX="-6.0" layoutY="1.0" prefHeight="754.0" prefWidth="860.0" styleClass="gradient_low">
+         <children>
+            <VBox alignment="CENTER" prefHeight="451.0" prefWidth="330.0" styleClass="black">
+               <children>
+                  <Label alignment="CENTER" prefHeight="47.0" prefWidth="241.0" styleClass="title" text="Hotel Stay +" textAlignment="CENTER" textFill="#ff0707" />
+                  <Line endX="100.0" startX="-150.0" stroke="WHITE" styleClass="line" />
+                  <ImageView fitHeight="70.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" styleClass="image">
+                     <image>
+                        <Image url="@../Images/icon%20white.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Line endX="100.0" startX="-150.0" stroke="WHITE" styleClass="line">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="40.0" />
+                     </VBox.margin>
+                  </Line>
+                  <Label alignment="CENTER" prefHeight="37.0" prefWidth="241.0" text="hotelstayplus.com" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Italic" size="10.0" />
+                     </font>
+                     <effect>
+                        <Glow level="0.81" />
+                     </effect>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="754.0" prefWidth="260.0" spacing="18.0" styleClass="gradient_side">
+               <children>
+                  <Label text="Nombre" textFill="WHITE">
+                     <padding>
+                        <Insets right="80.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="name_fld" prefHeight="25.0" prefWidth="168.0">
+                     <styleClass>
+                        <String fx:value="input_field" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
+                  <Label text="Apellidos" textFill="WHITE">
+                     <padding>
+                        <Insets right="80.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="surnames_fld" prefHeight="25.0" prefWidth="168.0">
+                     <styleClass>
+                        <String fx:value="input_field" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
+                  <Label text="Correo electrónico" textFill="WHITE">
+                     <padding>
+                        <Insets right="80.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="email_fld" prefHeight="25.0" prefWidth="168.0">
+                     <styleClass>
+                        <String fx:value="input_field" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
+                  <Label text="Dirección" textFill="WHITE">
+                     <padding>
+                        <Insets right="80.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="address_fld" prefHeight="25.0" prefWidth="168.0" promptText="C/ Avenida de las Flores 59">
+                     <styleClass>
+                        <String fx:value="input_field" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
+                  <Label text="Contraseña:" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="70.0" />
+                     </padding>
+                  </Label>
+                  <PasswordField fx:id="password_fld" prefHeight="25.0" prefWidth="169.0">
+                     <styleClass>
+                        <String fx:value="input_field" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </PasswordField>
+                  <Label text="Repite contraseña" textFill="WHITE">
+                     <padding>
+                        <Insets right="70.0" />
+                     </padding>
+                  </Label>
+                  <PasswordField fx:id="passwordRE_fld" prefHeight="25.0" prefWidth="169.0">
+                     <styleClass>
+                        <String fx:value="input_field" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </PasswordField>
+               </children>
+               <HBox.margin>
+                  <Insets left="40.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="754.0" prefWidth="260.0" spacing="20.0" styleClass="gradient_side">
+               <children>
+                  <Label text="Nombe de usuario" textFill="WHITE">
+                     <padding>
+                        <Insets right="80.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="localidad_fld" prefHeight="25.0" prefWidth="168.0" promptText="Madrid">
+                     <styleClass>
+                        <String fx:value="input_field" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
+                  <Label text="Número de teléfono" textFill="WHITE">
+                     <padding>
+                        <Insets right="80.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="phoneN_fld" prefHeight="25.0" prefWidth="168.0">
+                     <styleClass>
+                        <String fx:value="input_field" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </TextField>
+                  <Label prefHeight="52.0" prefWidth="70.0" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="70.0" />
+                     </padding>
+                  </Label>
+                  <CheckBox fx:id="accept_cbox" mnemonicParsing="false" text="Acepto los términos de HotelStay+" textFill="WHITE" />
+                  <CheckBox fx:id="accept2_cbox" mnemonicParsing="false" prefHeight="56.0" prefWidth="250.0" text="Al crear una cuenta en esta página web, acepto recibir comunicaciones publicitarias." textFill="WHITE" wrapText="true" />
+                  <Button fx:id="register_btn" mnemonicParsing="false" prefHeight="24.0" prefWidth="104.0" text="Registrarse">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label fx:id="error_lbl1" prefHeight="62.0" prefWidth="233.0" styleClass="error_lbl" text="error" textFill="WHITE" wrapText="true">
+                     <padding>
+                        <Insets right="80.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

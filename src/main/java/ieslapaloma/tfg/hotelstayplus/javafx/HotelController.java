@@ -71,12 +71,10 @@ public class HotelController implements Initializable{
 
         @FXML
         public void handleItemClick(MouseEvent event) {
-           // System.out.println("HANDLE ITEM CLICK---");
             String title = hotelName.getText();
             String location = hotelLocation.getText();
             long id = Long.valueOf(id_lbl.getText());
-            //System.out.println("Selected id: "+id);
-            //System.out.println("Clicked item: " + title + ", " + location+ "[ID: " +id +"]");
+
             
             List<Service> services = DBManager.getInstance().getServiceService().getServicesByHotelId(id);
             System.out.println("SERVICES FROM HOTEL "+title+ " AND ID: "+id+" :::::: " +services.size());
@@ -87,7 +85,7 @@ public class HotelController implements Initializable{
             
             hotel.setRealPojoServices((services));
 
-            System.out.println("hotel con id: " +id);
+            System.out.println("**********hotel con id: " +hotel.getId());
             Model.getInstance().setSelectedModelHotel(hotel);
             Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.MAX);
             HotelMaxController.getInstance().initialize(null, null);
