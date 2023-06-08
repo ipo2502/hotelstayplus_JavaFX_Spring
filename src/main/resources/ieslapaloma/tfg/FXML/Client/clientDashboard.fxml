@@ -50,7 +50,7 @@
             <Line endX="896.75732421875" endY="0.0037584304809570312" startX="539.878662109375" startY="0.0018792152404785156" stroke="#989898" strokeWidth="2.0" styleClass="ln" />
             <VBox alignment="CENTER" prefHeight="100.0" prefWidth="233.0" spacing="10.0">
                <children>
-                  <ChoiceBox fx:id="filter_selector" prefWidth="150.0" />
+                  <ChoiceBox fx:id="filter_selector" prefWidth="150.0" styleClass="account_selector" />
                   <Button fx:id="filter_btn" mnemonicParsing="false" prefHeight="33.0" prefWidth="80.0" text="Filtrar" />
                </children>
             </VBox>

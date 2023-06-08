@@ -6,6 +6,8 @@ import java.lang.System.Logger;
 import java.net.URL;
 import java.security.spec.ECPrivateKeySpec;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -17,6 +19,7 @@ import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.HotelstayplusApplication;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
+import ieslapaloma.tfg.hotelstayplus.javafx.Views.Filters;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
 import ieslapaloma.tfg.hotelstayplus.repository.ClientRepository;
 import ieslapaloma.tfg.hotelstayplus.repository.HotelRepository;
@@ -58,7 +61,7 @@ public class ControllerH implements Initializable{
     private Button filter_btn;
 
     @FXML
-    private ChoiceBox<?> filter_selector;
+    private ChoiceBox<Filters> filter_selector;
 
       @FXML
     //private HBox hotelLayout;
@@ -88,16 +91,54 @@ public class ControllerH implements Initializable{
     @FXML
     private Label userName_lbl;
 
+    static List<Hotel> hotelitos = DBManager.getInstance().getHotelService().getAllHotels();
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         load();
+        filter_btn.setOnAction(event -> onFilter(hotelitos));
+        filter_selector.setItems(FXCollections.observableArrayList(
+            Filters.LIKED, Filters.RECENTS, Filters.CHEAP, Filters.EXPENSIVE, Filters.LESSSTARS, Filters.MORESTARS)
+            );
+
         //nHotels_lbl.setText(String.valueOf(clientRepository.count()));
         //hotelesGrid.setOnMouseClicked(event -> onPrint());
 
     }
 
-    
+    private void onFilter(List<Hotel> collection) {
+        switch(filter_selector.getValue()) {
+            case MORESTARS:
+                Collections.sort(hotelitos, Comparator.comparingInt(Hotel::getStars).reversed());
+                load();
+                break;
+            case LESSSTARS:
+                Collections.sort(hotelitos, Comparator.comparingInt(Hotel::getStars));
+                load();
+                break;
+            case EXPENSIVE:
+                Collections.sort(hotelitos, Comparator.comparingDouble(Hotel::getPrice).reversed());
+                load();
+                break;
+            case CHEAP:
+                Collections.sort(hotelitos, Comparator.comparingDouble(Hotel::getPrice));
+                load();
+                break;
+            case RECENTS:
+                hotelitos = DBManager.getInstance().getHotelService().getAllHotels();
+                Collections.reverse(hotelitos);
+                load();
+            default:
+                hotelitos = DBManager.getInstance().getHotelService().getAllHotels();
+                load();
+                break;
+
+        }
+     
+            
+        
+    }
 
     private void load() {
         if (hotelesGrid == null) {
@@ -106,10 +147,9 @@ public class ControllerH implements Initializable{
         } else {
             userName_lbl.setText(Model.getInstance().getModelClient().getName() + " " + Model.getInstance().getModelClient().getSurnames());
         
-        recentlyAdded = new ArrayList<>(recentlyAdded());
         System.out.println("BDFDBDF:" +DBManager.getInstance().getHotelService().getAllHotels().get(0).toString());
         
-        List<Hotel> hotelitos = DBManager.getInstance().getHotelService().getAllHotels();
+        
         nHotels_lbl.setText(hotelitos.size()+" hoteles");
 
         int column = 0;
@@ -143,86 +183,5 @@ public class ControllerH implements Initializable{
         }
     }
     }
-
-    private void onPrint() {
-        System.out.println(pane.toString());
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.MAX);
-        System.out.println("bookings_btn.toString()");
-    }
-
-/* */
-    private List<Hotel> recentlyAdded() {
-
-      
-         /*
-          * 
-          */
-        List<Hotel> ls = new ArrayList<>();
-        Random r = new Random();
-        Hotel hotel = new Hotel();
-        hotel.setName("Hotel Ignacio");
-        hotel.setpOJOlocation("Madrid");
-        hotel.setImageSrc("/ieslapaloma/tfg/Images/hotel_sample.jpg");
-        hotel.setStarsSrc(starsPaths[r.nextInt(starsPaths.length)]);
-        hotel.setBackgroundImg(backgroundImgs[r.nextInt(backgroundImgs.length)]);
-        ls.add(hotel);
-
-        Hotel hotel1 = new Hotel();
-        hotel1.setName("Hotel Gonzalo Aguilera");
-        hotel1.setpOJOlocation("Toledo");
-        hotel1.setImageSrc("/ieslapaloma/tfg/Images/hotel_sample2.jpg"); 
-        hotel1.setStarsSrc(starsPaths[r.nextInt(starsPaths.length)]);
-        hotel1.setBackgroundImg(backgroundImgs[r.nextInt(backgroundImgs.length)]);
-        ls.add(hotel1);
-
-        Hotel hotel3 = new Hotel();
-        hotel3.setName("Hotel Alejandro Hinojosa");
-        hotel3.setpOJOlocation("Alicante)");
-        hotel3.setImageSrc("/ieslapaloma/tfg/Images/hotel_sample3.jpg"); 
-        hotel3.setStarsSrc(starsPaths[r.nextInt(starsPaths.length)]);
-        hotel3.setBackgroundImg(backgroundImgs[r.nextInt(backgroundImgs.length)]);
-        ls.add(hotel3);
-
-        Hotel hotel4 = new Hotel();
-        hotel4.setName("Hotel Juan Avilés");
-        hotel4.setpOJOlocation("Madrid)");
-        hotel4.setImageSrc("/ieslapaloma/tfg/Images/hotel_sample4.jpg"); 
-        hotel4.setStarsSrc(starsPaths[r.nextInt(starsPaths.length)]);
-        hotel4.setBackgroundImg(backgroundImgs[r.nextInt(backgroundImgs.length)]);
-        ls.add(hotel4);
-
-        Hotel hotel5 = new Hotel();
-        hotel5.setName("Hotel Julio César");
-        hotel5.setpOJOlocation("Barcelona)");
-        hotel5.setImageSrc("/ieslapaloma/tfg/Images/hotel_sample5.jpg"); 
-        hotel5.setStarsSrc(starsPaths[r.nextInt(starsPaths.length)]);
-        hotel5.setBackgroundImg(backgroundImgs[r.nextInt(backgroundImgs.length)]);
-        ls.add(hotel5);
-
-        Hotel hotel6 = new Hotel();
-        hotel6.setName("Hotel Elena Garibay");
-        hotel6.setpOJOlocation("Valencia)");
-        hotel6.setImageSrc("/ieslapaloma/tfg/Images/hotel_sample6.jpg"); 
-        hotel6.setStarsSrc(starsPaths[r.nextInt(starsPaths.length)]);
-        hotel6.setBackgroundImg(backgroundImgs[r.nextInt(backgroundImgs.length)]);
-        ls.add(hotel6);
-
-         
-
-        /*Hotel hotel2 = new Hotel();
-        hotel2.setName("Hotel Ignacio");
-        hotel2.setLocation("Madrid Sur (Alkorkón)");
-        hotel2.setImageSrc("hotel_sample.jpg");
-        ls.add(hotel2);
-
-        Hotel hotel3 = new Hotel();
-        hotel3.setName("Hotel Ignacio");
-        hotel3.setLocation("Madrid Sur (Alkorkón)");
-        hotel3.setImageSrc("hotel_sample.jpg");
-        ls.add(hotel3);*/
-
-        return ls;
-    }
-
     
 }

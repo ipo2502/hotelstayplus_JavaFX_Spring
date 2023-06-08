@@ -120,6 +120,30 @@
     -fx-font-size: 1.1em;
     -fx-background-radius: 40;
     -fx-font-family: FranziskaWebW03-Bold;
-    -fx-text-fill: #ffffff38;
+    -fx-text-fill: #ffffffb4;
 
+}
+
+.account_selector {
+    -fx-background-color: rgba(255, 255, 255, 0.355);
+    -fx-background-radius: 30;
+}
+
+.account_selector .label {
+    -fx-text-fill: #132A13;
+    -fx-font-size: 1.1em;
+}
+
+.account_selector .arrow {
+    -fx-background-color: #132A13;
+
+}
+
+.account_selector .context-menu { -fx-background-color: rgba(0, 0, 0, 0.216); }
+.account_selector .menu-item:focused { -fx-background-color: rgba(0, 0, 0, 0.726); }
+.account_selector .menu-item > .label { -fx-text-fill: white; }
+.account_selector .menu-item:focused > .label { -fx-text-fill: rgb(191, 191, 191); }
+
+#choice-box.popup-menu {
+    -fx-background-color: #ECF393;
 }

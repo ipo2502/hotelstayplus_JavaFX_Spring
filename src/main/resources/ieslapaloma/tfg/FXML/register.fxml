@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -27,7 +28,10 @@
          <children>
             <VBox alignment="CENTER" prefHeight="451.0" prefWidth="330.0" styleClass="black">
                <children>
-                  <Label alignment="CENTER" prefHeight="47.0" prefWidth="241.0" styleClass="title" text="Hotel Stay +" textAlignment="CENTER" textFill="#ff0707" />
+                  <Label alignment="CENTER" prefHeight="47.0" prefWidth="241.0" styleClass="title" text="Hotel Stay +" textAlignment="CENTER" textFill="#ff0707">
+                     <effect>
+                        <DropShadow />
+                     </effect></Label>
                   <Line endX="100.0" startX="-150.0" stroke="WHITE" styleClass="line" />
                   <ImageView fitHeight="70.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" styleClass="image">
                      <image>
@@ -130,7 +134,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="754.0" prefWidth="260.0" spacing="20.0" styleClass="gradient_side">
                <children>
-                  <Label text="Nombe de usuario" textFill="WHITE">
+                  <Label text="Nombre de usuario" textFill="WHITE">
                      <padding>
                         <Insets right="80.0" />
                      </padding>

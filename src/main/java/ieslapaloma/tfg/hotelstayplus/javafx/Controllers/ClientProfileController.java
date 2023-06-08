@@ -8,6 +8,7 @@ import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.model.Client;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -61,11 +62,30 @@ public class ClientProfileController implements Initializable{
     }
 
     private void onUpdate() {
-        
+        Client client = Model.getInstance().getModelClient();
+        client.setAddress(address_fld.getText());
+        client.setName(name_fld.getText());
+        client.setPhoneNumber(phonenumber_fld.getText());
+        client.setSurnames(surnames_fld.getText());
+        client.setEmail(email_fld.getText());
+        DBManager.getInstance().getClientService().updateClient(client);
+        System.out.println("update done");
+        showAlert("Los datos han sido modificados :)");
+        load();
+    }
+
+
+
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Date Selection");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     private void load() {
-        System.out.println("Está logeado con: " +Model.getInstance().getModelClient().toString());
+        //System.out.println("Está logeado con: " +Model.getInstance().getModelClient().toString());
         update_btn.setVisible(false);
         Client client = Model.getInstance().getModelClient();
         usernameTitle_lbl.setText(client.getName() + " " +client.getSurnames());

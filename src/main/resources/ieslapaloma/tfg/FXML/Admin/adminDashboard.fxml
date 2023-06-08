@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/clientDashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.ControllerH">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/clientDashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Admin.AdminControllerDashboard">
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -57,7 +57,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="USER" />
                      </graphic>
                   </Label>
-                  <Label fx:id="nHotels_lbl1" styleClass="grey" text="15 hoteles" />
+                  <Label fx:id="nUsers_lbl" styleClass="grey" text="15 hoteles" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="100.0" prefWidth="233.0" styleClass="hoverpane">
@@ -70,14 +70,14 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="TICKET" />
                      </graphic>
                   </Label>
-                  <Label fx:id="nHotels_lbl11" styleClass="grey" text="15 hoteles" />
+                  <Label fx:id="nbookings_lbl" styleClass="grey" text="15 hoteles" />
                </children>
             </VBox>
          </children>
       </HBox>
       <VBox alignment="CENTER" prefHeight="100.0" prefWidth="233.0">
          <children>
-            <Label alignment="CENTER" styleClass="grey" text="Se ha traspasado un total de €300.00">
+            <Label fx:id="totalMoney_lbl" alignment="CENTER" styleClass="grey" text="Se ha traspasado un total de €300.00">
                <font>
                   <Font size="24.0" />
                </font>

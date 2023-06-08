@@ -30,4 +30,8 @@ public class ClientService {
         return clientRepository.saveAndFlush(client);
     }
 
+    public Client updateClient(Client client) {
+        return clientRepository.saveAndFlush(client);
+    }
+
 }

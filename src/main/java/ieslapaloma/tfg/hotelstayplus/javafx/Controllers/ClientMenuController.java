@@ -9,6 +9,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class ClientMenuController implements Initializable{
 
@@ -51,7 +52,12 @@ public class ClientMenuController implements Initializable{
 
     private void onLogout() {
         System.out.println(logout_btn.toString());
-        Platform.exit();
+        Stage stage = (Stage) bookings_btn.getScene().getWindow();
+        Model.getInstance().getViewFactory().closedStage(stage);
+        Model.getInstance().setModelClient(null);
+        //Platform.exit();
+        Model.getInstance().setClientLoginSucessFlag(false);
+        Model.getInstance().getViewFactory().showLoginWindow();
     }
 
     private void onProfile() {

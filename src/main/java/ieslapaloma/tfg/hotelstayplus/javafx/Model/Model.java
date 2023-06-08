@@ -41,7 +41,7 @@ public class Model {
     }
     
     public ViewFactory getViewFactory() {return viewFactory;}
-    
+    public void setClientLoginSucessFlag(boolean login) {this.clientLoginSucessFlag = login;}
     public void setLoginAccountType(AccountType logiAccountType) {this.loginAccountType = logiAccountType;}
     public AccountType getLoginAccountType() {return loginAccountType;}
     public boolean getClientLoginSucessFlag() {return this.clientLoginSucessFlag;}
@@ -51,28 +51,14 @@ public class Model {
     public void setSelectedModelHotel(Hotel hotel) {this.modelHotel = hotel;}
     public void setModelBooking(Booking booking) { this.modelBooking = booking;}
     public Client getModelClient() { return this.modelClient;}
+    public void setModelClient(Client client) {this.modelClient = client; }
     public Hotel getModelHotel() { return this.modelHotel;}
     public Booking getModelBooking() { return this.modelBooking; }
 
     /*
     * Client Section
     */
-    //CAMBIAR CON EL DBMANAGER
-    public void evaluateClientCredentialsB(String user, String password) {
-        ResultSet resultSet = databaseDriver.getClientData(user, password);
-        try {
-            if (resultSet.next()) {
-                //Pojo add data to a User/Client object
-                modelClient = new Client();
-                modelClient.setName(user);
-                modelClient.setEmail(password);
-                this.clientLoginSucessFlag = true;
 
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public void evaluateClientCredentials(String user, String password) {
         Client client = DBManager.getInstance().getClientService().loginClient(user, password);

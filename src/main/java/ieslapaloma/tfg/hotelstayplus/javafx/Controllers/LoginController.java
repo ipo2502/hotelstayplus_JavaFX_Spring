@@ -3,8 +3,10 @@ package ieslapaloma.tfg.hotelstayplus.javafx.Controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.AccountType;
+import ieslapaloma.tfg.hotelstayplus.model.Client;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -75,6 +77,8 @@ public class LoginController implements Initializable{
             Model.getInstance().evaluateClientCredentials(user_fld.getText(), password_fld.getText());
             System.out.println(Model.getInstance().getClientLoginSucessFlag());
             if (Model.getInstance().getClientLoginSucessFlag()) {
+                Client c = DBManager.getInstance().getClientService().loginClient(user_fld.getText(), password_fld.getText());
+                Model.getInstance().setModelClient(c);
                 Model.getInstance().getViewFactory().closedStage(stage);
                 Model.getInstance().getViewFactory().showClientWindow();
             } else {
@@ -82,7 +86,7 @@ public class LoginController implements Initializable{
                 error_lbl.setText("Error de inicio de sesión");
             }
 
-        } else {
+        } else if (Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.ADMIN) {
             System.out.println("ADMIN ----");
             /*
              * ADMIN: ADMIN CREDENTIALS

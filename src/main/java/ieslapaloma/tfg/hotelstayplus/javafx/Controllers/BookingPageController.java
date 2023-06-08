@@ -247,6 +247,10 @@ public class BookingPageController implements Initializable {
         Hotel hotel = Model.getInstance().getModelHotel();
         Client client = Model.getInstance().getModelClient();
         Booking booking = new Booking(client, hotel, selectedDates[0], selectedDates[1]);
+        String pricetotal = totalPrice_lbl.getText();
+        String numericString = pricetotal.replace("€", "");
+
+        booking.setTotalPrice(Double.valueOf(numericString));
         try {
             
             if (DBManager.getInstance().getBookingService().createBooking(booking)) {
