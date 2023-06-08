@@ -25,6 +25,7 @@ public class ClientController implements Initializable{
                     case LOADING -> client_parent.setCenter(Model.getInstance().getViewFactory().getLoadingView());
                     case SUCCESSFULBOOKING -> client_parent.setCenter(Model.getInstance().getViewFactory().getBookingSuccessfulView());
                     case FAILEDBOOKING -> client_parent.setCenter(Model.getInstance().getViewFactory().getFailedBookingView());
+                    case MAXBOOKING -> client_parent.setCenter(Model.getInstance().getViewFactory().getMaxBookingView());
                     default -> client_parent.setCenter(Model.getInstance().getViewFactory().getDashboardView());
                     
                 }

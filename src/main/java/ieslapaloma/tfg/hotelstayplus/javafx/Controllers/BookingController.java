@@ -5,13 +5,17 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
+import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
+import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
+import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import ieslapaloma.tfg.hotelstayplus.model.Booking;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class BookingController implements Initializable{
@@ -42,6 +46,11 @@ public class BookingController implements Initializable{
     @FXML
     private ImageView little_img;
 
+    
+    @FXML
+    private Label id_lbl;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         instance = this;
@@ -50,6 +59,16 @@ public class BookingController implements Initializable{
     public static BookingController getInstance() {
         return instance;
     }
+
+    public void handleItemClick(MouseEvent event) {
+        Long id = Long.valueOf(id_lbl.getText());
+        Booking booking = DBManager.getInstance().getBookingService().getBookingById(id);
+        //Model.getInstance().setModelBooking(booking);
+        Model.getInstance().setModelBooking(booking);
+        System.out.println("se llega aki??");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.MAXBOOKING);
+    }
+
     public void setData(Booking booking) {
         hotelName_lbl.setText(booking.getHotel().getName());
         //price_lbl.setText(booking.getHotel().getPrice());
@@ -72,6 +91,8 @@ public class BookingController implements Initializable{
         croppedImageView.setViewport(new javafx.geometry.Rectangle2D(cropX, cropY, cropWidth, cropHeight));
         croppedImageView.setOpacity(0.4);
         container.getChildren().add(0, croppedImageView);
+        System.out.println("pre coger el id");
+        id_lbl.setText(String.valueOf(booking.getId()));
 
     }
 

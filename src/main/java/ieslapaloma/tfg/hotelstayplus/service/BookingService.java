@@ -32,6 +32,10 @@ public class BookingService {
         return bookingRepository.findBookingsByClientId(id);
     }
 
+    public Booking getBookingById(Long id) {
+        return bookingRepository.getReferenceById(id);
+    }
+
     public boolean createBooking(Booking booking) {
         Hotel hotel = booking.getHotel();
         LocalDate dateStart = booking.getDateStart();

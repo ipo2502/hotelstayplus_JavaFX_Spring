@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/maxHotel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.BookingMaxController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="little_gradientleftHalf">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="305.0" />
+            <ImageView fitHeight="53.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icon%20white.png" />
+               </image>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+            <Pane prefHeight="100.0" prefWidth="124.0" />
+            <Label prefHeight="33.0" prefWidth="192.0" styleClass="grey" text="Ignacio Pérez Ortega">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox prefHeight="660.0" prefWidth="850.0">
+         <children>
+            <AnchorPane prefHeight="661.0" prefWidth="850.0">
+               <children>
+                  <ImageView fitHeight="670.0" fitWidth="879.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/hotel_sample6.jpg" />
+                     </image>
+                  </ImageView>
+                  <VBox layoutX="230.0" layoutY="41.0" prefHeight="132.0" prefWidth="263.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="hotelName_lbl" prefHeight="32.0" prefWidth="265.0" text="HotelSample" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="17.0" prefWidth="59.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="119.0" text="Dirección:" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="address_lbl" prefHeight="17.0" prefWidth="258.0" text="Avenida de las Flores" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="59.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="105.0" text="Número" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="phoneNumber_lbl" prefHeight="17.0" prefWidth="258.0" text="645856698" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="17.0" prefWidth="59.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="214.0" text="Número Reserva:" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="bookingN_lbl" prefHeight="17.0" prefWidth="258.0" text="HSP67" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <ImageView fx:id="little_img" fitHeight="132.0" fitWidth="178.0" layoutX="29.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" styleClass="image">
+                     <image>
+                        <Image url="@../../Images/hotel_sample2.jpg" />
+                     </image>
+                  </ImageView>
+                  <Line endX="100.0" endY="-20.0" layoutX="401.0" layoutY="193.0" opacity="0.39" startX="100.0" startY="-166.0" stroke="#cdcdcd" />
+                  <VBox alignment="TOP_CENTER" layoutX="523.0" layoutY="42.0" prefHeight="167.0" prefWidth="66.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="CHECK-IN">
+                           <font>
+                              <Font size="9.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="startDay_lbl" text="19" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="startMonth_lbl" text="Junio" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="startWeekDay_lbl" text="Viernes" textFill="WHITE">
+                           <font>
+                              <Font name="System Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="checkin_lbl" text="14:00 - 0:00" textFill="WHITE">
+                           <font>
+                              <Font name="System Italic" size="11.0" />
+                           </font>
+                        </Label>
+                     </children></VBox>
+                  <Line endX="100.0" endY="-20.0" layoutX="513.0" layoutY="193.0" opacity="0.39" startX="100.0" startY="-166.0" stroke="#cdcdcd" />
+                  <VBox alignment="TOP_CENTER" layoutX="639.0" layoutY="42.0" prefHeight="167.0" prefWidth="77.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="CHECKOUT">
+                           <font>
+                              <Font size="9.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="endDay_lbl" text="22" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="endMonth_lbl" text="Junio" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="endWeekDay_lbl" text="Lunes" textFill="WHITE">
+                           <font>
+                              <Font name="System Italic" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="checkout_lbl" text="06:00 - 11:00" textFill="WHITE">
+                           <font>
+                              <Font name="System Italic" size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Line endX="100.0" endY="-20.0" layoutX="635.0" layoutY="193.0" opacity="0.39" startX="100.0" startY="-166.0" stroke="#cdcdcd" />
+                  <VBox alignment="TOP_CENTER" layoutX="761.0" layoutY="42.0" prefHeight="167.0" prefWidth="62.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="NOCHES">
+                           <font>
+                              <Font size="9.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="nightsN_lbl" text="3" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Line endX="-107.0" endY="-166.0" layoutX="141.0" layoutY="364.0" opacity="0.39" startX="681.0" startY="-166.0" stroke="#cdcdcd" />
+                  <VBox layoutX="29.0" layoutY="226.0" prefHeight="74.0" prefWidth="602.0">
+                     <children>
+                        <Label text="Precio" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label text="1 habitación" textFill="WHITE" />
+                        <Label text="10% VAT" textFill="WHITE" />
+                        <Label text="€ 2.20 Tourism fee" textFill="WHITE" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="674.0" layoutY="219.0" prefHeight="77.0" prefWidth="124.0">
+                     <children>
+                        <Label textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceRoom_lbl" text="€ 250.45" textFill="WHITE" />
+                        <Label fx:id="VAT_lbl" text="€ 24.55" textFill="WHITE" />
+                        <Label fx:id="tourismFee_lbl" text="€ 13.20" textFill="WHITE" />
+                        <Label fx:id="totalPrice_lbl" text="€ 283.20" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Line endX="-107.0" endY="-166.0" layoutX="138.0" layoutY="525.0" opacity="0.39" startX="141.0" startY="-166.0" stroke="#cdcdcd" />
+                  <Line endX="-107.0" endY="-166.0" layoutX="684.0" layoutY="525.0" opacity="0.39" startX="141.0" startY="-166.0" stroke="#cdcdcd" />
+                  <Label fx:id="hotelName_lbl1" alignment="CENTER" layoutX="336.0" layoutY="343.0" prefHeight="29.0" prefWidth="178.0" text="Información" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="TOP_CENTER" layoutX="647.0" layoutY="537.0" prefHeight="118.0" prefWidth="201.0" styleClass="help">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="61.0" prefWidth="176.0" text="¿Tienes alguna duda sin responder? Contacta con el hotel" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+                        <Button fx:id="contact_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Contactar" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="29.0" layoutY="383.0" prefHeight="77.0" prefWidth="726.0">
+                     <children>
+                        <Label text="Información del pago" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="hotelPayment_lbl" text="Hotel Sample handles all payments." textFill="WHITE" />
+                        <Label text="10% VIf you don't show up or cancel, applicable taxes may still be charged by the property." textFill="WHITE" />
+                        <Label text="Please remember to read the Important information below, as this may contain important details not mentioned here" textFill="WHITE" />
+                     </children>
+                  </VBox>
+                  <Line endX="-107.0" endY="-166.0" layoutX="136.0" layoutY="656.0" opacity="0.39" startX="141.0" startY="-166.0" stroke="#cdcdcd" />
+                  <VBox layoutX="29.0" layoutY="511.0" prefHeight="77.0" prefWidth="726.0">
+                     <children>
+                        <Label fx:id="hotelName_lbl11" alignment="CENTER" prefHeight="29.0" prefWidth="178.0" text="Cancelar reserva" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label text="¿Deseas cancelar la reserva?" textFill="WHITE" />
+                        <Label text="Lamentamos saber eso, ten en cuenta que al cancelar la reserva perderás tu lugar y no podrás recuperarlo. " textFill="WHITE" />
+                        <Label text="Si estás seguro de tu decisión, haz clic en 'Cancelar reserva' para confirmar la cancelación." textFill="WHITE" />
+                        <Label text="HotelStay+ no se hace cargo de problemas externos a los pagos realizados por medio de su plataforma." textFill="WHITE" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="cancelBooking_btn" layoutX="227.0" layoutY="517.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Gestionar" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

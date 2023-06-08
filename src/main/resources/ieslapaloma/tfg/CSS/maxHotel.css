@@ -201,4 +201,8 @@
     -fx-text-fill: #ffffff;
 }
 
+.help {
+    -fx-background-color: #272727;
+    -fx-background-radius: 30 30 0 0;
+}
 

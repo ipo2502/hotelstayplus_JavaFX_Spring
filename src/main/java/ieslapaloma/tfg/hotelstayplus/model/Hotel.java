@@ -277,6 +277,10 @@ public class Hotel {
         this.realPojoServices = realPojoServices;
     }
 
+    public List<Service> getRealPojoServices() {
+        return realPojoServices;
+    }
+
     
     
 }

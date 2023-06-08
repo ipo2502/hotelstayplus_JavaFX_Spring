@@ -29,6 +29,12 @@ public class Booking {
     @Column(name = "total_price")
     private double totalPrice;
 
+    @Column(name = "booking_code")
+    private String bookingCode;
+
+    @Column(name = "number_nights")
+    private Integer numbernights;
+    
     public Booking(Client client, Hotel hotel, LocalDate dateStart, LocalDate dateEnd) {
         this.client = client;
         this.hotel = hotel;
@@ -86,6 +92,28 @@ public class Booking {
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
- 
+
+    @Override
+    public String toString() {
+        return "Booking [id=" + id + ", client=" + client + ", hotel=" + hotel + ", dateStart=" + dateStart
+                + ", dateEnd=" + dateEnd + ", totalPrice=" + totalPrice + "]";
+    }
+
+    public String getBookingCode() {
+        return bookingCode;
+    }
+
+    public void setBookingCode(String bookingCode) {
+        this.bookingCode = bookingCode;
+    }
+
+    public Integer getNumbernights() {
+        return numbernights;
+    }
+
+    public void setNumbernights(Integer numbernights) {
+        this.numbernights = numbernights;
+    }
+    
     
 }

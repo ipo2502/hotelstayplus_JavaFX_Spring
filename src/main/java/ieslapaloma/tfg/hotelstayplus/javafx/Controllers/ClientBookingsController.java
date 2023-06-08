@@ -61,8 +61,8 @@ public class ClientBookingsController implements Initializable{
     
                     BookingController bookingController = fxmlLoader.getController();
                     bookingController.setData(booking);
-                    //pane.setOnMouseClicked(event -> bookingController.handleItemClick(event));
-    
+                    pane.setOnMouseClicked(event -> bookingController.handleItemClick(event));
+                    
                     
                     
                         if (column == 1) {
@@ -70,6 +70,7 @@ public class ClientBookingsController implements Initializable{
                             ++row;
                         }
                         hotelesGrid.add(pane, column++, row);
+                        
                         //GridPane.setMargin(pane, new Insets(3));
                     
     

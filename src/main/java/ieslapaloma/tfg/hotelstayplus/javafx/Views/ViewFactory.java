@@ -28,6 +28,7 @@ public class ViewFactory {
     private VBox loadingView;
     private VBox bookingSuccessfulView;
     private VBox failedBookingView;
+    private VBox maxBookingView;
     
 
     public ViewFactory() {
@@ -208,6 +209,18 @@ public class ViewFactory {
             }
         }
         return failedBookingView;
+    }
+
+    public VBox getMaxBookingView() {
+        System.out.println("> maxBooking");
+        if (maxBookingView == null) {
+            try {
+                maxBookingView = Paths.getFXML(ClientMenuOptions.MAXBOOKING, getClass()).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return maxBookingView;
     }
     
 }

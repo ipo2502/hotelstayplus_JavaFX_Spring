@@ -71,6 +71,8 @@ public class Paths { //C:\Users\ignac\Downloads\hotelstayplus\hotelstayplus\src\
                 return new FXMLLoader(cl.getResource(fxmlPath + "Client/successfulBooking.fxml"));
             case FAILEDBOOKING:
                 return new FXMLLoader(cl.getResource(fxmlPath + "Client/failedBooking.fxml"));
+            case MAXBOOKING:
+                return new FXMLLoader(cl.getResource(fxmlPath + "Client/maxBooking.fxml"));
             default:
                 break;
 
