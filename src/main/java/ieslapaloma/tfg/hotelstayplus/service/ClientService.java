@@ -22,6 +22,10 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
+    public Client getClientById(Long id) {
+        return clientRepository.getReferenceById(id);
+    }
+
     public Client loginClient(String username, String password) {
         return clientRepository.findLoginClient(username, password);
     }
@@ -32,6 +36,10 @@ public class ClientService {
 
     public Client updateClient(Client client) {
         return clientRepository.saveAndFlush(client);
+    }
+
+    public void deleteClientById(Long id) {
+        clientRepository.deleteById(id);
     }
 
 }

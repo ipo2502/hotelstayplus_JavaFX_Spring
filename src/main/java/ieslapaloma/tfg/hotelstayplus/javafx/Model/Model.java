@@ -23,6 +23,7 @@ public class Model {
     private Hotel modelHotel;
     private Booking modelBooking;
     private boolean successfulBookingFlag;
+    private Client adminClient;
 
     private Model() {
         this.viewFactory = new ViewFactory();
@@ -54,6 +55,8 @@ public class Model {
     public void setModelClient(Client client) {this.modelClient = client; }
     public Hotel getModelHotel() { return this.modelHotel;}
     public Booking getModelBooking() { return this.modelBooking; }
+    public Client getModelAdminClient() { return this.adminClient;}
+    public void setModelAdminClient(Client client) { this.adminClient = client;}
 
     /*
     * Client Section

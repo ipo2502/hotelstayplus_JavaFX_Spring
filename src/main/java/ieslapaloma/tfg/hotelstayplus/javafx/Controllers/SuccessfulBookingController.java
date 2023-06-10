@@ -62,13 +62,13 @@ public class SuccessfulBookingController implements Initializable{
         String stringDate2 = formatLocalDate(date2);
 
         hotelName_lbl.setText(booking.getHotel().getName());
-        bookingNumber_lbl.setText("Reserva HSPT"+String.valueOf(booking.getId())); //cambiar esto a algo mejor
+        bookingNumber_lbl.setText("Reserva HSPT"+booking.getBookingCode()); //cambiar esto a algo mejor
         date1_lbl.setText(stringDate1);
         date2_lbl.setText(stringDate2);
     }
 
     private String formatLocalDate(LocalDate date) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE d 'of' MMMM");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE d 'de' MMMM");
         String formattedDate = date.format(formatter);
     
         // Add the ordinal indicator for the day

@@ -36,6 +36,11 @@ public class BookingService {
         return bookingRepository.getReferenceById(id);
     }
 
+    public Long getLastId() {
+        List<Booking> s =  bookingRepository.findAll();
+        return s.get(s.size()-1).getId();
+    }
+
     public boolean createBooking(Booking booking) {
         Hotel hotel = booking.getHotel();
         LocalDate dateStart = booking.getDateStart();

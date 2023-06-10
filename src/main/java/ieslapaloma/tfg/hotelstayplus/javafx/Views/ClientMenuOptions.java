@@ -11,5 +11,6 @@ public enum ClientMenuOptions {
     LOADING,
     SUCCESSFULBOOKING,
     FAILEDBOOKING,
+    ADMINUSER,
     MAXBOOKING;
 }

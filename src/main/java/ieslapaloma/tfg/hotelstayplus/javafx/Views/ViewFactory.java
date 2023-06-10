@@ -29,6 +29,7 @@ public class ViewFactory {
     private VBox bookingSuccessfulView;
     private VBox failedBookingView;
     private VBox maxBookingView;
+    private VBox adminUserView;
     
 
     public ViewFactory() {
@@ -221,6 +222,18 @@ public class ViewFactory {
             }
         }
         return maxBookingView;
+    }
+
+    public VBox getAdminUserView() {
+        System.out.println("> admin user");
+        if (adminUserView == null) {
+            try {
+                adminUserView = Paths.getFXML(ClientMenuOptions.ADMINUSER, getClass()).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return adminUserView;
     }
     
 }

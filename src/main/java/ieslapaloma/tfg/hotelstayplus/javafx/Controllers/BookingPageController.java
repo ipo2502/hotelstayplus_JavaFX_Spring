@@ -142,6 +142,7 @@ public class BookingPageController implements Initializable {
     private static BookingPageController instance;
     private static LocalDate[] selectedDates = new LocalDate[2];
     private static boolean first = true;
+    private static int totalnights;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -251,6 +252,8 @@ public class BookingPageController implements Initializable {
         String numericString = pricetotal.replace("€", "");
 
         booking.setTotalPrice(Double.valueOf(numericString));
+        booking.setNumbernights(totalnights);
+        booking.setBookingCode("HSP"+DBManager.getInstance().getBookingService().getLastId());
         try {
             
             if (DBManager.getInstance().getBookingService().createBooking(booking)) {
@@ -358,6 +361,7 @@ public class BookingPageController implements Initializable {
                 datesChosen_lbl.setText("Seleccione dos fechas válidas");
             } else if (daysBetween < maxDays) {
                 datesChosen_lbl.setText(daysBetween + " noches");
+                totalnights = daysBetween;
                 selectedDates[0] = startDate;
                 selectedDates[1] = endDate;
                 dates = false;

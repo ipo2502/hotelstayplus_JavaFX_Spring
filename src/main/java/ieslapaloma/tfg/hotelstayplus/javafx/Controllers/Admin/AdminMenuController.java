@@ -3,6 +3,8 @@ package ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Admin;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
+import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -54,6 +56,8 @@ public class AdminMenuController implements Initializable{
 
     }private void onUsers() {
         System.out.println("onUsers");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ADMINUSER);
+
 
     }private void onHSP() {
         System.out.println("onHSP");

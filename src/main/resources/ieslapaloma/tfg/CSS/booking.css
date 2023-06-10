@@ -7,6 +7,11 @@
     -fx-cursor: hand;
 }
 
+.top_containeralt {
+    -fx-background-color: linear-gradient(to right, #222222d1,  #333333);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.574), 10, 0.5, 0, 0);
+}
+
 
 .image {
     -fx-border-radius: 30;
@@ -18,4 +23,17 @@
 Label {
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.348), 10, 0.5, 0, 0);
 
+}
+
+.input_field {
+    -fx-background-color: rgba(255, 255, 255, 0.045);
+    -fx-font-size: 0.8em;
+    -fx-font-style: Arial;
+    -fx-background-radius: 40;
+    -fx-text-fill: #ffffffb4;
+
+}
+
+.buttonn {
+    -fx-background-color: red;
 }
