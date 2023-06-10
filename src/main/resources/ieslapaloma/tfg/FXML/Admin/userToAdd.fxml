@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="850.0" styleClass="top_containeralt" stylesheets="@../../CSS/booking.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Admin.AdminSingleUserController">
+<AnchorPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="850.0" styleClass="top_containeralt" stylesheets="@../../CSS/booking.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Admin.AdminAddUserController">
    <children>
       <ImageView fx:id="backgroundImg_img" fitHeight="156.0" fitWidth="313.0" layoutX="-1.0" layoutY="-306.0" opacity="0.4" pickOnBounds="true" smooth="false" styleClass="image" visible="false">
          <image>
@@ -25,7 +25,7 @@
       </ImageView>
       <VBox alignment="CENTER_LEFT" layoutX="123.0" layoutY="15.0" prefHeight="100.0" prefWidth="206.0" spacing="7.0">
          <children>
-            <Label fx:id="userName_lbl" prefHeight="20.0" prefWidth="178.0" text="Ignacio Pérez Ortega" textFill="WHITE">
+            <Label fx:id="userName_lbl" prefHeight="20.0" prefWidth="178.0" text="Usuario Nuevo" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -62,14 +62,9 @@
       <VBox alignment="CENTER" layoutX="755.0" layoutY="16.0" prefHeight="100.0" prefWidth="69.0" spacing="10.0">
          <children>
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="144.0" text="Acciones" textAlignment="CENTER" textFill="WHITE" underline="true" />
-            <Button fx:id="delete_btn" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" styleClass="button_delete" text="Eliminar" wrapText="true">
+            <Button fx:id="addUser_btn" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" styleClass="button_add" text="Añadir" wrapText="true">
                <font>
                   <Font name="System Bold" size="9.0" />
-               </font>
-            </Button>
-            <Button fx:id="edit_btn" mnemonicParsing="false" prefHeight="18.0" prefWidth="45.0" styleClass="button_update" text="Editar" wrapText="true">
-               <font>
-                  <Font size="11.0" />
                </font>
             </Button>
          </children>
@@ -77,11 +72,20 @@
       <Line endX="-85.0" endY="41.0" layoutX="806.0" layoutY="70.0" startX="-85.0" startY="-44.0" stroke="#9e9e9e57" />
       <VBox alignment="CENTER_LEFT" layoutX="315.0" layoutY="15.0" prefHeight="100.0" prefWidth="206.0" spacing="7.0">
          <children>
-            <Label fx:id="hotelName_lbl1" prefHeight="20.0" prefWidth="178.0" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl12" text="Nombre" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="name_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="118.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
                <children>
                   <Label fx:id="date1_lbl1" text="Número" textFill="WHITE">
@@ -103,7 +107,7 @@
                         <Font name="System Bold" size="11.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="bookings_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" styleClass="input_fieldALT">
+                  <TextField fx:id="bookings_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="100.0" styleClass="input_fieldALT" text="0">
                      <font>
                         <Font size="1.0" />
                      </font>
@@ -114,11 +118,20 @@
       </VBox>
       <VBox alignment="CENTER_LEFT" layoutX="503.0" layoutY="15.0" prefHeight="100.0" prefWidth="206.0" spacing="7.0">
          <children>
-            <Label fx:id="hotelName_lbl11" prefHeight="20.0" prefWidth="178.0" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl13" text="Apellidos" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="surnames_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="118.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
                <children>
                   <Label fx:id="date1_lbl11" text="Contraseña" textFill="WHITE">

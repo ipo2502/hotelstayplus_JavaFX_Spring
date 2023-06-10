@@ -79,7 +79,7 @@
     -fx-stroke-width: 2px;
 }
 
-.button {
+.buttton {
     -fx-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.158), rgba(255, 255, 255, 0.1));
     -fx-border-radius: 30;
     -fx-background-radius: 30;
@@ -92,7 +92,7 @@
 
 }
 
-.button:hover {
+.buttton:hover {
     -fx-background-color: linear-gradient(to right, rgba(82, 82, 82, 0.337), rgba(255, 255, 255, 0.085));
     -fx-text-fill: linear-gradient(to right, rgba(255, 255, 255, 0.582), rgba(255, 255, 255, 0.555));
     -fx-cursor: hand;

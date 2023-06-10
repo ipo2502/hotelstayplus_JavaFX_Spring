@@ -11,6 +11,7 @@ import ieslapaloma.tfg.hotelstayplus.model.Client;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -23,28 +24,63 @@ public class AdminUserController implements Initializable{
     private static AdminUserController instance;
 
     @FXML
+    private Button addUser_btn;
+
+    @FXML
     private Label nHotels_lbl;
     private static Pane pane;
+    static List<Client> clients = DBManager.getInstance().getClientService().getAllClients();
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         instance = this;
         load();
+        addUser_btn.setOnAction(event -> onAddUser());
+    }
 
+    private void onAddUser() {
+        int column = 0;
+        int row = 1;
+        try {
+                Client client = new Client("Nuevo", "", "", "", 0, "", "", "");
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/ieslapaloma/tfg/FXML/Admin/userToAdd.fxml"));
+ 
+                pane = fxmlLoader.load();
+
+                AdminAddUserController userController = fxmlLoader.getController();
+                //pane.setOnMouseClicked(event -> userController.handleItemClick(event));
+                
+                
+                
+                    if (column == 1) {
+                        column = 0;
+                        ++row;
+                    }
+                    hotelesGrid.add(pane, column++, row);
+                    
+                    //GridPane.setMargin(pane, new Insets(3));
+                
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static AdminUserController getInstance() {
         return instance;
     }
 
-    private void load() {
+    public void load() {
+        clients = DBManager.getInstance().getClientService().getAllClients();
         if (hotelesGrid == null) {
             System.out.println("nulleooo");
 
         } else {
-            
-        List<Client> clients = DBManager.getInstance().getClientService().getAllClients();
+            hotelesGrid.getChildren().clear();
 
+        System.out.println("hay un total de " +clients.size()+ " usuarios");
+        nHotels_lbl.setText(clients.size() + " usuarios");
         int column = 0;
         int row = 1;
         try {

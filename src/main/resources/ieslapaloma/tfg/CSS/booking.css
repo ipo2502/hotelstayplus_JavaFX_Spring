@@ -26,14 +26,30 @@ Label {
 }
 
 .input_field {
-    -fx-background-color: rgba(255, 255, 255, 0.045);
-    -fx-font-size: 0.8em;
-    -fx-font-style: Arial;
+    -fx-background-color: rgba(255, 255, 255, 0.39);
+    -fx-font-size: 1em;
+    -fx-font-style: System;
     -fx-background-radius: 40;
     -fx-text-fill: #ffffffb4;
 
 }
 
-.buttonn {
-    -fx-background-color: red;
+.input_fieldALT{
+    -fx-background-color: rgba(255, 255, 255, 0.39);
+    -fx-font-size: 1em;
+    -fx-font-style: System;
+    -fx-background-radius: 40;
+    -fx-text-fill: #ffffffb4;
+}
+
+.button_delete {
+    -fx-background-color: rgb(255, 161, 161);
+}
+
+.button_update {
+    -fx-background-color: rgba(135, 143, 255, 0.788);
+}
+
+.button_add {
+    -fx-background-color: rgba(145, 255, 135, 0.788);
 }

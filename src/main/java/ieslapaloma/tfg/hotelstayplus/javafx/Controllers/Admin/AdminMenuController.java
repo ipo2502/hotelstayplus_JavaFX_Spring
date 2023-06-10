@@ -47,9 +47,13 @@ public class AdminMenuController implements Initializable{
 
     private void onBookings() {
         System.out.println("bookings");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ADMINBOOKINGS);
+
     }
     private void onDashboard() {
         System.out.println("onDashboard");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ADMINDASHBOARD);
+
 
     }private void onLogOut() {
         System.out.println("onLogOut");
@@ -64,6 +68,8 @@ public class AdminMenuController implements Initializable{
         
     }private void onHotels() {
         System.out.println("onHotels");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ADMINBOOKINGS);
+
     }
     
 }

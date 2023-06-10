@@ -17,7 +17,9 @@ public class AdminController implements Initializable {
         .addListener((observable, oldValue, newValue) -> {
             switch(newValue) {
                 case ADMINUSER -> client_parentAdmin.setCenter(Model.getInstance().getViewFactory().getAdminUserView());
-                
+                case ADMINDASHBOARD -> client_parentAdmin.setCenter(Model.getInstance().getViewFactory().getAdminDashboardView());
+                case ADMINBOOKINGS -> client_parentAdmin.setCenter(Model.getInstance().getViewFactory().getAdminBookingsView());
+                case ADMINHOTELS -> client_parentAdmin.setCenter(Model.getInstance().getViewFactory().getAdminHotelsView());
                 default -> client_parentAdmin.setCenter(Model.getInstance().getViewFactory().getDashboardView());
                 
             }

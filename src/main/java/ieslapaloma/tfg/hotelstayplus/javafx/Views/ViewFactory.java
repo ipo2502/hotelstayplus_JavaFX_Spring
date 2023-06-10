@@ -30,7 +30,9 @@ public class ViewFactory {
     private VBox failedBookingView;
     private VBox maxBookingView;
     private VBox adminUserView;
-    
+    private VBox adminDashboardView;
+    private VBox adminHotelsView;
+    private VBox adminBookingsView;
 
     public ViewFactory() {
         this.loginAccountType = AccountType.CLIENT;
@@ -234,6 +236,42 @@ public class ViewFactory {
             }
         }
         return adminUserView;
+    }
+
+    public VBox getAdminDashboardView() {
+        System.out.println("> adminDashboardView ");
+        if (adminDashboardView == null) {
+            try {
+                adminDashboardView = Paths.getFXML(ClientMenuOptions.ADMINDASHBOARD, getClass()).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return adminDashboardView;
+    }
+
+    public VBox getAdminHotelsView() {
+        System.out.println("> AdminHotelsView ");
+        if (adminHotelsView == null) {
+            try {
+                adminHotelsView = Paths.getFXML(ClientMenuOptions.ADMINHOTELS, getClass()).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return adminHotelsView;
+    }
+
+    public VBox getAdminBookingsView() {
+        System.out.println("> AdminBookingsView ");
+        if (adminBookingsView == null) {
+            try {
+                adminBookingsView = Paths.getFXML(ClientMenuOptions.ADMINBOOKINGS, getClass()).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return adminBookingsView;
     }
     
 }

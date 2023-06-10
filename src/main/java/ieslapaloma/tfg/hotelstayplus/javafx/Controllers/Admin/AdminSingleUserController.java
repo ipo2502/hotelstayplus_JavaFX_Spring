@@ -59,21 +59,24 @@ public class AdminSingleUserController implements Initializable{
     @FXML
     private Label id_lbl;
 
+    boolean edit1 = false;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
 
     public void setData(Client client) {
         setAllDisable(true);
-
+        bookings_fld.setDisable(true);
         int clientBookings = 0; //preguntar a la BD cuantos tiene 
 
-        userName_lbl.setText(client.getName());
+        userName_lbl.setText(client.getName() + " " +client.getSurnames());
         email_fld.setText(client.getEmail());
         user_fld.setText(client.getUsername());
         phoneNumber_fld.setText(client.getPhoneNumber());
         bookings_fld.setText(String.valueOf(clientBookings));
-        password_fld.setText(client.getPassword());
+        String password = "*".repeat(client.getPassword().length());
+        password_fld.setText(password);
         address_fld.setText(client.getAddress());
 
         id_lbl.setText(String.valueOf(client.getId()));
@@ -86,18 +89,44 @@ public class AdminSingleUserController implements Initializable{
         Long id = Long.valueOf(id_lbl.getText());
         System.out.println("delete client with id" +id);
         DBManager.getInstance().getClientService().deleteClientById(id);
-        AdminUserController.getInstance().initialize(null, null);
+        AdminUserController.getInstance().load();
+    }
+
+    private void pulse() {
+        if (edit1) {
+            edit1 = false;
+        } else {
+            edit1 = true;
+        }
     }
 
     private void onEdit() {
-        
+        pulse();
+        if (edit1) {
+            setAllDisable(false);
+            edit_btn.setStyle("-fx-background-color: rgba(145, 255, 135, 0.788);");
+            
+
+        } else {
+            edit_btn.setStyle("-fx-background-color: rgba(135, 143, 255, 0.788);");
+            Client client = DBManager.getInstance().getClientService().getClientById(Long.valueOf(id_lbl.getText()));
+            client.setUsername(user_fld.getText());
+            client.setEmail(email_fld.getText());
+            client.setPassword(password_fld.getText());
+            client.setAddress(address_fld.getText());
+            client.setPhoneNumber(phoneNumber_fld.getText());
+            System.out.println("se va a updatear el cliente " + id_lbl.getText());
+            DBManager.getInstance().getClientService().updateClient(client);
+            setAllDisable(true);
+
+        }
+
     }
 
     private void setAllDisable(boolean b) {
         email_fld.setDisable(b);
         user_fld.setDisable(b);
         phoneNumber_fld.setDisable(b);
-        bookings_fld.setDisable(b);
         password_fld.setDisable(b);
         address_fld.setDisable(b);
     }

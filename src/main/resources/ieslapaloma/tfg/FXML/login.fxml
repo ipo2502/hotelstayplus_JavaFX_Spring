@@ -71,7 +71,7 @@
                         <String fx:value="input_field" />
                         <String fx:value="shadow" />
                      </styleClass></PasswordField>
-                  <Button fx:id="login_btn" mnemonicParsing="false" prefHeight="24.0" prefWidth="104.0" text="Iniciar sesión">
+                  <Button fx:id="login_btn" mnemonicParsing="false" prefHeight="24.0" prefWidth="104.0" styleClass="buttton" text="Iniciar sesión">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin></Button>

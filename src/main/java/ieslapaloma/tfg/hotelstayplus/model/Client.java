@@ -48,6 +48,20 @@ public class Client {
 
     
     
+    public Client(String name, String surnames, String email, String username, int img_n, String password,
+            String phoneNumber, String address) {
+        this.name = name;
+        this.surnames = surnames;
+        this.email = email;
+        this.username = username;
+        this.img_n = img_n;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
+
+
     public Long getId() {
         return id;
     }

@@ -75,6 +75,12 @@ public class Paths { //C:\Users\ignac\Downloads\hotelstayplus\hotelstayplus\src\
                 return new FXMLLoader(cl.getResource(fxmlPath + "Client/maxBooking.fxml"));
             case ADMINUSER:
                 return new FXMLLoader(cl.getResource(fxmlPath + "Admin/adminUsers.fxml"));
+            case ADMINDASHBOARD:
+                return new FXMLLoader(cl.getResource(fxmlPath + "Admin/adminDashboard.fxml"));
+            case ADMINBOOKINGS:
+                return new FXMLLoader(cl.getResource(fxmlPath + "Admin/adminBookings.fxml"));
+            case ADMINHOTELS:
+                return new FXMLLoader(cl.getResource(fxmlPath + "Admin/adminHotels.fxml"));
             default:
                 break;
 

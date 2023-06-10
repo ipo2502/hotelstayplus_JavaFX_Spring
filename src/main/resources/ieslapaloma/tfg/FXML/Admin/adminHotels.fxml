@@ -35,15 +35,15 @@
          <children>
             <VBox alignment="CENTER" prefHeight="100.0" prefWidth="233.0">
                <children>
-                  <Label alignment="CENTER" styleClass="grey" text="Usuarios">
+                  <Label alignment="CENTER" styleClass="grey" text="Hoteles">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <graphic>
-                        <FontAwesomeIconView fill="#9a9a9a" glyphName="USER" styleClass="grey" />
+                        <FontAwesomeIconView fill="#9a9a9a" glyphName="HOTEL" styleClass="grey" />
                      </graphic>
                   </Label>
-                  <Label fx:id="nHotels_lbl" styleClass="grey" text="2 usuarios" />
+                  <Label fx:id="nHotels_lbl" styleClass="grey" text="2 hoteles" />
                </children>
             </VBox>
             <Line endX="896.75732421875" endY="0.0037584304809570312" startX="539.878662109375" startY="0.0018792152404785156" stroke="#989898" strokeWidth="2.0" styleClass="ln" />
