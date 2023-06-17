@@ -98,6 +98,18 @@ public class Paths { //C:\Users\ignac\Downloads\hotelstayplus\hotelstayplus\src\
         return null;
     }
 
+    public static String getStarsUrlImage(int stars) {
+        switch(stars) {
+            case 1: return "/ieslapaloma/tfg/Images/stars1.png";
+            case 2: return "/ieslapaloma/tfg/Images/stars2.png";
+            case 3: return "/ieslapaloma/tfg/Images/stars3.png";
+            case 4: return "/ieslapaloma/tfg/Images/stars4.png";
+            case 5: return "/ieslapaloma/tfg/Images/stars5.png";
+
+            default: return "";
+        }
+    }
+
     public static String getHotelUrlImage(int img_n) {
         switch(img_n) {
             case 1: return "/ieslapaloma/tfg/Images/hotel_sample.jpg";
@@ -106,13 +118,27 @@ public class Paths { //C:\Users\ignac\Downloads\hotelstayplus\hotelstayplus\src\
             case 4: return "/ieslapaloma/tfg/Images/hotel_sample4.jpg";
             case 5: return "/ieslapaloma/tfg/Images/hotel_sample5.jpg";
             case 6: return "/ieslapaloma/tfg/Images/hotel_sample6.jpg";
-            case 7: return "/ieslapaloma/tfg/Images/stars1.png";
-            case 8: return "/ieslapaloma/tfg/Images/stars2.png";
-            case 9: return "/ieslapaloma/tfg/Images/stars3.png";
-            case 10: return "/ieslapaloma/tfg/Images/stars4.png";
-            case 11: return "/ieslapaloma/tfg/Images/stars5.png";
+            case 7: return "/ieslapaloma/tfg/Images/hotel_sample7.jpg";
+            case 8: return "/ieslapaloma/tfg/Images/hotel_sample8.jpg";
+            case 9: return "/ieslapaloma/tfg/Images/hotel_sample9.jpg";
+            case 10: return "/ieslapaloma/tfg/Images/hotel_sample10.jpg";
+            case 11: return "/ieslapaloma/tfg/Images/hotel_sample11.jpg";
+            case 12: return "/ieslapaloma/tfg/Images/hotel_sample12.jpg";
+            case 13: return "/ieslapaloma/tfg/Images/hotel_sample13.jpg";
+            case 14: return "/ieslapaloma/tfg/Images/hotel_sample14.jpg";
+            case 15: return "/ieslapaloma/tfg/Images/hotel_sample15.jpg";
+            case 16: return "/ieslapaloma/tfg/Images/hotel_sample16.jpg";
+            case 17: return "/ieslapaloma/tfg/Images/hotel_sample17.jpg";
+            case 18: return "/ieslapaloma/tfg/Images/hotel_sample18.jpg";
+            case 19: return "/ieslapaloma/tfg/Images/hotel_sample19.jpg";
+            case 20: return "/ieslapaloma/tfg/Images/hotel_sample20.jpg";
+            case 21: return "/ieslapaloma/tfg/Images/hotel_sample21.jpg";
+            case 22: return "/ieslapaloma/tfg/Images/hotel_sample22.jpg";
+            case 23: return "/ieslapaloma/tfg/Images/hotel_sample23.jpg";
+            case 24: return "/ieslapaloma/tfg/Images/hotel_sample24.jpg";
+            case 25: return "/ieslapaloma/tfg/Images/hotel_sample25.jpg";
 
-            default: return "";
+            default: return "/ieslapaloma/tfg/Images/hotel_sample25.jpg";
         }
     }
 

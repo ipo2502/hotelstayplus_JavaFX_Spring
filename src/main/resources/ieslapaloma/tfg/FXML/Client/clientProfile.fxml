@@ -72,7 +72,7 @@
                         <Font size="11.0" />
                      </font></Label>
                   <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-628.0" layoutY="365.0" startX="650.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />
-                  <Button fx:id="edit_btn" layoutX="120.0" layoutY="386.0" mnemonicParsing="false" text="Editar" />
+                  <Button fx:id="edit_btn" layoutX="120.0" layoutY="386.0" mnemonicParsing="false" styleClass="buttonn" text="Editar" />
                   <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-657.0" layoutY="398.0" startX="850.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />
                   <Line endX="896.75732421875" endY="0.0037584304809570312" layoutX="-800.0" layoutY="397.0" startX="850.0" startY="0.0018792152404785156" stroke="#989898" strokeLineCap="BUTT" strokeWidth="0.2" styleClass="ln" />
                   <Label layoutX="297.0" layoutY="188.0" styleClass="grey" text="Apellidos:" />
@@ -85,7 +85,7 @@
                   <TextField fx:id="phonenumber_fld" layoutX="134.0" layoutY="319.0" prefHeight="25.0" prefWidth="124.0" styleClass="input_field" />
                   <TextField fx:id="surnames_fld" layoutX="391.0" layoutY="184.0" prefHeight="25.0" prefWidth="140.0" styleClass="input_field" />
                   <TextField fx:id="address_fld" layoutX="391.0" layoutY="251.0" prefHeight="25.0" prefWidth="140.0" styleClass="input_field" />
-                  <Button fx:id="update_btn" layoutX="389.0" layoutY="386.0" mnemonicParsing="false" text="Actualizar" />
+                  <Button fx:id="update_btn" layoutX="389.0" layoutY="386.0" mnemonicParsing="false" styleClass="buttonn" text="Actualizar" />
                </children>
             </AnchorPane>
          </children>

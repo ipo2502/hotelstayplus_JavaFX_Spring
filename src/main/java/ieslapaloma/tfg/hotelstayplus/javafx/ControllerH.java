@@ -99,7 +99,7 @@ public class ControllerH implements Initializable{
         load();
         filter_btn.setOnAction(event -> onFilter(hotelitos));
         filter_selector.setItems(FXCollections.observableArrayList(
-            Filters.LIKED, Filters.RECENTS, Filters.CHEAP, Filters.EXPENSIVE, Filters.LESSSTARS, Filters.MORESTARS)
+            Filters.Recientes, Filters.Baratos, Filters.Caros, Filters.MenosEstrellas, Filters.MasEstrellas)
             );
 
         //nHotels_lbl.setText(String.valueOf(clientRepository.count()));
@@ -109,23 +109,23 @@ public class ControllerH implements Initializable{
 
     private void onFilter(List<Hotel> collection) {
         switch(filter_selector.getValue()) {
-            case MORESTARS:
+            case MasEstrellas:
                 Collections.sort(hotelitos, Comparator.comparingInt(Hotel::getStars).reversed());
                 load();
                 break;
-            case LESSSTARS:
+            case MenosEstrellas:
                 Collections.sort(hotelitos, Comparator.comparingInt(Hotel::getStars));
                 load();
                 break;
-            case EXPENSIVE:
+            case Caros:
                 Collections.sort(hotelitos, Comparator.comparingDouble(Hotel::getPrice).reversed());
                 load();
                 break;
-            case CHEAP:
+            case Baratos:
                 Collections.sort(hotelitos, Comparator.comparingDouble(Hotel::getPrice));
                 load();
                 break;
-            case RECENTS:
+            case Recientes:
                 hotelitos = DBManager.getInstance().getHotelService().getAllHotels();
                 Collections.reverse(hotelitos);
                 load();

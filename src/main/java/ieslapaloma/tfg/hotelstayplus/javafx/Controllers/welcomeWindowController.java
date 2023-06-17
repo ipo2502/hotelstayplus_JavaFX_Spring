@@ -9,7 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class welcomeWindowController implements Initializable{
+public class welcomeWindowController implements Initializable {
     
     @FXML
     private Button start_btn;
@@ -20,7 +20,6 @@ public class welcomeWindowController implements Initializable{
     }
 
     public void onStart() {
-        System.out.println(start_btn.toString());
         Model.getInstance().getViewFactory().closedStage((Stage) start_btn.getScene().getWindow());
         Model.getInstance().getViewFactory().showLoginWindow();
     }

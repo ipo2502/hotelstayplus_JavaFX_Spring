@@ -166,7 +166,7 @@
                   </Label>
                   <CheckBox fx:id="accept_cbox" mnemonicParsing="false" text="Acepto los términos de HotelStay+" textFill="WHITE" />
                   <CheckBox fx:id="accept2_cbox" mnemonicParsing="false" prefHeight="56.0" prefWidth="250.0" text="Al crear una cuenta en esta página web, acepto recibir comunicaciones publicitarias." textFill="WHITE" wrapText="true" />
-                  <Button fx:id="register_btn" mnemonicParsing="false" prefHeight="24.0" prefWidth="104.0" text="Registrarse">
+                  <Button fx:id="register_btn" mnemonicParsing="false" prefHeight="24.0" prefWidth="104.0" styleClass="buttton" text="Registrarse">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>

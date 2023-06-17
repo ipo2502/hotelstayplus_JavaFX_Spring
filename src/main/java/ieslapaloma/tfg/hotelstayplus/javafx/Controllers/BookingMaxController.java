@@ -12,11 +12,14 @@ import java.util.ResourceBundle;
 import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
+import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import ieslapaloma.tfg.hotelstayplus.model.Booking;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -92,17 +95,84 @@ public class BookingMaxController implements Initializable{
     @FXML
     private Label tourismFee_lbl;
 
+    @FXML
+    private Button realCancelBooking_btn;
+
+    public static BookingMaxController instance;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        instance = this;
         load();
+        cancelBooking_btn.setOnAction(event -> onCancel());
+        contact_btn.setOnAction(event -> onContact());
+        realCancelBooking_btn.setOnAction(event -> onRealCancel());
+    }
+
+    private void onContact() {
+                showAlert("Llame al número de teléfono (6463605568) o escriba al correo " +hotelName_lbl.getText()+"@gmail.com");
+    }
+
+    private void onCancel() {
+        showAlert("Tenga en cuenta que si desea cancelar su reserva, es posible que no recupere su dinero");
+        realCancelBooking_btn.setVisible(true);
+    }
+
+    private void onRealCancel() {
+        showConfirmationDialog();
+    }
+
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Date Selection");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    private void showConfirmationDialog() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("¿Está completamente seguro de que quiere cancelar la reserva?");
+        alert.setHeaderText("El hotel " +hotelName_lbl.getText()+ " no permite devoluciones");
+        alert.setContentText("No hay marcha atrás.");
+        //alert.getDialogPane().getStyleClass().add("alert");
+
+        ButtonType yesButton = new ButtonType("Sí");
+        ButtonType noButton = new ButtonType("No");
+
+        alert.getButtonTypes().setAll(yesButton, noButton);
+
+        alert.showAndWait().ifPresent(buttonType -> {
+            if (buttonType == yesButton) {
+                // User clicked "Yes"
+                System.out.println("Confirmed");
+                onDelete();
+            } else if (buttonType == noButton) {
+                // User clicked "No"
+                System.out.println("Cancelled");
+            }
+        });
+    }
+
+    private void onDelete() {
+        Long id = Model.getInstance().getModelBooking().getId();
+        DBManager.getInstance().getBookingService().deleteBookingById(id);
+        ClientBookingsController.getInstance().load();
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.BOOKINGS);
+
+    }
+
+    public static BookingMaxController getInstance() {
+        return instance;
     }
     
     private void load() {
+        realCancelBooking_btn.setVisible(false);
         Booking booking = Model.getInstance().getModelBooking();
         Hotel hotel = booking.getHotel();
         hotelName_lbl.setText(hotel.getName());
         //phoneNumber_lbl.setText(hotel.getPhoneNumber()); //añadir phone number a hotel
-        //bookingN_lbl.setText(booking.getBookingCode()); //next time
+        bookingN_lbl.setText(booking.getBookingCode()); //next time
         nightsN_lbl.setText(String.valueOf(booking.getNumbernights()));
 
         String urlImg = Paths.getHotelUrlImage(hotel.getHotelImg_n());

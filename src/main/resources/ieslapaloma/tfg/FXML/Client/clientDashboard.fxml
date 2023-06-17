@@ -51,7 +51,7 @@
             <VBox alignment="CENTER" prefHeight="100.0" prefWidth="233.0" spacing="10.0">
                <children>
                   <ChoiceBox fx:id="filter_selector" prefWidth="150.0" styleClass="account_selector" />
-                  <Button fx:id="filter_btn" mnemonicParsing="false" prefHeight="33.0" prefWidth="80.0" text="Filtrar" />
+                  <Button fx:id="filter_btn" mnemonicParsing="false" prefHeight="33.0" prefWidth="80.0" styleClass="buttonn" text="Filtrar" />
                </children>
             </VBox>
          </children>

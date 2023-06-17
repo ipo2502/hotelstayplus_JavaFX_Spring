@@ -92,15 +92,16 @@ public class AdminAddUserController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         instance = this;
-
+        bookings_fld.setDisable(true);
+        addUser_btn.setOnAction(event -> onAdd());
     }
 
     public static AdminAddUserController getInstance() {
         return instance;
     }
 
-    public void onEdit() {
-        Client client = DBManager.getInstance().getClientService().getClientById(Long.valueOf(id_lbl.getText()));
+    public void onAdd() {
+        Client client = new Client();
         client.setUsername(user_fld.getText());
         client.setEmail(email_fld.getText());
         client.setName(name_fld.getText());
@@ -108,7 +109,8 @@ public class AdminAddUserController implements Initializable{
         client.setPassword(password_fld.getText());
         client.setAddress(address_fld.getText());
         client.setPhoneNumber(phoneNumber_fld.getText());
-        DBManager.getInstance().getClientService().updateClient(client);
+        DBManager.getInstance().getClientService().addClient(client);
+        AdminUserController.getInstance().load();
     }
 
     

@@ -201,7 +201,7 @@
                   <VBox alignment="TOP_CENTER" layoutX="647.0" layoutY="537.0" prefHeight="118.0" prefWidth="201.0" styleClass="help">
                      <children>
                         <Label alignment="CENTER" prefHeight="61.0" prefWidth="176.0" text="¿Tienes alguna duda sin responder? Contacta con el hotel" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-                        <Button fx:id="contact_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" text="Contactar" />
+                        <Button fx:id="contact_btn" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" styleClass="buttonn" text="Contactar" />
                      </children>
                   </VBox>
                   <VBox layoutX="29.0" layoutY="383.0" prefHeight="77.0" prefWidth="726.0">
@@ -230,7 +230,8 @@
                         <Label text="HotelStay+ no se hace cargo de problemas externos a los pagos realizados por medio de su plataforma." textFill="WHITE" />
                      </children>
                   </VBox>
-                  <Button fx:id="cancelBooking_btn" layoutX="227.0" layoutY="517.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Gestionar" />
+                  <Button fx:id="cancelBooking_btn" layoutX="227.0" layoutY="517.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" styleClass="buttonn" text="Gestionar" />
+                  <Button fx:id="realCancelBooking_btn" layoutX="693.0" layoutY="422.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="110.0" styleClass="redbutton" text="Cancelar&#10;reserva" textAlignment="CENTER" textFill="#ff1414" />
                </children>
             </AnchorPane>
          </children>

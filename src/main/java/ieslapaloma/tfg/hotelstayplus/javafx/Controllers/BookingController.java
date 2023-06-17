@@ -10,6 +10,7 @@ import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import ieslapaloma.tfg.hotelstayplus.model.Booking;
+import ieslapaloma.tfg.hotelstayplus.model.Client;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -23,6 +24,9 @@ public class BookingController implements Initializable{
     public static BookingController instance;
     @FXML
     private Label date1_lbl;
+
+    @FXML
+    private Label booked_lbl;
 
     @FXML
     private Label date2_lbl;
@@ -61,17 +65,19 @@ public class BookingController implements Initializable{
     }
 
     public void handleItemClick(MouseEvent event) {
+        booked_lbl.setVisible(false);
         Long id = Long.valueOf(id_lbl.getText());
         Booking booking = DBManager.getInstance().getBookingService().getBookingById(id);
         //Model.getInstance().setModelBooking(booking);
         Model.getInstance().setModelBooking(booking);
         System.out.println("se llega aki??");
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.MAXBOOKING);
+        BookingMaxController.getInstance().initialize(null, null);
     }
 
     public void setData(Booking booking) {
         hotelName_lbl.setText(booking.getHotel().getName());
-        //price_lbl.setText(booking.getHotel().getPrice());
+        price_lbl.setText("€ "+String.valueOf(booking.getHotel().getPrice()));
         location_lbl.setText(booking.getHotel().getLocation());
         String dateStart = formatLocalDate(booking.getDateStart());
         String dateEnd = formatLocalDate(booking.getDateEnd());
@@ -94,6 +100,13 @@ public class BookingController implements Initializable{
         System.out.println("pre coger el id");
         id_lbl.setText(String.valueOf(booking.getId()));
 
+        Client client = booking.getClient();
+        booked_lbl.setText(client.getName() + " " + client.getSurnames());
+
+    }
+
+    public void setBookedLabelVisible() {
+        booked_lbl.setVisible(true);
     }
 
     private String formatLocalDate(LocalDate date) {

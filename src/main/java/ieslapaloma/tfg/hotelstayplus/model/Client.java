@@ -35,14 +35,6 @@ public class Client {
 
     @Column
     private String address;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-        name = "user_liked_hotel",
-        joinColumns = @JoinColumn(name = "client_id"),
-        inverseJoinColumns = @JoinColumn(name = "hotel_id")
-    )
-    private Set<Hotel> likedHotels = new HashSet<>();
     
     public Client() {}
 
@@ -167,20 +159,6 @@ public class Client {
     public void setAddress(String address) {
         this.address = address;
     }
-
-
-
-    public Set<Hotel> getLikedHotels() {
-        return likedHotels;
-    }
-
-
-
-    public void setLikedHotels(Set<Hotel> likedHotels) {
-        this.likedHotels = likedHotels;
-    }
-
-
 
     @Override
     public String toString() {

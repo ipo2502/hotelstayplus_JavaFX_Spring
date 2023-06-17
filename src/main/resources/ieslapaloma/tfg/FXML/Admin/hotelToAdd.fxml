@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="850.0" styleClass="top_containeralt" stylesheets="@../../CSS/booking.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Admin.AdminAddHotelController">
+   <children>
+      <ImageView fx:id="backgroundImg_img" fitHeight="156.0" fitWidth="313.0" layoutX="-1.0" layoutY="-306.0" opacity="0.4" pickOnBounds="true" smooth="false" styleClass="image" visible="false">
+         <image>
+            <Image url="@../../Images/hotel_sample2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="little_img" fitHeight="117.0" fitWidth="100.0" layoutX="14.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" styleClass="image">
+         <image>
+            <Image url="@../../Images/hotel_sample2.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER_LEFT" layoutX="134.0" layoutY="12.0" prefHeight="100.0" prefWidth="206.0" spacing="7.0">
+         <children>
+            <Label fx:id="hotelName_lbl" prefHeight="20.0" prefWidth="178.0" text="Hotel Sample" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl" text="Nombre" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font></Label>
+                  <TextField fx:id="hotelName_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="113.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl2" text="Correo" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="email_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="125.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="755.0" layoutY="16.0" prefHeight="195.0" prefWidth="69.0" spacing="10.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="144.0" text="Acciones" textAlignment="CENTER" textFill="WHITE" underline="true" />
+            <Button fx:id="addNHotel_btn" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" styleClass="button_add" text="Añadir" wrapText="true">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Line endX="-85.0" endY="41.0" layoutX="806.0" layoutY="117.0" startX="-85.0" startY="-44.0" stroke="#9e9e9e57" />
+      <VBox alignment="CENTER_LEFT" layoutX="322.0" layoutY="4.0" prefHeight="100.0" prefWidth="206.0" spacing="7.0">
+         <children>
+            <Label fx:id="hotelName_lbl1" prefHeight="20.0" prefWidth="178.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl1" text="Número" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="phoneNumber_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="118.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl21" text="Código Postal" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="postalCode_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="85.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl13" text="Web" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="web_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="136.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="509.0" layoutY="4.0" prefHeight="100.0" prefWidth="206.0" spacing="7.0">
+         <children>
+            <Label fx:id="hotelName_lbl11" prefHeight="20.0" prefWidth="178.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl11" text="Localidad" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="city_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="117.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl211" text="Dirección" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="address_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="118.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label fx:id="id_lbl" layoutX="514.0" layoutY="-100.0" prefHeight="20.0" prefWidth="178.0" text="id" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER_LEFT" layoutX="134.0" layoutY="104.0" prefHeight="100.0" prefWidth="184.0" spacing="7.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl12" text="Estrellas" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="stars_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="71.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="date1_lbl122" text="/5★" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl212" text="Valoración" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="rating_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="60.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="date1_lbl2122" text="/10" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="274.0" spacing="10.0">
+               <children>
+                  <Label fx:id="date1_lbl2121" text="Precio" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="price_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="85.0" styleClass="input_fieldALT">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="date1_lbl21211" text="€" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" layoutX="322.0" layoutY="121.0" prefHeight="25.0" prefWidth="155.0" spacing="10.0">
+         <children>
+            <Label fx:id="date1_lbl121" text="Imagen" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Button fx:id="leftArrow_btn" mnemonicParsing="false" prefHeight="25.0" prefWidth="21.0" styleClass="button_update" text="&lt;" wrapText="true" />
+            <TextField fx:id="img_fld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="31.0" styleClass="input_fieldALT" text="1">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </TextField>
+            <Button fx:id="rightArrow_btn" mnemonicParsing="false" prefHeight="25.0" prefWidth="21.0" styleClass="button_add" text="&gt;" wrapText="true" />
+         </children>
+      </HBox>
+      <ImageView fx:id="imgChoose_img" fitHeight="117.0" fitWidth="100.0" layoutX="556.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" styleClass="image">
+         <image>
+            <Image url="@../../Images/hotel_sample2.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="322.0" layoutY="156.0" prefHeight="56.0" prefWidth="195.0">
+         <children>
+            <Label fx:id="date1_lbl1211" text="Servicios" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <CheckBox fx:id="wifi_cbox" mnemonicParsing="false" prefHeight="22.0" prefWidth="56.0" text="Wifi" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="bar_cbox" mnemonicParsing="false" prefHeight="22.0" prefWidth="56.0" text="Bar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="desayuno_cbox" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" text="Desayuno" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <CheckBox fx:id="hours24_cbox" mnemonicParsing="false" prefHeight="20.0" prefWidth="57.0" text="24 horas" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="9.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="parking_cbox" mnemonicParsing="false" prefHeight="20.0" prefWidth="66.0" text="Parking" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

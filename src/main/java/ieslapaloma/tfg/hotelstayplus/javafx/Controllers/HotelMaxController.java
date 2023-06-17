@@ -4,8 +4,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
@@ -40,9 +42,6 @@ public class HotelMaxController implements Initializable{
     private Button booking_btn;
 
     @FXML
-    private FontAwesomeIconView heart_icon;
-
-    @FXML
     private Label hotelName_lbl;
 
     @FXML
@@ -59,9 +58,6 @@ public class HotelMaxController implements Initializable{
 
     @FXML
     private ImageView imageSmall5_img;
-
-    @FXML
-    private Button like_btn;
 
     @FXML
     private Label location_lbl;
@@ -117,6 +113,8 @@ public class HotelMaxController implements Initializable{
     @FXML
     private Label website_lbl;
 
+    static Long id;
+
     private List<Service> allServices = List.of(
         new Service(1L, "Wifi"), 
         new Service(2L, "Bar"), 
@@ -126,6 +124,7 @@ public class HotelMaxController implements Initializable{
 
     boolean red = false;
     static HotelMaxController instance;
+    static Hotel hotel = Model.getInstance().getModelHotel();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -136,14 +135,13 @@ public class HotelMaxController implements Initializable{
         //bigText_lbl.setText("El Hotel Paradise es un lujoso refugio situado en la hermosa costa de una isla paradisíaca. Con su arquitectura moderna y elegante, este hotel de cinco estrellas ofrece a sus huéspedes una experiencia inigualable de comodidad y lujo.");
         //bigText2_lbl.setText("Ubicado en un entorno idílico, rodeado de exuberantes jardines tropicales y con vistas impresionantes al océano, el Hotel Paradise combina a la perfección la belleza natural con las comodidades modernas.");
         load();
-        like_btn.setOnAction(event -> onLike());
         booking_btn.setOnAction(event -> onBooking());
     }
     
     private void load() {
         //System.out.println("EJECUCION DEL LOAD -------------------------------------------------------");
-        Hotel hotel = Model.getInstance().getModelHotel();
-
+        hotel = Model.getInstance().getModelHotel();
+        id = hotel.getId();
         System.out.println(servDesayuno_icon.getOpacity());
         allServicesOpacity();
 
@@ -177,6 +175,7 @@ public class HotelMaxController implements Initializable{
         website_lbl.setText(hotel.getWebsite());
         stars_img.setImage(imageHotel2);
         setRating(hotel.getRating(), ratingtitle_lbl, rating_icon);
+
     }
 
     public static HotelMaxController getInstance() {
@@ -209,18 +208,8 @@ public class HotelMaxController implements Initializable{
         servParking_lbl.setOpacity(0.57);
         servParking_lbl.setTextFill(Color.WHITE);
     }
-    private void onLike() {
-        System.out.println(like_btn.toString());
-        if (!red) {
-            heart_icon.setFill(Color.valueOf("FF00009e")); //heartIcon.setFill(Color.RED);
-            red = true;
-            
-        } else {
-            heart_icon.setFill(Color.valueOf("ffffff8e")); //heartIcon.setFill(Color.RED);
-            red = false;
-        }
 
-    }
+    
 
     private void onBooking() {
         Hotel hotel = Model.getInstance().getModelHotel();

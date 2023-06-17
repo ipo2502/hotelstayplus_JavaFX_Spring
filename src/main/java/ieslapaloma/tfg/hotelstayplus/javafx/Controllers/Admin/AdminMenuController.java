@@ -8,6 +8,7 @@ import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class AdminMenuController implements Initializable{
 
@@ -57,6 +58,12 @@ public class AdminMenuController implements Initializable{
 
     }private void onLogOut() {
         System.out.println("onLogOut");
+        Stage stage = (Stage) bookings_btn.getScene().getWindow();
+        Model.getInstance().getViewFactory().closedStage(stage);
+        Model.getInstance().setModelClient(null);
+        //Platform.exit();
+        Model.getInstance().setClientLoginSucessFlag(false);
+        Model.getInstance().getViewFactory().showLoginWindow();
 
     }private void onUsers() {
         System.out.println("onUsers");
@@ -68,7 +75,7 @@ public class AdminMenuController implements Initializable{
         
     }private void onHotels() {
         System.out.println("onHotels");
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ADMINBOOKINGS);
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ADMINHOTELS);
 
     }
     

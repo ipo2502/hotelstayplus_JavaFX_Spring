@@ -103,7 +103,7 @@ public class HotelController implements Initializable{
         hotelLayout.setBackground(background);
 
         String urlImg = Paths.getHotelUrlImage(hotel.getHotelImg_n());
-        String urlStarsImg = Paths.getHotelUrlImage((hotel.getStars()+6));
+        String urlStarsImg = Paths.getStarsUrlImage((hotel.getStars()));
 
         Image imageCover = new Image(getClass().getResourceAsStream(urlImg));
         hotelImage.setImage(imageCover);

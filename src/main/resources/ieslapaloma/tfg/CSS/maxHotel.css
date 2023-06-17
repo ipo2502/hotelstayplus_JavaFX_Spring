@@ -106,14 +106,14 @@
     -fx-stroke-width: 2px;
 }
 
-.button {
+.buttonn {
     -fx-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.158), rgba(255, 255, 255, 0.1));
     -fx-border-radius: 30;
     -fx-background-radius: 30;
     -fx-text-fill: linear-gradient(to right, rgba(255, 255, 255, 0.582), rgba(255, 255, 255, 0.555));;
 }
 
-.button:hover {
+.buttonn:hover {
     -fx-cursor: hand;
     -fx-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.418), rgba(255, 255, 255, 0.1));
 
@@ -204,5 +204,34 @@
 .help {
     -fx-background-color: #272727;
     -fx-background-radius: 30 30 0 0;
+}
+
+.redbutton {
+    -fx-background-color: linear-gradient(to right, rgba(160, 0, 0, 0.718), rgba(48, 0, 0, 0.811));
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-font-family: FranziskaWebW03-Bold;
+    -fx-text-fill: linear-gradient(to right, rgba(255, 255, 255, 0.582), rgba(255, 255, 255, 0.555));;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.574), 10, 0.5, 0, 0);
+
+}
+
+.redbutton:hover {
+    -fx-background-color: linear-gradient(to right, rgba(234, 0, 0, 0.718), rgba(125, 0, 0, 0.811));
+}
+
+.buttonn_r {
+    -fx-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.741), rgba(255, 255, 255, 0.352));
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.775), 10, 0.5, 0, 0);
+
+    -fx-text-fill: linear-gradient(to right, rgba(255, 255, 255, 0.582), rgba(255, 255, 255, 0.555));;
+}
+
+.buttonn_r:hover {
+    -fx-cursor: hand;
+    -fx-background-color: linear-gradient(to right, rgba(0, 13, 113, 0.418), rgba(255, 255, 255, 0.1));
+
 }
 

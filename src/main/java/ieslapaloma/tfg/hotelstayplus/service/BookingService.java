@@ -41,6 +41,14 @@ public class BookingService {
         return s.get(s.size()-1).getId();
     }
 
+    public int getNumberOfBookingsByClientId(Long clientId) {
+        return bookingRepository.countBookingsByClientId(clientId);
+    }
+
+    public void deleteBookingById(Long id) {
+        bookingRepository.deleteById(id);
+    }
+
     public boolean createBooking(Booking booking) {
         Hotel hotel = booking.getHotel();
         LocalDate dateStart = booking.getDateStart();

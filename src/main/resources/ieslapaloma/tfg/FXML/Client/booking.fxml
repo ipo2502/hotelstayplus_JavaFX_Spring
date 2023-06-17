@@ -39,5 +39,6 @@
       </VBox>
       <Label fx:id="price_lbl" layoutX="774.0" layoutY="11.0" text="€ 299.99" textFill="WHITE" />
       <Label fx:id="id_lbl" layoutX="587.0" layoutY="50.0" text="€ 299.99" textFill="WHITE" />
+      <Label fx:id="booked_lbl" layoutX="587.0" layoutY="71.0" text="Reservado por el usuario " textFill="WHITE" visible="false" />
    </children>
 </AnchorPane>

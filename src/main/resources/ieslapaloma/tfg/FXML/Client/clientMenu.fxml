@@ -17,7 +17,7 @@
                <children>
                   <Button fx:id="dashboard_btn" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="Principal">
                      <graphic>
-                        <FontAwesomeIconView />
+                        <FontAwesomeIconView glyphName="DEDENT" />
                      </graphic>
                      <VBox.margin>
                         <Insets top="10.0" />
@@ -25,18 +25,18 @@
                   </Button>
                   <Button fx:id="bookings_btn" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="Mis Reservas">
                      <graphic>
-                        <FontAwesomeIconView />
+                        <FontAwesomeIconView glyphName="TICKET" />
                      </graphic>
                   </Button>
                   <Line endX="100.0" stroke="#656565" strokeWidth="3.0" />
                   <Button fx:id="profile_btn" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="Mi Perfil">
                      <graphic>
-                        <FontAwesomeIconView />
+                        <FontAwesomeIconView glyphName="USER" />
                      </graphic>
                   </Button>
                   <Button fx:id="logout_btn" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="Salir">
                      <graphic>
-                        <FontAwesomeIconView />
+                        <FontAwesomeIconView glyphName="CROSSHAIRS" />
                      </graphic>
                   </Button>
                </children>

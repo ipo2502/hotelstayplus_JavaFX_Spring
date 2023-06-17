@@ -26,4 +26,23 @@ public class HotelService {
     public Optional<Hotel> getHotelById(Long id) {
         return hotelRepository.findById(id);
     }
+
+    public Hotel addHotel(Hotel hotel) {
+        return hotelRepository.saveAndFlush(hotel);
+    }
+
+    public void deleteHotelById(Long id) {
+        hotelRepository.deleteById(id);
+    }
+
+    public Hotel updateHotel(Hotel hotel) {
+        return hotelRepository.saveAndFlush(hotel);
+    }
+
+    public List<ieslapaloma.tfg.hotelstayplus.model.Service> getHotelServicesById(Long hotelId) {
+        Hotel hotel = hotelRepository.findById(hotelId)
+                .orElseThrow(() -> new RuntimeException("Hotel not found"));
+
+        return hotel.getServices();
+    }
 }

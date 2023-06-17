@@ -45,12 +45,15 @@ public class Hotel {
     @Column(name = "price")
     private Double price;
 
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Column(name = "email")
+    private String email;
+
     private Integer description_n1;
 
     private Integer description_n2;
-
-    @ManyToMany(mappedBy = "likedHotels")
-    private Set<Client> likedByUsers = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
@@ -61,6 +64,25 @@ public class Hotel {
     private List<Service> services = new ArrayList<>();
 
     public Hotel() {}
+
+    
+
+    public Hotel(String name, Integer stars, Double rating, String location, String city, String postalCode,
+            String website, Integer hotelImg_n, Double price, String phoneNumber, String email) {
+        this.name = name;
+        this.stars = stars;
+        this.rating = rating;
+        this.location = location;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.website = website;
+        this.hotelImg_n = hotelImg_n;
+        this.price = price;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+
 
     public Hotel(Long id, String nombre) {
         this.id = id;
@@ -98,8 +120,6 @@ public class Hotel {
         this.hotelImg_n = hotelImg_n;
     }
 
-    
-
     public Double getPrice() {
         return price;
     }
@@ -122,6 +142,22 @@ public class Hotel {
 
     public Integer getStars() {
         return stars;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setStars(Integer stars) {
@@ -154,14 +190,6 @@ public class Hotel {
 
     public void setHotelImg_n(Integer hotelImg_n) {
         this.hotelImg_n = hotelImg_n;
-    }
-
-    public Set<Client> getLikedByUsers() {
-        return likedByUsers;
-    }
-
-    public void setLikedByUsers(Set<Client> likedByUsers) {
-        this.likedByUsers = likedByUsers;
     }
 
     public void setPOJOname(String pOJOname) {

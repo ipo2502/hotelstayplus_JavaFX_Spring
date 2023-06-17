@@ -12,11 +12,11 @@ public class Booking {
     @Column(name = "booking_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_client")
     private Client client;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_hotel")
     private Hotel hotel;
 

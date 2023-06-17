@@ -68,7 +68,8 @@ public class AdminSingleUserController implements Initializable{
     public void setData(Client client) {
         setAllDisable(true);
         bookings_fld.setDisable(true);
-        int clientBookings = 0; //preguntar a la BD cuantos tiene 
+        password_fld.setDisable(true);
+        int clientBookings = DBManager.getInstance().getBookingService().getNumberOfBookingsByClientId(client.getId()); //preguntar a la BD cuantos tiene 
 
         userName_lbl.setText(client.getName() + " " +client.getSurnames());
         email_fld.setText(client.getEmail());
@@ -127,7 +128,6 @@ public class AdminSingleUserController implements Initializable{
         email_fld.setDisable(b);
         user_fld.setDisable(b);
         phoneNumber_fld.setDisable(b);
-        password_fld.setDisable(b);
         address_fld.setDisable(b);
     }
 

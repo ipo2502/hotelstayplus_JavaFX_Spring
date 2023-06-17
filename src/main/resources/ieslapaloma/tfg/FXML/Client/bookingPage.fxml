@@ -89,7 +89,7 @@
                         <Image url="@../../Images/stars5.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="booking_btn" layoutX="709.0" layoutY="47.0" mnemonicParsing="false" text="Reservar" textFill="#ff7e7e">
+                  <Button fx:id="booking_btn" layoutX="709.0" layoutY="47.0" mnemonicParsing="false" styleClass="buttonn_r" text="Reservar" textFill="#ff7e7e">
                      <font>
                         <Font name="Arial" size="19.0" />
                      </font>
@@ -102,7 +102,7 @@
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
                   </Label>
-                  <Button fx:id="like_btn" layoutX="635.0" layoutY="53.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="46.0">
+                  <Button fx:id="like_btn" layoutX="635.0" layoutY="53.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="46.0" styleClass="buttonn">
                      <graphic>
                         <FontAwesomeIconView fx:id="heart_icon" fill="#ffffff5e" glyphName="HEART" />
                      </graphic>
@@ -290,7 +290,7 @@
                               <Font name="System Bold Italic" size="22.0" />
                            </font>
                         </Label>
-                        <Button fx:id="calculate_btn" mnemonicParsing="false" text="Calcular" />
+                        <Button fx:id="calculate_btn" mnemonicParsing="false" styleClass="buttonn" text="Calcular" />
                      </children>
                   </VBox>
                   <HBox alignment="CENTER" layoutX="612.0" layoutY="182.0" prefHeight="100.0" prefWidth="186.0" spacing="5.0">

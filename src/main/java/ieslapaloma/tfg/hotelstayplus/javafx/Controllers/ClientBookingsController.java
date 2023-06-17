@@ -38,12 +38,12 @@ public class ClientBookingsController implements Initializable{
         return instance;
     }
 
-        private void load() {
+        public void load() {
             if (hotelesGrid == null) {
                 System.out.println("nulleooo");
     
             } else {
-
+            hotelesGrid.getChildren().clear();
             Long id = Model.getInstance().getModelClient().getId();
                 System.out.println(DBManager.getInstance().getBookingService().getAllBookingsByClientId(id));
                 

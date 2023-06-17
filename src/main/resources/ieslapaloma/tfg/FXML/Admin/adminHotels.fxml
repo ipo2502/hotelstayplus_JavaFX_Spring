@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/clientDashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Admin.AdminUserController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="850.0" styleClass="top_container" stylesheets="@../../CSS/clientDashboard.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Admin.AdminHotelController">
    <children>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -49,7 +49,7 @@
             <Line endX="896.75732421875" endY="0.0037584304809570312" startX="539.878662109375" startY="0.0018792152404785156" stroke="#989898" strokeWidth="2.0" styleClass="ln" />
             <VBox alignment="CENTER" prefHeight="100.0" prefWidth="253.0">
                <children>
-                  <Button fx:id="addUser_btn" mnemonicParsing="false" styleClass="buttonn" text="Añadir Usuario" />
+                  <Button fx:id="addHotel_btn" mnemonicParsing="false" styleClass="buttonn" text="Añadir Hotel" />
                </children>
             </VBox>
          </children>
