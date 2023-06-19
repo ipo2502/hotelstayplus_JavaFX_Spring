@@ -1,6 +1,6 @@
 package ieslapaloma.tfg.hotelstayplus.javafx.Views;
 
-import javax.faces.flow.builder.ReturnBuilder;
+import java.io.IOException;
 
 import ieslapaloma.tfg.hotelstayplus.javafx.PathEnum;
 import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
@@ -43,7 +43,7 @@ public class ViewFactory {
         if (welcomeWindow == null) {
             try {
                 welcomeWindow = Paths.getFXML(PathEnum.WELCOMEWINDOW, getClass()).load(); //
-            } catch (Exception e) {
+            } catch (IOException e) {
                 System.err.println("Exception WelcomeWindowView(): " +e.getLocalizedMessage());
             }
         }
@@ -118,7 +118,7 @@ public class ViewFactory {
         if (clientDashboardView == null) {
             try {
                 clientDashboardView = Paths.getFXML(ClientMenuOptions.DASHBOARD, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -129,7 +129,7 @@ public class ViewFactory {
         if (clientBookingsView == null) {
             try {
                 clientBookingsView = Paths.getFXML(ClientMenuOptions.BOOKINGS, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -140,7 +140,7 @@ public class ViewFactory {
         if (clientProfileView == null) {
             try {
                 clientProfileView = Paths.getFXML(ClientMenuOptions.PROFILE, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -151,7 +151,7 @@ public class ViewFactory {
         if (maxHotelView == null) {
             try {
                 maxHotelView = Paths.getFXML(ClientMenuOptions.MAX, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -162,7 +162,7 @@ public class ViewFactory {
         if (hotelBookingView == null) {
             try {
                 hotelBookingView = Paths.getFXML(ClientMenuOptions.BOOKINGHOTEL, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -173,7 +173,7 @@ public class ViewFactory {
         if (loadingView == null) {
             try {
                 loadingView = Paths.getFXML(ClientMenuOptions.LOADING, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -184,7 +184,7 @@ public class ViewFactory {
         if (bookingSuccessfulView == null) {
             try {
                 bookingSuccessfulView = Paths.getFXML(ClientMenuOptions.SUCCESSFULBOOKING, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -195,7 +195,7 @@ public class ViewFactory {
         if (failedBookingView == null) {
             try {
                 failedBookingView = Paths.getFXML(ClientMenuOptions.FAILEDBOOKING, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -206,7 +206,7 @@ public class ViewFactory {
         if (maxBookingView == null) {
             try {
                 maxBookingView = Paths.getFXML(ClientMenuOptions.MAXBOOKING, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -217,7 +217,7 @@ public class ViewFactory {
         if (adminUserView == null) {
             try {
                 adminUserView = Paths.getFXML(ClientMenuOptions.ADMINUSER, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -228,7 +228,7 @@ public class ViewFactory {
         if (adminDashboardView == null) {
             try {
                 adminDashboardView = Paths.getFXML(ClientMenuOptions.ADMINDASHBOARD, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -239,7 +239,7 @@ public class ViewFactory {
         if (adminHotelsView == null) {
             try {
                 adminHotelsView = Paths.getFXML(ClientMenuOptions.ADMINHOTELS, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -250,7 +250,7 @@ public class ViewFactory {
         if (adminBookingsView == null) {
             try {
                 adminBookingsView = Paths.getFXML(ClientMenuOptions.ADMINBOOKINGS, getClass()).load();
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

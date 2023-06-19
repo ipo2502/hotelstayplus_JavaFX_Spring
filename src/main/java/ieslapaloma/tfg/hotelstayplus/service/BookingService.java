@@ -58,8 +58,6 @@ public class BookingService {
         List<Booking> conflictingBookings = bookingRepository.findByHotelAndDateRange(hotel, dateStart, dateEnd);
 
         if (!conflictingBookings.isEmpty()) {
-            // Handle overlapping bookings (e.g., throw an exception or show an error message)
-            // ...
             System.out.println("ERROR: NO SE PUEDE AÑADIR PORQUE LAS FECHAS COLISIONAN");
             Model.getInstance().setSuccessfulBookingFlag(false);
             return false;
