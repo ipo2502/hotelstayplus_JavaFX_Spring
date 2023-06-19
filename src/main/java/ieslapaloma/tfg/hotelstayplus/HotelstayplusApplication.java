@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import ieslapaloma.tfg.hotelstayplus.javafx.App;
-import ieslapaloma.tfg.hotelstayplus.javafx.lokuraControll;
 
 import javafx.application.Application;
 

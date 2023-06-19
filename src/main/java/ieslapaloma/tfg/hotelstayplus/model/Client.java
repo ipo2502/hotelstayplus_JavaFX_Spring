@@ -3,7 +3,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.*;
-import jakarta.persistence.GenerationType;
 @Entity
 @Table(name = "clients")
 public class Client {
@@ -35,11 +34,26 @@ public class Client {
 
     @Column
     private String address;
+
+    @Transient
+    private String ratingString; 
     
     public Client() {}
 
     
     
+    public String getRatingString() {
+        return ratingString;
+    }
+
+
+
+    public void setRatingString(String ratingString) {
+        this.ratingString = ratingString;
+    }
+
+
+
     public Client(String name, String surnames, String email, String username, int img_n, String password,
             String phoneNumber, String address) {
         this.name = name;

@@ -57,9 +57,9 @@ public class AdminControllerDashboard implements Initializable{
         .mapToDouble(Booking::getTotalPrice)
         .sum();
         totalMoney_lbl.setText("Se ha traspasado un total de €" +totalPriceSum);
-        nbookings_lbl.setText(String.valueOf(bookings.size() + " hoteles"));
-        nHotels_lbl.setText(String.valueOf(hotels.size()) + " usuarios");
-        nUsers_lbl.setText(String.valueOf(clients.size())+ " reservas");
+        nbookings_lbl.setText(String.valueOf(bookings.size() + " reservas"));
+        nHotels_lbl.setText(String.valueOf(hotels.size()) + " hoteles");
+        nUsers_lbl.setText(String.valueOf(clients.size())+ " usuarios");
     }
     
 }

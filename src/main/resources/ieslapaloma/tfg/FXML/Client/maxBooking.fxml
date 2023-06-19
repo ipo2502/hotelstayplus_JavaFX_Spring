@@ -38,7 +38,7 @@
          <children>
             <AnchorPane prefHeight="661.0" prefWidth="850.0">
                <children>
-                  <ImageView fitHeight="670.0" fitWidth="879.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="background_img" fitHeight="670.0" fitWidth="879.0" opacity="0.04" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../Images/hotel_sample6.jpg" />
                      </image>
@@ -212,8 +212,8 @@
                            </font>
                         </Label>
                         <Label fx:id="hotelPayment_lbl" text="Hotel Sample handles all payments." textFill="WHITE" />
-                        <Label text="10% VIf you don't show up or cancel, applicable taxes may still be charged by the property." textFill="WHITE" />
-                        <Label text="Please remember to read the Important information below, as this may contain important details not mentioned here" textFill="WHITE" />
+                        <Label text="Si no se presenta o cancela, es posible que se apliquen impuestos correspondientes por parte del establecimiento." textFill="WHITE" />
+                        <Label text="Recuerde leer la información importante a continuación y los términos." textFill="WHITE" />
                      </children>
                   </VBox>
                   <Line endX="-107.0" endY="-166.0" layoutX="136.0" layoutY="656.0" opacity="0.39" startX="141.0" startY="-166.0" stroke="#cdcdcd" />

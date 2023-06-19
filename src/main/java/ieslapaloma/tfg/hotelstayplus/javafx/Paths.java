@@ -150,7 +150,7 @@ public class Paths { //C:\Users\ignac\Downloads\hotelstayplus\hotelstayplus\src\
             case 4: return "/ieslapaloma/tfg/Images/bedroom_sample4.jpg";
             case 5: return "/ieslapaloma/tfg/Images/bedroom_sample5.jpg";
             case 6: return "/ieslapaloma/tfg/Images/bedroom_sample6.jpg";
-            default: return "";
+            default: return "/ieslapaloma/tfg/Images/bedroom_sample.jpg";
         }
     }
 

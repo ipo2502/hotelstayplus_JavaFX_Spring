@@ -17,7 +17,7 @@ public class Model {
     private ViewFactory viewFactory;
     private AccountType loginAccountType = AccountType.CLIENT;
     private DatabaseDriver databaseDriver;
-    private boolean login = false;
+    private boolean login = true;
     private boolean clientLoginSucessFlag;
     private Client modelClient;
     private Hotel modelHotel;
@@ -70,6 +70,8 @@ public class Model {
             this.clientLoginSucessFlag = true;
         } else {
             System.out.println("no se encontró el usuario");
+                        this.clientLoginSucessFlag = false;
+
         }
     }
 
@@ -78,7 +80,7 @@ public class Model {
      */
 
      public boolean evaluateAdminCredentials(String user, String password) {
-        if (user.equals("igna") && password.equals("2")) {
+        if (user.equals("admin") && password.equals("2222")) {
             return true;
         } else {
             return false;

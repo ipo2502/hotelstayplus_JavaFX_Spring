@@ -127,7 +127,7 @@ public class ControllerH implements Initializable{
                 break;
             case Recientes:
                 hotelitos = DBManager.getInstance().getHotelService().getAllHotels();
-                Collections.reverse(hotelitos);
+                Collections.sort(hotelitos, Comparator.comparingLong(Hotel::getId));
                 load();
             default:
                 hotelitos = DBManager.getInstance().getHotelService().getAllHotels();

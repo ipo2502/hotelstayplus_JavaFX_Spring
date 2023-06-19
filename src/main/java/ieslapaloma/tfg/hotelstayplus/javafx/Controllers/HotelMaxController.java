@@ -3,6 +3,7 @@ package ieslapaloma.tfg.hotelstayplus.javafx.Controllers;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Set;
 
@@ -113,6 +114,9 @@ public class HotelMaxController implements Initializable{
     @FXML
     private Label website_lbl;
 
+    @FXML
+    private Label username_lbl;
+
     static Long id;
 
     private List<Service> allServices = List.of(
@@ -144,21 +148,25 @@ public class HotelMaxController implements Initializable{
         id = hotel.getId();
         System.out.println(servDesayuno_icon.getOpacity());
         allServicesOpacity();
-
+        username_lbl.setText(Model.getInstance().getModelClient().getName() + " " + Model.getInstance().getModelClient().getSurnames());
         List<Service> services = hotel.getServicesPojo();
         System.out.println(services.size());
         //List<Service> servicesList = loadServices(services);
         //System.out.println("Está viendo e hotel: " +hotel+ " que tiene una lista de servicios de " +servicesList.toString());
         loadGraphicServices(services);
 
+        Random r = new Random();
+        String days = r.nextInt(1574) +678 + " valoraciones";
+        nRatings_lbl.setText(days);
+        Model.getInstance().getModelClient().setRatingString(days);
         String hotelUrlImg = Paths.getHotelUrlImage(hotel.getHotelImg_n());
         String bedroomUrlImg = Paths.getBedroomUrlImage(hotel.getHotelImg_n());
-        String starsUrlImg = Paths.getHotelUrlImage((hotel.getStars()+6));
+        String starsUrlImg = Paths.getStarsUrlImage((hotel.getStars()));
         System.out.println(starsUrlImg + " ---" +hotelUrlImg);
         //Image imageStars = new Image(getClass().getResourceAsStream(starsUrlImg));
         Image imageHotel = new Image(getClass().getResourceAsStream(hotelUrlImg));
         Image imageHotel2 = new Image(getClass().getResourceAsStream(starsUrlImg));
-
+        Image starsImage = new Image(getClass().getResourceAsStream(starsUrlImg));
         Image imageBedroom = new Image(getClass().getResourceAsStream(bedroomUrlImg));
 
         String description1 = Paths.getDescription1(hotel.getDescription_n1(), hotel.getName());
@@ -167,13 +175,13 @@ public class HotelMaxController implements Initializable{
         hotelName_lbl.setText(hotel.getName());
         bigImage1_img.setImage(imageHotel);
         backgroundImg_img.setImage(imageHotel);
-        //bigImage2_img.setImage(imageBedroom);
+        bigImage2_img.setImage(imageBedroom);
         pricePerNight_lbl.setText(hotel.getPrice()+"€/noche!");
-        location_lbl.setText(hotel.getLocation());
+        location_lbl.setText(hotel.getLocation() + ", " +hotel.getCity());
         bigText_lbl.setText(description1);
         bigText2_lbl.setText(description2);
         website_lbl.setText(hotel.getWebsite());
-        stars_img.setImage(imageHotel2);
+        stars_img.setImage(starsImage);
         setRating(hotel.getRating(), ratingtitle_lbl, rating_icon);
 
     }
@@ -252,7 +260,7 @@ public class HotelMaxController implements Initializable{
             rating_icon.setGlyphName("THUMBS_UP");
 
         }
-        label.setText(output);
+        label.setText(output + " ("+rating+")");
     }
     
     private void loadGraphicServices(List<Service> services) {

@@ -65,13 +65,11 @@ public class ViewFactory {
     public void showRegisterWindow() {
         FXMLLoader loader = Paths.getFXML(PathEnum.REGISTER, getClass());
         createStage(loader);
-
     }
 
     public void showAdminView() {
         FXMLLoader loader = Paths.getFXML(PathEnum.ADMIN, getClass());
         createStage(loader);
-
     }
  
     public void showOtherDashboardView() {
@@ -82,7 +80,6 @@ public class ViewFactory {
     public void showMaxHotelView() {
         FXMLLoader loader = Paths.getFXML(PathEnum.FULLHOTEL, getClass());
         createStage(loader);
-
     }
      
      private void createStage(FXMLLoader loader) {
@@ -94,10 +91,9 @@ public class ViewFactory {
          }
          Stage stage = new Stage();
          stage.setScene(scene);
-         //stage.getIcons().add(new Image(String.valueOf(Paths.getImg(PathEnum.IMG_ICON, getClass()))));
-         stage.setTitle("HotelStay");
+         stage.getIcons().add(new Image(String.valueOf(Paths.getImg(PathEnum.IMG_ICON, getClass()))));
+         stage.setTitle("HotelStay+");
          stage.setResizable(false);
- 
          stage.show();
      }
      

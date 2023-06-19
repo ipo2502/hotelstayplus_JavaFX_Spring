@@ -20,9 +20,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 public class BookingMaxController implements Initializable{
 
@@ -98,6 +100,9 @@ public class BookingMaxController implements Initializable{
     @FXML
     private Button realCancelBooking_btn;
 
+    @FXML
+    private ImageView   background_img;
+
     public static BookingMaxController instance;
 
     @Override
@@ -110,11 +115,11 @@ public class BookingMaxController implements Initializable{
     }
 
     private void onContact() {
-                showAlert("Llame al número de teléfono (6463605568) o escriba al correo " +hotelName_lbl.getText()+"@gmail.com");
+                showAlert("Llame al número de teléfono (6463605568) o escriba al correo " +Model.getInstance().getModelHotel().getEmail()+ ".");
     }
 
     private void onCancel() {
-        showAlert("Tenga en cuenta que si desea cancelar su reserva, es posible que no recupere su dinero");
+        showAlert("Tenga en cuenta que si desea cancelar su reserva, es posible que no recupere su dinero.");
         realCancelBooking_btn.setVisible(true);
     }
 
@@ -124,9 +129,13 @@ public class BookingMaxController implements Initializable{
 
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Date Selection");
+        alert.setTitle("Atención");
         alert.setHeaderText(null);
         alert.setContentText(message);
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/ieslapaloma/tfg/Images/icon.png")));
+        DialogPane dialogPane = alert.getDialogPane();
+        //dialogPane.getStylesheets().add(getClass().getResource("alertStyle.css").toExternalForm());
         alert.showAndWait();
     }
 
@@ -136,7 +145,8 @@ public class BookingMaxController implements Initializable{
         alert.setHeaderText("El hotel " +hotelName_lbl.getText()+ " no permite devoluciones");
         alert.setContentText("No hay marcha atrás.");
         //alert.getDialogPane().getStyleClass().add("alert");
-
+Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/ieslapaloma/tfg/Images/icon.png")));    
         ButtonType yesButton = new ButtonType("Sí");
         ButtonType noButton = new ButtonType("No");
 
@@ -171,6 +181,7 @@ public class BookingMaxController implements Initializable{
         Booking booking = Model.getInstance().getModelBooking();
         Hotel hotel = booking.getHotel();
         hotelName_lbl.setText(hotel.getName());
+        hotelPayment_lbl.setText("El hotel "+hotel.getName() + " se responsabiliza de todos los pagos.");
         //phoneNumber_lbl.setText(hotel.getPhoneNumber()); //añadir phone number a hotel
         bookingN_lbl.setText(booking.getBookingCode()); //next time
         nightsN_lbl.setText(String.valueOf(booking.getNumbernights()));
@@ -179,7 +190,7 @@ public class BookingMaxController implements Initializable{
 
         Image imageCover = new Image(getClass().getResourceAsStream(urlImg));
         little_img.setImage(imageCover);
-
+        background_img.setImage(imageCover);
         LocalDate startDate = booking.getDateStart();
         LocalDate endDate = booking.getDateEnd();
 

@@ -18,6 +18,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class RegisterController implements Initializable{
@@ -91,8 +92,11 @@ public class RegisterController implements Initializable{
         Model.getInstance().getViewFactory().showLoginWindow();
         Stage stage = (Stage) error_lbl1.getScene().getWindow();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.getDialogPane().getStyleClass().add("Registro completado");
-        alert.setContentText("Enhorabuena! Se ha registrado. Inicie sesión con sus credenciales");
+        Stage stage2 = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage2.getIcons().add(new Image(getClass().getResourceAsStream("/ieslapaloma/tfg/Images/icon.png")));
+        alert.setTitle("Registro completado");
+        alert.setHeaderText("¡Ha sido dado de alta!");
+        alert.setContentText("Enhorabuena! Ahora forma parte de HotelStay+. Inicie sesión con sus credenciales.");
         alert.show();
         Model.getInstance().getViewFactory().closedStage(stage);
     }

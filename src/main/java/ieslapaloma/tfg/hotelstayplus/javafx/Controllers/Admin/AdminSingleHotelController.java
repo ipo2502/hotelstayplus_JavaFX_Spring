@@ -309,6 +309,7 @@ public class AdminSingleHotelController implements Initializable{
         web_fld.setText(hotel.getWebsite());
         email_fld.setText(hotel.getEmail());
         postalCode_fld.setText(hotel.getPostalCode());
+        phoneNumber_fld.setText(hotel.getPhoneNumber());
         city_fld.setText(hotel.getCity());
         address_fld.setText(hotel.getLocation());
         stars_fld.setText(String.valueOf(hotel.getStars()));

@@ -17,6 +17,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 public class AdminSingleUserController implements Initializable{
 
@@ -57,6 +59,9 @@ public class AdminSingleUserController implements Initializable{
     private TextField user_fld;
 
     @FXML
+    private Rectangle rectangle;
+
+    @FXML
     private Label id_lbl;
 
     boolean edit1 = false;
@@ -71,6 +76,8 @@ public class AdminSingleUserController implements Initializable{
         password_fld.setDisable(true);
         int clientBookings = DBManager.getInstance().getBookingService().getNumberOfBookingsByClientId(client.getId()); //preguntar a la BD cuantos tiene 
 
+        rectangle.setFill(getColor(client.getImg_n()));
+        
         userName_lbl.setText(client.getName() + " " +client.getSurnames());
         email_fld.setText(client.getEmail());
         user_fld.setText(client.getUsername());
@@ -84,6 +91,49 @@ public class AdminSingleUserController implements Initializable{
 
         delete_btn.setOnAction(event -> onDelete());
         edit_btn.setOnAction(event -> onEdit());
+    }
+
+    private Color getColor(int img) {
+        Color c = Color.ORANGE;
+        switch(img) {
+            case 1:
+            break;
+            case 2:
+            c = Color.ALICEBLUE;
+            break;
+            case 3:
+            c = Color.AZURE;
+            break;
+            case 4:
+            c = Color.BLANCHEDALMOND;
+            break;
+            case 5:
+            c = Color.BROWN;
+            break;
+            case 6:
+            c = Color.CORAL;
+            break;
+            case 7:
+            c = Color.DARKSALMON;
+            break;
+            case 8:
+            c = Color.FUCHSIA;
+            break;
+            case 9:
+            c = Color.GREEN;
+            break;
+            case 10:
+            c = Color.INDIGO;
+            break;
+            case 11:
+            c = Color.YELLOW;
+            break;
+            case 12:
+            c = Color.VIOLET;
+            break;
+
+        }
+        return c;
     }
 
     private void onDelete() {
@@ -113,7 +163,7 @@ public class AdminSingleUserController implements Initializable{
             Client client = DBManager.getInstance().getClientService().getClientById(Long.valueOf(id_lbl.getText()));
             client.setUsername(user_fld.getText());
             client.setEmail(email_fld.getText());
-            client.setPassword(password_fld.getText());
+            getPassword(client);
             client.setAddress(address_fld.getText());
             client.setPhoneNumber(phoneNumber_fld.getText());
             System.out.println("se va a updatear el cliente " + id_lbl.getText());
@@ -122,6 +172,12 @@ public class AdminSingleUserController implements Initializable{
 
         }
 
+    }
+
+    private void getPassword(Client client) {
+        if (!password_fld.getText().contains("*")) {
+            client.setPassword(password_fld.getText());
+        }
     }
 
     private void setAllDisable(boolean b) {

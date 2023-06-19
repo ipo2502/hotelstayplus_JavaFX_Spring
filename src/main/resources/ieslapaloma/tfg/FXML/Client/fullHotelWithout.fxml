@@ -32,7 +32,7 @@
                </effect>
             </ImageView>
             <Pane prefHeight="100.0" prefWidth="124.0" />
-            <Label prefHeight="33.0" prefWidth="192.0" styleClass="grey" text="Ignacio Pérez Ortega">
+            <Label fx:id="username_lbl" prefHeight="33.0" prefWidth="192.0" styleClass="grey" text="Ignacio Pérez Ortega">
                <font>
                   <Font size="19.0" />
                </font>
@@ -107,13 +107,13 @@
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
                   </Label>
-                  <VBox alignment="CENTER" layoutX="590.0" layoutY="116.0" prefHeight="84.0" prefWidth="238.0">
+                  <VBox alignment="CENTER" layoutX="568.0" layoutY="116.0" prefHeight="84.0" prefWidth="260.0">
                      <children>
-                        <HBox prefHeight="84.0" prefWidth="177.0">
+                        <HBox prefHeight="84.0" prefWidth="277.0">
                            <children>
-                              <Pane prefHeight="84.0" prefWidth="160.0">
+                              <Pane prefHeight="84.0" prefWidth="202.0">
                                  <children>
-                                    <Label fx:id="ratingtitle_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="14.0" text="Muy buena" textFill="WHITE">
+                                    <Label fx:id="ratingtitle_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="14.0" text="Muy buena (8,8)" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="22.0" />
                                        </font>
@@ -134,7 +134,7 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <ImageView fx:id="bigImage1_img" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="bigImage1_img" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../Images/hotel_sample5.jpg" />
                      </image>
@@ -142,12 +142,12 @@
                         <DropShadow />
                      </effect>
                   </ImageView>
-                  <Label fx:id="bigText_lbl" alignment="CENTER" layoutX="259.0" layoutY="175.0" prefHeight="150.0" prefWidth="384.0" text="¡Bienvenidos al Hotel Paradiso!&#10;Sumérgete en la experiencia de lujo y confort en nuestro &#10;magnífico hotel, ubicado en un entorno paradisíaco.&#10;Desde el momento en que pongas un pie en nuestras instalaciones,&#10;te envolverá una atmósfera de elegancia y hospitalidad incomparable." textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                  <Label fx:id="bigText_lbl" alignment="CENTER" layoutX="259.0" layoutY="220.0" prefHeight="150.0" prefWidth="384.0" text="¡Bienvenidos al Hotel Paradiso!&#10;Sumérgete en la experiencia de lujo y confort en nuestro &#10;magnífico hotel, ubicado en un entorno paradisíaco.&#10;Desde el momento en que pongas un pie en nuestras instalaciones,&#10;te envolverá una atmósfera de elegancia y hospitalidad incomparable." textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Italic" size="13.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="bigImage2_img" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="371.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="bigImage2_img" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../Images/hotel_sample5.jpg" />
                      </image>
@@ -155,58 +155,13 @@
                         <DropShadow />
                      </effect>
                   </ImageView>
-                  <Label fx:id="bigText2_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="259.0" layoutY="371.0" prefHeight="150.0" prefWidth="384.0" text="Disponemos de una amplia selección de habitaciones y suites,&#10;todas ellas equipadas con comodidades de primer nivel y detalles&#10;de diseño exquisito. Desde las habitaciones estándar hasta las &#10;lujosas suites, cada espacio ha sido pensado para ofrecer el &#10;máximo confort y relajación a nuestros huéspedes." textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                  <Label fx:id="bigText2_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="259.0" layoutY="416.0" prefHeight="150.0" prefWidth="384.0" text="Disponemos de una amplia selección de habitaciones y suites,&#10;todas ellas equipadas con comodidades de primer nivel y detalles&#10;de diseño exquisito. Desde las habitaciones estándar hasta las &#10;lujosas suites, cada espacio ha sido pensado para ofrecer el &#10;máximo confort y relajación a nuestros huéspedes." textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="System Italic" size="13.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="imageSmall1_img" fitHeight="93.0" fitWidth="105.0" layoutX="38.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Images/hotel_sample5.jpg" />
-                     </image>
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </ImageView>
-                  <ImageView fx:id="imageSmall2_img" fitHeight="93.0" fitWidth="105.0" layoutX="206.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Images/hotel_sample5.jpg" />
-                     </image>
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </ImageView>
-                  <ImageView fx:id="imageSmall3_img" fitHeight="93.0" fitWidth="105.0" layoutX="377.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Images/hotel_sample5.jpg" />
-                     </image>
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </ImageView>
-                  <ImageView fx:id="imageSmall4_img" fitHeight="93.0" fitWidth="105.0" layoutX="545.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Images/hotel_sample5.jpg" />
-                     </image>
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </ImageView>
-                  <ImageView fx:id="imageSmall5_img" fitHeight="93.0" fitWidth="105.0" layoutX="708.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Images/hotel_sample5.jpg" />
-                     </image>
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </ImageView>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="150.0" layoutX="37.0" layoutY="175.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="201.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="150.0" layoutX="37.0" layoutY="371.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="201.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="79.0" layoutX="38.0" layoutY="559.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="105.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="79.0" layoutX="206.0" layoutY="559.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="105.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="79.0" layoutX="377.0" layoutY="559.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="105.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="79.0" layoutX="545.0" layoutY="559.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="105.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="79.0" layoutX="708.0" layoutY="559.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="105.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="150.0" layoutX="37.0" layoutY="226.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="201.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="150.0" layoutX="37.0" layoutY="422.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" styleClass="image2" width="201.0" />
                   <Label fx:id="website_lbl" alignment="CENTER" layoutX="291.0" layoutY="646.0" prefHeight="18.0" prefWidth="238.0" text="www.hotel.es" textFill="WHITE">
                      <graphic>
                         <FontAwesomeIconView glyphName="GLOBE" styleClass="white" />
@@ -215,7 +170,7 @@
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
                   </Label>
-                  <VBox alignment="TOP_CENTER" layoutX="699.0" layoutY="211.0" prefHeight="280.0" prefWidth="120.0" spacing="3.0" styleClass="services">
+                  <VBox alignment="TOP_CENTER" layoutX="699.0" layoutY="242.0" prefHeight="280.0" prefWidth="120.0" spacing="3.0" styleClass="services">
                      <children>
                         <Label fx:id="ratingtitle_lbl1" alignment="CENTER" contentDisplay="CENTER" text="Servicios" textAlignment="CENTER" textFill="WHITE">
                            <font>

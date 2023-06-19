@@ -27,6 +27,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class BookingPageController implements Initializable {
 
@@ -130,11 +131,16 @@ public class BookingPageController implements Initializable {
     private ImageView stars_img;
 
     @FXML
+    private ImageView bigImage2_img;
+
+    @FXML
     private Label totalPrice_lbl;
 
     @FXML
     private Label website_lbl;
 
+    @FXML
+    private Label username_lbl;
     
     @FXML
     private Label error_lbl;
@@ -147,9 +153,12 @@ public class BookingPageController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         instance = this;
+                    username_lbl.setText(Model.getInstance().getModelClient().getName() + " " + Model.getInstance().getModelClient().getSurnames());
+
         System.out.println("el booking flag: " +Model.getInstance().getSuccessfulBookingFlag());
         if (!Model.getInstance().getSuccessfulBookingFlag()) {
             error_lbl.setVisible(true);
+            error_lbl.setText("Error: ya existe una reserva con las fechas elegidas.");
             System.out.println("nove");
         }
        // if (first) { //añadir que verifique que sea null cada uno de los elementos  del load data y borrar el if para que se actualicen
@@ -169,6 +178,7 @@ public class BookingPageController implements Initializable {
     private void loadData() {
         datePicker1.setValue(null);
         datePicker2.setValue(null);
+        username_lbl.setText(Model.getInstance().getModelClient().getName() + " " + Model.getInstance().getModelClient().getSurnames());
 
         Hotel hotel = Model.getInstance().getModelHotel();
 
@@ -183,11 +193,14 @@ public class BookingPageController implements Initializable {
 
         String hotelUrlImg = Paths.getHotelUrlImage(hotel.getHotelImg_n());
         String bedroomUrlImg = Paths.getBedroomUrlImage(hotel.getHotelImg_n());
-        String starsUrlImg = Paths.getHotelUrlImage((hotel.getStars()+6));
+        String starsUrlImg = Paths.getStarsUrlImage((hotel.getStars()));
         System.out.println(starsUrlImg + " ---" +hotelUrlImg);
-        //Image imageStars = new Image(getClass().getResourceAsStream(starsUrlImg));
+        Image imageStars = new Image(getClass().getResourceAsStream(starsUrlImg));
         Image imageHotel = new Image(getClass().getResourceAsStream(hotelUrlImg));
         Image imageHotel2 = new Image(getClass().getResourceAsStream(starsUrlImg));
+        String days = Model.getInstance().getModelClient().getRatingString();
+        nRatings_lbl.setText(days);
+       // Model.getInstance().getModelClient().setRatingString(days);
 
         Image imageBedroom = new Image(getClass().getResourceAsStream(bedroomUrlImg));
 
@@ -197,12 +210,12 @@ public class BookingPageController implements Initializable {
         hotelName_lbl.setText(hotel.getName());
         bigImage1_img.setImage(imageHotel);
         backgroundImg_img.setImage(imageHotel);
-        //bigImage2_img.setImage(imageBedroom);
+        bigImage2_img.setImage(imageBedroom);
         pricePerNight_lbl.setText(hotel.getPrice()+"€/noche!");
         bigText_lbl.setText(description1);
         bigText2_lbl.setText(description2);
         website_lbl.setText(hotel.getWebsite());
-        stars_img.setImage(imageHotel2);
+        stars_img.setImage(imageStars);
 
     }
 
@@ -216,9 +229,9 @@ public class BookingPageController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("¿Está seguro de que quiere hacer una reserva?");
         alert.setHeaderText("Se le cobrarán " +totalPrice_lbl.getText()+ "€ a su cuenta.");
-        alert.setContentText(":O.");
-        //alert.getDialogPane().getStyleClass().add("alert");
-
+        alert.setContentText("Todos los pagos están seguros y cifrados por HotelStay+.");
+Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/ieslapaloma/tfg/Images/icon.png")));
         ButtonType yesButton = new ButtonType("Sí");
         ButtonType noButton = new ButtonType("No");
 
@@ -238,7 +251,7 @@ public class BookingPageController implements Initializable {
     }
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Date Selection");
+        alert.setTitle("Atención");
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
@@ -259,6 +272,7 @@ public class BookingPageController implements Initializable {
             if (DBManager.getInstance().getBookingService().createBooking(booking)) {
                 Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.LOADING);
                 Model.getInstance().setModelBooking(booking);
+                error_lbl.setVisible(false);
 
             } else {
                 Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.LOADING);

@@ -7,7 +7,6 @@ import java.util.ResourceBundle;
 
 import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.Controllers.BookingController;
-import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.model.Booking;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,9 +36,6 @@ public class AdminBookingsController implements Initializable{
 
         } else {
 
-       // Long id = Model.getInstance().getModelClient().getId();
-        //    System.out.println(DBManager.getInstance().getBookingService().getAllBookingsByClientId(id));
-            
         List<Booking> bookings = DBManager.getInstance().getBookingService().getAllBookings();
         nHotels_lbl.setText(bookings.size()+" hoteles");
 
@@ -55,7 +51,7 @@ public class AdminBookingsController implements Initializable{
                 BookingController bookingController = fxmlLoader.getController();
                 bookingController.setBookedLabelVisible();
                 bookingController.setData(booking);
-                pane.setOnMouseClicked(event -> bookingController.handleItemClick(event));
+                //pane.setOnMouseClicked(event -> bookingController.handleItemClick(event));
                 
                 
                 

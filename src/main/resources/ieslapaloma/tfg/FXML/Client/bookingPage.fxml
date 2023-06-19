@@ -32,7 +32,7 @@
                </effect>
             </ImageView>
             <Pane prefHeight="100.0" prefWidth="124.0" />
-            <Label prefHeight="33.0" prefWidth="192.0" styleClass="grey" text="Ignacio Pérez Ortega">
+            <Label fx:id="username_lbl" prefHeight="33.0" prefWidth="192.0" styleClass="grey" text="Ignacio Pérez Ortega">
                <font>
                   <Font size="19.0" />
                </font>
@@ -239,7 +239,7 @@
                         <String fx:value="line" />
                      </styleClass>
                   </Line>
-                  <ImageView fx:id="bigImage1_img1" fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="bigImage2_img" fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../Images/hotel_sample5.jpg" />
                      </image>
@@ -328,10 +328,10 @@
                   </HBox>
                   <Label fx:id="error_lbl" alignment="CENTER" contentDisplay="CENTER" layoutX="456.0" layoutY="600.0" prefHeight="66.0" prefWidth="371.0" text="ERROR: ya existe una reserva con fechas bla bla" textFill="#ff1111" underline="true" visible="false" wrapText="true">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                      <effect>
-                        <Glow level="0.41" />
+                        <Glow level="0.32" />
                      </effect>
                   </Label>
                </children>

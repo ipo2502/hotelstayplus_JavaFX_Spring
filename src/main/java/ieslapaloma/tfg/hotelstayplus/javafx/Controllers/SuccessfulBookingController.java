@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
+import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import ieslapaloma.tfg.hotelstayplus.model.Booking;
@@ -12,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class SuccessfulBookingController implements Initializable{
@@ -54,7 +56,9 @@ public class SuccessfulBookingController implements Initializable{
 
     private void loadData() {
         Booking booking = Model.getInstance().getModelBooking();
-
+        String url = Paths.getHotelUrlImage(Model.getInstance().getModelHotel().getHotelImg_n());
+        Image img = new Image(url);
+        backgroundImg_img.setImage(img);
         LocalDate date1 = booking.getDateStart();
         LocalDate date2 = booking.getDateEnd();
 

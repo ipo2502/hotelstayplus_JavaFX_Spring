@@ -3,12 +3,15 @@ package ieslapaloma.tfg.hotelstayplus.javafx.Controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class LoadingController implements Initializable{
 
@@ -16,9 +19,17 @@ public class LoadingController implements Initializable{
     private Label loading_lbl;
     private static LoadingController instance;
 
+        @FXML
+    private ImageView backgroundImg_img;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         instance = this;
+
+        String url = Paths.getHotelUrlImage(Model.getInstance().getModelHotel().getHotelImg_n());
+        Image img = new Image(url);
+        backgroundImg_img.setImage(img);
+
         System.out.println("loading las vainas");
 
   // Start the loading process in a separate thread
