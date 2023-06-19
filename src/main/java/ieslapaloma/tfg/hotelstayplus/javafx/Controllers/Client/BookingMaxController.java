@@ -20,7 +20,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -134,8 +133,6 @@ public class BookingMaxController implements Initializable{
         alert.setContentText(message);
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/ieslapaloma/tfg/Images/icon.png")));
-        DialogPane dialogPane = alert.getDialogPane();
-        //dialogPane.getStylesheets().add(getClass().getResource("alertStyle.css").toExternalForm());
         alert.showAndWait();
     }
 

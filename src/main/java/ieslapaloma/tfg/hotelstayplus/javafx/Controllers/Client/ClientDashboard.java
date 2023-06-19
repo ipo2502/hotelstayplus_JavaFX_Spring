@@ -1,32 +1,16 @@
 package ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Client;
-import java.io.FileNotFoundException;
-import java.io.IOError;
 import java.io.IOException;
-import java.lang.System.Logger;
 import java.net.URL;
-import java.security.spec.ECPrivateKeySpec;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Random;
 import java.util.ResourceBundle;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import ieslapaloma.tfg.hotelstayplus.DBManager;
-import ieslapaloma.tfg.hotelstayplus.HotelstayplusApplication;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
-import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.Filters;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
-import ieslapaloma.tfg.hotelstayplus.repository.ClientRepository;
-import ieslapaloma.tfg.hotelstayplus.repository.HotelRepository;
-import ieslapaloma.tfg.hotelstayplus.service.HotelService;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -34,27 +18,12 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
+
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
-import org.springframework.stereotype.Controller;
-
 public class ClientDashboard implements Initializable{
-    
-    private HotelRepository hotelRepository;
-   
-    @Autowired
-    private HotelService hotelService;
-    private ObservableList<Hotel> hotelsList = FXCollections.observableArrayList();
-    
-    private Hotel hotelSelected;
+        
     private static Pane pane;
 
     @FXML
@@ -63,25 +32,9 @@ public class ClientDashboard implements Initializable{
     @FXML
     private ChoiceBox<Filters> filter_selector;
 
-      @FXML
-    //private HBox hotelLayout;
+    @FXML
     private List<Hotel> recentlyAdded;
-    private String[] starsPaths = {
-        "/ieslpaloma/Images/stars1.png",
-        "/estoyharto/Images/stars2.png",
-        "/estoyharto/Images/stars3.png",
-        "/estoyharto/Images/stars4.png",
-        "/estoyharto/Images/stars5.png"
-    };
 
-    private String[] backgroundImgs = {
-        "/ieslapaloma/tfg/Images/hotel_sample.jpg",
-        "/ieslapaloma/tfg/Images/hotel_sample2.jpg",
-        "/ieslapaloma/tfg/Images/hotel_sample3.jpg",
-        "/ieslapaloma/tfg/Images/hotel_sample4.jpg",
-        "/ieslapaloma/tfg/Images/hotel_sample5.jpg",
-        "/ieslapaloma/tfg/Images/hotel_sample6.jpg"
-    };
     @FXML
     private GridPane hotelesGrid;
 

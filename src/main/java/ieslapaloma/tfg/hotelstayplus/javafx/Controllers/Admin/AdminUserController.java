@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import ieslapaloma.tfg.hotelstayplus.DBManager;
-import ieslapaloma.tfg.hotelstayplus.model.Booking;
 import ieslapaloma.tfg.hotelstayplus.model.Client;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,17 +42,10 @@ public class AdminUserController implements Initializable{
         int column = 0;
         int row = 1;
         try {
-                Client client = new Client("Nuevo", "", "", "", 0, "", "", "");
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/ieslapaloma/tfg/FXML/Admin/userToAdd.fxml"));
  
-                pane = fxmlLoader.load();
-
-                AdminAddUserController userController = fxmlLoader.getController();
-                //pane.setOnMouseClicked(event -> userController.handleItemClick(event));
-                
-                
-                
+                pane = fxmlLoader.load();               
                     if (column == 1) {
                         column = 0;
                         ++row;

@@ -1,9 +1,6 @@
 package ieslapaloma.tfg.hotelstayplus.javafx.Model;
 
-import java.sql.ResultSet;
-
 import ieslapaloma.tfg.hotelstayplus.DBManager;
-import ieslapaloma.tfg.hotelstayplus.javafx.Database.DatabaseDriver;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.AccountType;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ViewFactory;
 import ieslapaloma.tfg.hotelstayplus.model.Booking;
@@ -16,7 +13,6 @@ public class Model {
     private static Model model;
     private ViewFactory viewFactory;
     private AccountType loginAccountType = AccountType.CLIENT;
-    private DatabaseDriver databaseDriver;
     private boolean login = true;
     private boolean clientLoginSucessFlag;
     private Client modelClient;
@@ -26,9 +22,7 @@ public class Model {
     private Client adminClient;
 
     private Model() {
-        this.viewFactory = new ViewFactory();
-        this.databaseDriver = new DatabaseDriver();
-        
+        this.viewFactory = new ViewFactory();        
         this.clientLoginSucessFlag = false;
         this.successfulBookingFlag = true;
 

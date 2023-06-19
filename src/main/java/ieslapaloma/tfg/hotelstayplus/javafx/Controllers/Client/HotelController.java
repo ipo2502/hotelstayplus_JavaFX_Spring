@@ -1,10 +1,7 @@
 package ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Client;
-import java.lang.System.Logger;
 import java.net.URL;
 import java.util.List;
-import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.PathEnum;
@@ -13,10 +10,8 @@ import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
 import ieslapaloma.tfg.hotelstayplus.model.Service;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -27,7 +22,6 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 
 public class HotelController implements Initializable{
 
@@ -53,27 +47,9 @@ public class HotelController implements Initializable{
 
     @FXML
     private ImageView starsImage;
-    private String[] starsPaths = {
-        "/ieslapaloma/tfg/Images/stars1.jpg",
-        "/ieslapaloma/tfg/Images/stars2.jpg",
-        "/ieslapaloma/tfg/Images/stars3.jpg",
-        "/ieslapaloma/tfg/Images/stars4.jpg",
-        "/ieslapaloma/tfg/Images/stars5.jpg"
-    };
 
-
-    private String[] colors = {"CCF1FF",
-        "E0D7FF",
-        "FB9AA8",
-        "FFCCE1",
-        "D7EEFF",
-        "FAFFC7"};
-
-
-        @FXML
+    @FXML
         public void handleItemClick(MouseEvent event) {
-            String title = hotelName.getText();
-            String location = hotelLocation.getText();
             long id = Long.valueOf(id_lbl.getText());
 
             
@@ -113,14 +89,7 @@ public class HotelController implements Initializable{
         Image stars = new Image(getClass().getResourceAsStream(urlStarsImg));
         starsImage.setImage(stars);
 
-        Random r = new Random();
-        /*hotelBox.setStyle("-fx-background-color: #" +(colors[r.nextInt(colors.length)])
-        + ";" +
-        "-fx-background-radius: 10;"+
-        "-fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 10);");
-        */
     }
-    //pasar esto a una clase
     
 
     @Override

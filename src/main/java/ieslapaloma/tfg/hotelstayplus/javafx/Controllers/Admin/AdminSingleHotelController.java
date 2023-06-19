@@ -5,12 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import org.hibernate.annotations.OnDelete;
-
 import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
-import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
-import ieslapaloma.tfg.hotelstayplus.model.Booking;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
 import ieslapaloma.tfg.hotelstayplus.model.Service;
 import javafx.fxml.FXML;
@@ -227,8 +223,6 @@ public class AdminSingleHotelController implements Initializable{
             hotel.setPrice(Double.valueOf(price_fld.getText()));
             hotel.setHotelImg_n(Integer.valueOf(img_fld.getText()));
 
-            List <Service> hotelservices = new ArrayList<>();
-
             hotel.setServices(loadServicesChosen());
             DBManager.getInstance().getHotelService().updateHotel(hotel);
             setAllDisable(true);
@@ -320,7 +314,6 @@ public class AdminSingleHotelController implements Initializable{
         Image imageCover = new Image(getClass().getResourceAsStream(urlImg));
         little_img.setImage(imageCover);
         imgChoose_img.setImage(imageCover);
-        List<Service> services = hotel.getServicesPojo();
         Hotel hotel2 = DBManager.getInstance().getHotelService().getHotelById(Long.valueOf(id_lbl.getText())).get();
         List<Service> hotelservices = DBManager.getInstance().getHotelService().getHotelServicesById(hotel2.getId());
 

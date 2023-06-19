@@ -3,11 +3,7 @@ package ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Admin;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.mysql.cj.callback.UsernameCallback;
-
 import ieslapaloma.tfg.hotelstayplus.DBManager;
-import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
-import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import ieslapaloma.tfg.hotelstayplus.model.Client;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class AdminAddUserController implements Initializable{

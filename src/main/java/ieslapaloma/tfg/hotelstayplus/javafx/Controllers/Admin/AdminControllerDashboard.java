@@ -4,11 +4,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import org.kordamp.ikonli.Ikon;
-import org.kordamp.ikonli.IkonHandler;
-import org.kordamp.ikonli.fontawesome.FontAwesome;
-import org.kordamp.ikonli.javafx.FontIcon;
-
 import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.model.Booking;
 import ieslapaloma.tfg.hotelstayplus.model.Client;

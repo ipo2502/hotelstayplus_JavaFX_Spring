@@ -47,16 +47,10 @@ public class AdminHotelController implements Initializable{
         int column = 0;
         int row = 1;
         try {
-                Hotel hotel = new Hotel(" ", 0, 0.0, " ", " ", " ", " ", 0, 0.0, " ", " ");
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/ieslapaloma/tfg/FXML/Admin/hotelToAdd.fxml"));
  
-                pane = fxmlLoader.load();
-
-                //AdminAddHotelController userController = fxmlLoader.getController();
-                //pane.setOnMouseClicked(event -> userController.handleItemClick(event));
-                
-                
+                pane = fxmlLoader.load();                
                 
                     if (column == 1) {
                         column = 0;

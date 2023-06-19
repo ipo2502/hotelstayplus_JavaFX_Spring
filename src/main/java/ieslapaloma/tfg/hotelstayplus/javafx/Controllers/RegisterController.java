@@ -1,11 +1,8 @@
 package ieslapaloma.tfg.hotelstayplus.javafx.Controllers;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
-import com.fasterxml.jackson.databind.deser.ValueInstantiator.Gettable;
 
 import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
@@ -98,9 +95,6 @@ public class RegisterController implements Initializable{
     }
 
     private boolean checkeo() {
-        //que la longitud no sea muy larga
-        //que el nº d telefono sea válido
-        // etc
         boolean output = true;
         if (!password_fld.getText().equals(passwordRE_fld.getText())) {
             error_lbl1.setText("Las contraseñas insertadas no son iguales");

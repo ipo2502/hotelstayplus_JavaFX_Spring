@@ -6,8 +6,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import com.github.javafaker.Book;
-
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
@@ -148,7 +146,6 @@ public class BookingPageController implements Initializable {
 
     private static BookingPageController instance;
     private static LocalDate[] selectedDates = new LocalDate[2];
-    private static boolean first = true;
     private static int totalnights;
 
     @Override
@@ -160,12 +157,9 @@ public class BookingPageController implements Initializable {
             error_lbl.setVisible(true);
             error_lbl.setText("Error: ya existe una reserva con las fechas elegidas.");
         }
-       // if (first) { //añadir que verifique que sea null cada uno de los elementos  del load data y borrar el if para que se actualicen
             loadData();
-            first = false;
             calculate_btn.setOnAction(event -> onCalculate());
             booking_btn.setOnAction(event -> showConfirmationDialog());
-       // }  
     }
 
     
@@ -191,7 +185,6 @@ public class BookingPageController implements Initializable {
         String starsUrlImg = Paths.getStarsUrlImage((hotel.getStars()));
         Image imageStars = new Image(getClass().getResourceAsStream(starsUrlImg));
         Image imageHotel = new Image(getClass().getResourceAsStream(hotelUrlImg));
-        Image imageHotel2 = new Image(getClass().getResourceAsStream(starsUrlImg));
         String days = Model.getInstance().getModelClient().getRatingString();
         nRatings_lbl.setText(days);
 

@@ -1,14 +1,11 @@
 package ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Client;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import ieslapaloma.tfg.hotelstayplus.DBManager;
 import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
@@ -119,13 +116,6 @@ public class HotelMaxController implements Initializable{
 
     static Long id;
 
-    private List<Service> allServices = List.of(
-        new Service(1L, "Wifi"), 
-        new Service(2L, "Bar"), 
-        new Service(3L, "Desayuno"), 
-        new Service(4L, "24 Horas"), 
-        new Service(5L, "Parking"));
-
     boolean red = false;
     static HotelMaxController instance;
     static Hotel hotel = Model.getInstance().getModelHotel();
@@ -155,7 +145,6 @@ public class HotelMaxController implements Initializable{
         String bedroomUrlImg = Paths.getBedroomUrlImage(hotel.getHotelImg_n());
         String starsUrlImg = Paths.getStarsUrlImage((hotel.getStars()));
         Image imageHotel = new Image(getClass().getResourceAsStream(hotelUrlImg));
-        Image imageHotel2 = new Image(getClass().getResourceAsStream(starsUrlImg));
         Image starsImage = new Image(getClass().getResourceAsStream(starsUrlImg));
         Image imageBedroom = new Image(getClass().getResourceAsStream(bedroomUrlImg));
 
