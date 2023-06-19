@@ -7,7 +7,10 @@ import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class AdminMenuController implements Initializable{
@@ -47,17 +50,14 @@ public class AdminMenuController implements Initializable{
     }
 
     private void onBookings() {
-        System.out.println("bookings");
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ADMINBOOKINGS);
 
     }
     private void onDashboard() {
-        System.out.println("onDashboard");
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ADMINDASHBOARD);
 
 
     }private void onLogOut() {
-        System.out.println("onLogOut");
         Stage stage = (Stage) bookings_btn.getScene().getWindow();
         Model.getInstance().getViewFactory().closedStage(stage);
         Model.getInstance().setModelClient(null);
@@ -66,17 +66,27 @@ public class AdminMenuController implements Initializable{
         Model.getInstance().getViewFactory().showLoginWindow();
 
     }private void onUsers() {
-        System.out.println("onUsers");
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ADMINUSER);
 
 
     }private void onHSP() {
-        System.out.println("onHSP");
+        showAlert("Esta aplicación ha sido desarrollada por Ignacio Pérez Ortega.");
         
     }private void onHotels() {
-        System.out.println("onHotels");
         Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ADMINHOTELS);
 
+    }
+
+     private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("HotelStay+");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/ieslapaloma/tfg/Images/icon.png")));
+        DialogPane dialogPane = alert.getDialogPane();
+        //dialogPane.getStylesheets().add(getClass().getResource("alertStyle.css").toExternalForm());
+        alert.showAndWait();
     }
     
 }

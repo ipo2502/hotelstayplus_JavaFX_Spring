@@ -138,7 +138,6 @@ public class AdminSingleUserController implements Initializable{
 
     private void onDelete() {
         Long id = Long.valueOf(id_lbl.getText());
-        System.out.println("delete client with id" +id);
         DBManager.getInstance().getClientService().deleteClientById(id);
         AdminUserController.getInstance().load();
     }
@@ -166,7 +165,6 @@ public class AdminSingleUserController implements Initializable{
             getPassword(client);
             client.setAddress(address_fld.getText());
             client.setPhoneNumber(phoneNumber_fld.getText());
-            System.out.println("se va a updatear el cliente " + id_lbl.getText());
             DBManager.getInstance().getClientService().updateClient(client);
             setAllDisable(true);
 
@@ -194,7 +192,6 @@ public class AdminSingleUserController implements Initializable{
         Long id = Long.valueOf(id_lbl.getText());
         Client client = DBManager.getInstance().getClientService().getClientById(id);
         Model.getInstance().setModelAdminClient(client);
-        System.out.println("Selected client id " +id);
     }
      
 }

@@ -1,6 +1,4 @@
 package ieslapaloma.tfg.hotelstayplus.model;
-import java.util.HashSet;
-import java.util.Set;
 
 import jakarta.persistence.*;
 @Entity

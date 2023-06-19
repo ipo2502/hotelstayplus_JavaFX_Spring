@@ -61,21 +61,18 @@ public class LoginController implements Initializable{
     }
 
     private void onRegister() {
-        System.out.println("> register");
         Stage stage = (Stage) error_lbl.getScene().getWindow();
         Model.getInstance().getViewFactory().closedStage(stage);
         Model.getInstance().getViewFactory().showRegisterWindow();
     }
 
     private void onLogin() {
-        System.out.println(login_btn.toString());
         Stage stage = (Stage) error_lbl.getScene().getWindow();
         if (Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.CLIENT) {
             /*
              * LOGIN: CLIENT CREDENTIALS
              */
             Model.getInstance().evaluateClientCredentials(user_fld.getText(), password_fld.getText());
-            System.out.println(Model.getInstance().getClientLoginSucessFlag());
             if (Model.getInstance().getClientLoginSucessFlag()) {
                 Client c = DBManager.getInstance().getClientService().loginClient(user_fld.getText(), password_fld.getText());
                 Model.getInstance().setModelClient(c);
@@ -87,16 +84,13 @@ public class LoginController implements Initializable{
             }
 
         } else if (Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.ADMIN) {
-            System.out.println("ADMIN ----");
             /*
              * ADMIN: ADMIN CREDENTIALS
              */
             if (Model.getInstance().evaluateAdminCredentials(user_fld.getText(), password_fld.getText())) {
-                System.out.println("LOGEO DEL ADMIN");
                 Model.getInstance().getViewFactory().closedStage(stage);
                 Model.getInstance().getViewFactory().showAdminView();
             } else {
-                System.out.println("NO LOGEO");
             }
         }
     }

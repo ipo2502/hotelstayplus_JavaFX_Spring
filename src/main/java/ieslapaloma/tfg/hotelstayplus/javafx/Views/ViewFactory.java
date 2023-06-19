@@ -115,7 +115,6 @@ public class ViewFactory {
     }
 
     public VBox getDashboardView() {
-        System.out.println("> selected Dashboard");
         if (clientDashboardView == null) {
             try {
                 clientDashboardView = Paths.getFXML(ClientMenuOptions.DASHBOARD, getClass()).load();
@@ -127,7 +126,6 @@ public class ViewFactory {
     }
 
     public VBox getBookingsView() {
-        System.out.println("> selected Bookings");
         if (clientBookingsView == null) {
             try {
                 clientBookingsView = Paths.getFXML(ClientMenuOptions.BOOKINGS, getClass()).load();
@@ -139,7 +137,6 @@ public class ViewFactory {
     }
 
     public VBox getProfileView() {
-        System.out.println("> selected Profile");
         if (clientProfileView == null) {
             try {
                 clientProfileView = Paths.getFXML(ClientMenuOptions.PROFILE, getClass()).load();
@@ -151,7 +148,6 @@ public class ViewFactory {
     }
 
     public VBox getMaxView() {
-        System.out.println("> selected hotel");
         if (maxHotelView == null) {
             try {
                 maxHotelView = Paths.getFXML(ClientMenuOptions.MAX, getClass()).load();
@@ -163,7 +159,6 @@ public class ViewFactory {
     }
 
     public VBox getHotelBookingView() {
-        System.out.println("> selected booking view");
         if (hotelBookingView == null) {
             try {
                 hotelBookingView = Paths.getFXML(ClientMenuOptions.BOOKINGHOTEL, getClass()).load();
@@ -175,7 +170,6 @@ public class ViewFactory {
     }
 
     public VBox getLoadingView() {
-        System.out.println("> loading");
         if (loadingView == null) {
             try {
                 loadingView = Paths.getFXML(ClientMenuOptions.LOADING, getClass()).load();
@@ -187,7 +181,6 @@ public class ViewFactory {
     }
 
     public VBox getBookingSuccessfulView() {
-        System.out.println("> successful");
         if (bookingSuccessfulView == null) {
             try {
                 bookingSuccessfulView = Paths.getFXML(ClientMenuOptions.SUCCESSFULBOOKING, getClass()).load();
@@ -199,7 +192,6 @@ public class ViewFactory {
     }
 
     public VBox getFailedBookingView() {
-        System.out.println("> failed");
         if (failedBookingView == null) {
             try {
                 failedBookingView = Paths.getFXML(ClientMenuOptions.FAILEDBOOKING, getClass()).load();
@@ -211,7 +203,6 @@ public class ViewFactory {
     }
 
     public VBox getMaxBookingView() {
-        System.out.println("> maxBooking");
         if (maxBookingView == null) {
             try {
                 maxBookingView = Paths.getFXML(ClientMenuOptions.MAXBOOKING, getClass()).load();
@@ -223,7 +214,6 @@ public class ViewFactory {
     }
 
     public VBox getAdminUserView() {
-        System.out.println("> admin user");
         if (adminUserView == null) {
             try {
                 adminUserView = Paths.getFXML(ClientMenuOptions.ADMINUSER, getClass()).load();
@@ -235,7 +225,6 @@ public class ViewFactory {
     }
 
     public VBox getAdminDashboardView() {
-        System.out.println("> adminDashboardView ");
         if (adminDashboardView == null) {
             try {
                 adminDashboardView = Paths.getFXML(ClientMenuOptions.ADMINDASHBOARD, getClass()).load();
@@ -247,7 +236,6 @@ public class ViewFactory {
     }
 
     public VBox getAdminHotelsView() {
-        System.out.println("> AdminHotelsView ");
         if (adminHotelsView == null) {
             try {
                 adminHotelsView = Paths.getFXML(ClientMenuOptions.ADMINHOTELS, getClass()).load();
@@ -259,7 +247,6 @@ public class ViewFactory {
     }
 
     public VBox getAdminBookingsView() {
-        System.out.println("> AdminBookingsView ");
         if (adminBookingsView == null) {
             try {
                 adminBookingsView = Paths.getFXML(ClientMenuOptions.ADMINBOOKINGS, getClass()).load();

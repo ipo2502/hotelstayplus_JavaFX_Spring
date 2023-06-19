@@ -74,12 +74,11 @@ public class AdminUserController implements Initializable{
     public void load() {
         clients = DBManager.getInstance().getClientService().getAllClients();
         if (hotelesGrid == null) {
-            System.out.println("nulleooo");
+            System.out.println("null");
 
         } else {
             hotelesGrid.getChildren().clear();
 
-        System.out.println("hay un total de " +clients.size()+ " usuarios");
         nHotels_lbl.setText(clients.size() + " usuarios");
         int column = 0;
         int row = 1;

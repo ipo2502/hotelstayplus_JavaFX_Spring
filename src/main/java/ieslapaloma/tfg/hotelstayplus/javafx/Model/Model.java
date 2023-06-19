@@ -69,8 +69,7 @@ public class Model {
             modelClient = client;
             this.clientLoginSucessFlag = true;
         } else {
-            System.out.println("no se encontró el usuario");
-                        this.clientLoginSucessFlag = false;
+            this.clientLoginSucessFlag = false;
 
         }
     }

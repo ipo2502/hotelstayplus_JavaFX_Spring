@@ -41,7 +41,7 @@ public class AdminHotelController implements Initializable{
     
     private void onAddHotel() {
         if (hotelesGrid == null) {
-            System.out.println("nulleooo");
+            System.out.println("null");
             hotelesGrid = hotelesGrid2;
         }
         int column = 0;
@@ -78,12 +78,11 @@ public class AdminHotelController implements Initializable{
     public void load() {
         hotels = DBManager.getInstance().getHotelService().getAllHotels();
         if (hotelesGrid == null) {
-            System.out.println("nulleooo");
+            System.out.println("null");
 
         } else {
             hotelesGrid.getChildren().clear();
         hotelesGrid2 = hotelesGrid;
-        System.out.println("hay un total de " +hotels.size()+ " usuarios");
         nHotels_lbl.setText(hotels.size() + " hoteles");
         int column = 0;
         int row = 1;

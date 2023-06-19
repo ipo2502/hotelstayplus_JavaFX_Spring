@@ -171,7 +171,6 @@ public class AdminAddHotelController implements Initializable{
 
     public void onAdd() {
         Hotel hotel = new Hotel();
-        System.out.println("add hotel " +hotel.toString());
 
         hotel.setName(hotelName_fld.getText());
         hotel.setEmail(email_fld.getText());
@@ -204,7 +203,6 @@ public class AdminAddHotelController implements Initializable{
     }
 
     private void onArrowLeft() {
-        System.out.println("left");
         int img_n = Integer.valueOf(img_fld.getText());
         img_n = getPreviousImg_N(img_n);
         img_fld.setText(String.valueOf(img_n));
@@ -234,8 +232,6 @@ public class AdminAddHotelController implements Initializable{
     }
 
     private void onArrowRight() {
-        System.out.println("right");
-
         int img_n = Integer.valueOf(img_fld.getText());
         img_n = getNextImg_N(img_n);
         img_fld.setText(String.valueOf(img_n));

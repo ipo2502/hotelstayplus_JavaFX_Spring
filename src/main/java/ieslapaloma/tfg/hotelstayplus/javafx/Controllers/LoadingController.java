@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import ieslapaloma.tfg.hotelstayplus.javafx.Paths;
+import ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Client.BookingPageController;
 import ieslapaloma.tfg.hotelstayplus.javafx.Model.Model;
 import ieslapaloma.tfg.hotelstayplus.javafx.Views.ClientMenuOptions;
 import javafx.application.Platform;
@@ -30,8 +31,6 @@ public class LoadingController implements Initializable{
         Image img = new Image(url);
         backgroundImg_img.setImage(img);
 
-        System.out.println("loading las vainas");
-
   // Start the loading process in a separate thread
   Thread loadingThread = new Thread(this::load);
   loadingThread.start();
@@ -48,7 +47,6 @@ public class LoadingController implements Initializable{
 
         try {
             for (int i = 0; i < 2; i++) {
-                System.out.println("vuelta: " + i);
 
                 // Update the label on the UI thread
                 Platform.runLater(() -> loading_lbl.setText("cargando ."));

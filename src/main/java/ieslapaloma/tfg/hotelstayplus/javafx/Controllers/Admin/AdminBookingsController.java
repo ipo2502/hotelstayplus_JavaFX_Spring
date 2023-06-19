@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import ieslapaloma.tfg.hotelstayplus.DBManager;
-import ieslapaloma.tfg.hotelstayplus.javafx.Controllers.BookingController;
+import ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Client.BookingController;
 import ieslapaloma.tfg.hotelstayplus.model.Booking;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +32,7 @@ public class AdminBookingsController implements Initializable{
 
     private void load() {
         if (hotelesGrid == null) {
-            System.out.println("nulleooo");
+            System.out.println("null");
 
         } else {
 

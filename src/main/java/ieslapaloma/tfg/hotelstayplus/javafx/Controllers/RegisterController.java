@@ -70,11 +70,8 @@ public class RegisterController implements Initializable{
     private void onRegister() {
         if (checkeo()) {
             createUser();
-            System.out.println("registro");
 
-        } else {
-            System.out.println("err");
-        }
+        } 
     }
 
     private void createUser() {
@@ -88,7 +85,6 @@ public class RegisterController implements Initializable{
         client.setAddress(address_fld.getText());
         client.setUsername(localidad_fld.getText());
         DBManager.getInstance().getClientService().addClient(client);
-        System.out.println(DBManager.getInstance().getClientService().getAllClients().toString());
         Model.getInstance().getViewFactory().showLoginWindow();
         Stage stage = (Stage) error_lbl1.getScene().getWindow();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

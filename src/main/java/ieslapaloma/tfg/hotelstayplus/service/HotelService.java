@@ -3,10 +3,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
-import ieslapaloma.tfg.hotelstayplus.model.Client;
 import ieslapaloma.tfg.hotelstayplus.model.Hotel;
 import ieslapaloma.tfg.hotelstayplus.repository.HotelRepository;
 

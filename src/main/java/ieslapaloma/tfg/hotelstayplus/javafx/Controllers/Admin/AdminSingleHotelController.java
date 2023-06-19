@@ -230,7 +230,6 @@ public class AdminSingleHotelController implements Initializable{
             List <Service> hotelservices = new ArrayList<>();
 
             hotel.setServices(loadServicesChosen());
-            System.out.println("se va a updatear el cliente " + id_lbl.getText());
             DBManager.getInstance().getHotelService().updateHotel(hotel);
             setAllDisable(true);
             String urlImg = Paths.getHotelUrlImage(hotel.getHotelImg_n());
@@ -256,13 +255,11 @@ public class AdminSingleHotelController implements Initializable{
 
     private void onDelete() {
         Long id = Long.valueOf(id_lbl.getText());
-        System.out.println("delete hotel with id" +id);
         DBManager.getInstance().getHotelService().deleteHotelById(id);
         AdminHotelController.getInstance().load();
     }
 
     private void onArrowLeft() {
-        System.out.println("left");
         int img_n = Integer.valueOf(img_fld.getText());
         img_n = getPreviousImg_N(img_n);
         img_fld.setText(String.valueOf(img_n));
@@ -292,7 +289,6 @@ public class AdminSingleHotelController implements Initializable{
     }
 
     private void onArrowRight() {
-        System.out.println("right");
 
         int img_n = Integer.valueOf(img_fld.getText());
         img_n = getNextImg_N(img_n);
