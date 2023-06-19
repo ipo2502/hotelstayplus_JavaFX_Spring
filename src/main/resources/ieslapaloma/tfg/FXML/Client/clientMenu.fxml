@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" styleClass="main_menu_container" stylesheets="@../../CSS/clientMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.ClientMenuController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="180.0" styleClass="main_menu_container" stylesheets="@../../CSS/clientMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Client.ClientMenuController">
    <children>
       <AnchorPane prefHeight="750.0" prefWidth="190.0" styleClass="left_container" VBox.vgrow="NEVER">
          <children>

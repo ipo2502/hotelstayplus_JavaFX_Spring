@@ -1,4 +1,4 @@
-package ieslapaloma.tfg.hotelstayplus.javafx.Controllers;
+package ieslapaloma.tfg.hotelstayplus.javafx.Controllers.Client;
 
 import java.net.URL;
 import java.util.ResourceBundle;

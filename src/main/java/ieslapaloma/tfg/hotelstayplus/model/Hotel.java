@@ -1,11 +1,7 @@
 package ieslapaloma.tfg.hotelstayplus.model;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
-import javax.transaction.Transactional;
 
 import jakarta.persistence.*;
 import jakarta.persistence.GenerationType;
@@ -221,7 +217,7 @@ public class Hotel {
 
 
     @Transient
-    private String POJOname; //retirar en un futuro
+    private String POJOname; 
     @Transient
     private String imageSrc;
     @Transient
