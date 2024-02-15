@@ -67,7 +67,7 @@ public class ViewFactory {
         createStage(loader);
     }
 
-    public void showAdminView() {
+    public void showAdminView() { // aaaaaaaaaaaaaa
         FXMLLoader loader = Paths.getFXML(PathEnum.ADMIN, getClass());
         createStage(loader);
     }
